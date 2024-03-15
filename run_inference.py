@@ -61,7 +61,7 @@ def main():
         eval_prompt.output_prompt_labels(model, tokenizer, queries, prompt, args, args.used_set)
 
     elif args.task == "evaluate":
-        eval_prompt.full_evaluate_prompt(model, tokenizer, queries, qrels, "best_combination_prompt", prompt, args, args.used_set)
+        eval_prompt.full_evaluate_prompt(model, tokenizer, queries, qrels, "id-best_combination_prompt", prompt, args, args.used_set)
 
 if __name__ == '__main__':
     main()
