@@ -32,16 +32,18 @@ def preprocess_dataset(args : argparse, prompt : str , split : str):
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--model_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='model to train')
-    parser.add_argument('--exp_name', type=str, default="Mistral SemEval Fine-Tune", help='Describes the conducted experiment')
-    parser.add_argument('--run', type=int, default=14, help='run number for wandb logging')
+    parser.add_argument('--model_name', type=str, default="models/Mistral-7B-Instruct-v0.2/run_13/end_model/compiled/", help='model to train')
+    parser.add_argument('--tokenizer_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='tokenizer to use for the model')
+    parser.add_argument('--exp_name', type=str, default="Run13 re-train SemEval2024 Task2 Append-Text train", help='Describes the conducted experiment')
+    parser.add_argument('--run', type=int, default=1, help='run number for wandb logging')
 
     # I/O paths for models, CT, queries and qrels
-    parser.add_argument('--save_dir', type=str, default="outputs/models/run_14/", help='path to model save dir')
+    parser.add_argument('--save_dir', type=str, default="outputs/models/run_13_re-train/", help='path to model save dir')
 
-    parser.add_argument("--used_prompt", default="prompts/", type=str)
+    parser.add_argument("--used_prompt", default="prompts/MistralPrompts.json", type=str)
     parser.add_argument("--queries", default="queries/", type=str)
     parser.add_argument("--qrels", default="qrels/", type=str)
+    parser.add_argument("--train_split_name", default="train_appended-text", type=str)
 
     #Model Hyperparamenters
     parser.add_argument("--max_length", type=int, default=6000)
@@ -94,7 +96,7 @@ def create_model_and_tokenizer(args : argparse):
 
     model = get_peft_model(model, peft_config)
 
-    tokenizer = AutoTokenizer.from_pretrained(args.model_name, trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_name, trust_remote_code=True)
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = 'right'
 
@@ -116,7 +118,7 @@ def main():
 
     # Load dataset and prompt
     prompt = json.load(open(args.used_prompt))["best_combination_prompt"]
-    train_dataset = preprocess_dataset(args, prompt, "train-dev_manual-Expand")
+    train_dataset = preprocess_dataset(args, prompt, args.train_split_name)
     eval_dataset = preprocess_dataset(args, prompt, "dev")
 
     training_arguments = TrainingArguments(
@@ -142,8 +144,6 @@ def main():
         report_to="wandb"
     )
     
-    
-
     ## Data collator for completing with "Answer: YES" or "Answer: NO"
     collator = DataCollatorForCompletionOnlyLM("Answer:", tokenizer= tokenizer)
 

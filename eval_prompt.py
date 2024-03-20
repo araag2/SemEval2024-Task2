@@ -13,18 +13,20 @@ from tqdm import tqdm
 # Model libs
 from sklearn.metrics import f1_score, precision_score, recall_score
 
+def tokenize_and_generate(model : object, tokenizer : object, text : str) -> str:
+        tokenized = tokenizer(text, return_tensors="pt")
+        tokenized["input_ids"] = tokenized.input_ids.to(device="cuda")
+        tokenized["attention_mask"] = tokenized.attention_mask.to(device="cuda")
+
+        # We could use do_sample=False and disable top_k and top_p to get a deterministic output
+        outputs =  model.generate(**tokenized, max_new_tokens=50, top_k = 5, do_sample=True, pad_token_id=tokenizer.eos_token_id)
+        return tokenizer.decode(outputs[0][tokenized["input_ids"].shape[1]:]).strip()
+
 def query_inference(model : object, tokenizer : object, queries : dict) -> dict:
     res_labels = {}
     with torch.inference_mode():
         for q_id in tqdm(queries):
-            tokenized = tokenizer(queries[q_id]["text"], return_tensors="pt")
-            tokenized["input_ids"] = tokenized.input_ids.to(device="cuda")
-            tokenized["attention_mask"] = tokenized.attention_mask.to(device="cuda")
-
-            # We could use do_sample=False and disable top_k and top_p to get a deterministic output
-            outputs =  model.generate(**tokenized, max_new_tokens=50, top_k = 5, do_sample=True, pad_token_id=tokenizer.eos_token_id)
-
-            decoded_output = tokenizer.decode(outputs[0][tokenized["input_ids"].shape[1]:]).strip()
+            decoded_output = tokenize_and_generate(model, tokenizer, queries[q_id]["text"])
             decoded_output_sub = re.sub("[,!\.]+", " ", decoded_output)
             decoded_output_sub = re.sub("(\\n)+", " ", decoded_output_sub)
             decoded_output_sub = re.sub("(<\/s>)+", " ", decoded_output_sub)
@@ -116,3 +118,18 @@ def output_prompt_labels(model : object, tokenizer : object, queries : dict, pro
     # Output results
     with safe_open_w(f'{args.output_dir}{timestamp}_{used_set}-set.json') as output_file:
         output_file.write(json.dumps(label_2_SemEval2024(pred_labels), ensure_ascii=False, indent=4))
+
+def output_prompt_res(model : object, tokenizer : object, queries : dict, qrels : str, prompt : str, args : object, used_set : str):
+    # Replace prompt with query info
+    queries = create_qid_prompt_label_dict(queries, qrels, prompt)
+
+    with torch.inference_mode():
+        for q_id in tqdm(queries):
+            queries[q_id]["expanded_text"] = tokenize_and_generate(model, tokenizer, queries[q_id]["text"])
+            queries[q_id]["text"] += queries[q_id]["expanded_text"]
+
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
+
+    # Output results
+    with safe_open_w(f'{args.output_dir}{timestamp}_{used_set}-set.json') as output_file:
+        output_file.write(json.dumps(queries, ensure_ascii=False, indent=4))
