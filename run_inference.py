@@ -14,12 +14,12 @@ def main():
 
     # Model and checkpoint paths, including a merging flag
     parser.add_argument('--model', type=str, help='name of the model used to generate and combine prompts', default='mistralai/Mistral-7B-Instruct-v0.2')
+    parser.add_argument('--exp_name', type=str, help='name of the experiment', default='run-7_constraint')
     parser.add_argument('--merge', dest='merge', action='store_true', help='boolean flag to set if model is merging')
     parser.add_argument('--no-merge', dest='merge', action='store_true', help='boolean flag to set if model is merging')
     parser.set_defaults(merge=False)
 
-    parser.add_argument('--checkpoint', type=str, help='path to model checkpoint, used if merging', default="")
-
+    parser.add_argument('--checkpoint', type=str, help='path to model checkpoint, used if merging', default="models/run_7/checkpoint-12388/")
 
     # Path to queries, qrels and prompt files
     parser.add_argument('--used_set', type=str, help='choose which data to use', default="test") # train | dev | test
@@ -39,8 +39,8 @@ def main():
     model = None
 
     if args.merge:
-        model = AutoModelForCausalLM.from_pretrained(args.model)
-        model = PeftModel.from_pretrained(model, args.checkpoint)
+        model = AutoModelForCausalLM.from_pretrained(args.model, device_map= {"": 0})
+        model = PeftModel.from_pretrained(model, args.checkpoint, device_map= {"": 0})
         model = model.merge_and_unload()
     else:
        model = AutoModelForCausalLM.from_pretrained(

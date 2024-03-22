@@ -13,27 +13,48 @@ from tqdm import tqdm
 # Model libs
 from sklearn.metrics import f1_score, precision_score, recall_score
 
-def tokenize_and_generate(model : object, tokenizer : object, text : str) -> str:
-        tokenized = tokenizer(text, return_tensors="pt")
-        tokenized["input_ids"] = tokenized.input_ids.to(device="cuda")
-        tokenized["attention_mask"] = tokenized.attention_mask.to(device="cuda")
+#Constraint Decoding
+from genre.trie import MarisaTrie
 
-        # We could use do_sample=False and disable top_k and top_p to get a deterministic output
-        outputs =  model.generate(**tokenized, max_new_tokens=50, top_k = 5, do_sample=True, pad_token_id=tokenizer.eos_token_id)
-        return tokenizer.decode(outputs[0][tokenized["input_ids"].shape[1]:]).strip()
+def tokenize_generate_decode(model : object, tokenizer : object, text : str, max_new_tokens : int = 50, top_k : int = 5, do_sample : bool = True) -> str:   
+    tokenized = tokenizer(text, return_tensors="pt")
+    tokenized["input_ids"] = tokenized.input_ids.to(device="cuda")
+    tokenized["attention_mask"] = tokenized.attention_mask.to(device="cuda")
 
-def query_inference(model : object, tokenizer : object, queries : dict) -> dict:
+    # We could use do_sample=False and disable top_k and top_p to get a deterministic output
+    outputs =  model.generate(**tokenized, max_new_tokens=max_new_tokens, top_k = top_k, do_sample=do_sample, pad_token_id=tokenizer.eos_token_id)
+    return tokenizer.decode(outputs[0][tokenized["input_ids"].shape[1]:]).strip()
+
+def tokenize_generate_decode_constraint(model : object, tokenizer : object, text : str, trie : object) -> str:
+    tokenized = tokenizer(text, return_tensors="pt")
+    tokenized["input_ids"] = tokenized.input_ids.to(device="cuda")
+    tokenized["attention_mask"] = tokenized.attention_mask.to(device="cuda")
+
+    # We could use do_sample=False and disable top_k and top_p to get a deterministic output
+    outputs =  model.generate(**tokenized, pad_token_id=tokenizer.eos_token_id, prefix_allowed_tokens_fn=lambda batch_id, sent: trie.get(sent.tolist()) )
+    return tokenizer.decode(outputs[0][tokenized["input_ids"].shape[1]:]).strip()
+
+def query_inference(model : object, tokenizer : object, queries : dict, constraint : bool = False) -> dict:
     res_labels = {}
+    trie = MarisaTrie([[0]+tokenizer.encode("Yes"), [0]+tokenizer.encode("No")]) if constraint else None
+
     with torch.inference_mode():
         for q_id in tqdm(queries):
-            decoded_output = tokenize_and_generate(model, tokenizer, queries[q_id]["text"])
+            decoded_output = ""
+            if not constraint:
+                decoded_output = tokenize_generate_decode(model, tokenizer, queries[q_id]["text"], 200, 10, True)
+            else:
+                decoded_output = tokenize_generate_decode_constraint(model, tokenizer, queries[q_id]["text"], trie)
+
             decoded_output_sub = re.sub("[,!\.]+", " ", decoded_output)
             decoded_output_sub = re.sub("(\\n)+", " ", decoded_output_sub)
             decoded_output_sub = re.sub("(<\/s>)+", " ", decoded_output_sub)
 
+            print(decoded_output_sub)
+
             res_labels[q_id] = textlabel_2_binarylabel(decoded_output_sub.split(" "))
     return res_labels
-
+    
 def calculate_metrics(pred_labels : dict, gold_labels : dict) -> dict:
     res_labels = [[],[]]
     mistakes = []
@@ -97,7 +118,7 @@ def full_evaluate_prompt(model: object, tokenizer: object, queries: dict, qrels:
     queries_dict = create_qid_prompt_label_dict(queries, qrels, prompt)
 
     # 0-shot inference from queries TODO
-    pred_labels = query_inference(model, tokenizer, queries_dict)
+    pred_labels = query_inference(model, tokenizer, queries_dict, constraint=True)
 
     # Compute metrics
     metrics, mistakes = calculate_metrics(pred_labels, queries_dict)
@@ -116,7 +137,7 @@ def output_prompt_labels(model : object, tokenizer : object, queries : dict, pro
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
 
     # Output results
-    with safe_open_w(f'{args.output_dir}{timestamp}_{used_set}-set.json') as output_file:
+    with safe_open_w(f'{args.output_dir}{args.exp_name if "exp_name" in args else ""}{timestamp}_{used_set}-set.json') as output_file:
         output_file.write(json.dumps(label_2_SemEval2024(pred_labels), ensure_ascii=False, indent=4))
 
 def output_prompt_res(model : object, tokenizer : object, queries : dict, qrels : str, prompt : str, args : object, used_set : str):
@@ -125,11 +146,11 @@ def output_prompt_res(model : object, tokenizer : object, queries : dict, qrels 
 
     with torch.inference_mode():
         for q_id in tqdm(queries):
-            queries[q_id]["expanded_text"] = tokenize_and_generate(model, tokenizer, queries[q_id]["text"])
+            queries[q_id]["expanded_text"] = tokenize_generate_decode(model, tokenizer, queries[q_id]["text"], 200, 10, True)
             queries[q_id]["text"] += queries[q_id]["expanded_text"]
 
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
 
     # Output results
-    with safe_open_w(f'{args.output_dir}{timestamp}_{used_set}-set.json') as output_file:
+    with safe_open_w(f'{args.output_dir}{args.exp_name if "exp_name" in args else ""}{timestamp}_{used_set}-set.json') as output_file:
         output_file.write(json.dumps(queries, ensure_ascii=False, indent=4))

@@ -38,7 +38,7 @@ def parse_args():
     parser.add_argument('--run', type=int, default=1, help='run number for wandb logging')
 
     # I/O paths for models, CT, queries and qrels
-    parser.add_argument('--save_dir', type=str, default="outputs/models/run_13_re-train/", help='path to model save dir')
+    parser.add_argument('--save_dir', type=str, default="models/run_13_re-train/", help='path to model save dir')
 
     parser.add_argument("--used_prompt", default="prompts/MistralPrompts.json", type=str)
     parser.add_argument("--queries", default="queries/", type=str)
