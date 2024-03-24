@@ -5,7 +5,7 @@ import re
 
 # Local Files
 from utils import safe_open_w
-from label_prompt_funcs import textlabel_2_binarylabel, label_2_SemEval2024, create_qid_prompt_label_dict, create_qdid_prompt
+from label_prompt_funcs import textlabel_2_binarylabel, label_2_SemEval2024, create_qid_prompt_label_dict, create_qdid_prompt, create_qdid_prompt_self_consistency
 
 # Util libs
 from datetime import datetime
@@ -23,6 +23,7 @@ def tokenize_generate_decode(model : object, tokenizer : object, text : str, max
 
     # We could use do_sample=False and disable top_k and top_p to get a deterministic output
     outputs =  model.generate(**tokenized, max_new_tokens=max_new_tokens, top_k = top_k, do_sample=do_sample, pad_token_id=tokenizer.eos_token_id)
+
     return tokenizer.decode(outputs[0][tokenized["input_ids"].shape[1]:]).strip()
 
 def tokenize_generate_decode_constraint(model : object, tokenizer : object, text : str, trie : object) -> str:
@@ -30,27 +31,33 @@ def tokenize_generate_decode_constraint(model : object, tokenizer : object, text
     tokenized["input_ids"] = tokenized.input_ids.to(device="cuda")
     tokenized["attention_mask"] = tokenized.attention_mask.to(device="cuda")
 
-    # We could use do_sample=False and disable top_k and top_p to get a deterministic output
-    outputs =  model.generate(**tokenized, pad_token_id=tokenizer.eos_token_id, prefix_allowed_tokens_fn=lambda batch_id, sent: trie.get(sent.tolist()) )
+    #outputs =  model.generate(**tokenized, pad_token_id=tokenizer.eos_token_id, max_new_tokens = 2, do_sample = True, top_k = 10)
+    #print(f'Tensors -> {outputs[0][tokenized["input_ids"].shape[1]:]} that decode to {tokenizer.decode(outputs[0][tokenized["input_ids"].shape[1]:]).strip()}')
+
+    outputs =  model.generate(**tokenized, pad_token_id=tokenizer.eos_token_id, max_new_tokens = 2, do_sample = True, top_k = 10, prefix_allowed_tokens_fn=lambda batch_id, sent: trie.get(sent.tolist()))
     return tokenizer.decode(outputs[0][tokenized["input_ids"].shape[1]:]).strip()
 
 def query_inference(model : object, tokenizer : object, queries : dict, constraint : bool = False) -> dict:
     res_labels = {}
-    trie = MarisaTrie([[0]+tokenizer.encode("Yes"), [0]+tokenizer.encode("No")]) if constraint else None
+    
+    #trie = MarisaTrie([ [0]+tokenizer.encode(‘Yes’) , [0]+tokenizer.encode(‘No’)])
+
+    # Tokens for Yes and No
+    trie = MarisaTrie([[7929, 28723], [7929,  13], [ 7929, 28725], [627, 2255]]) if constraint else None
 
     with torch.inference_mode():
         for q_id in tqdm(queries):
             decoded_output = ""
             if not constraint:
-                decoded_output = tokenize_generate_decode(model, tokenizer, queries[q_id]["text"], 200, 10, True)
+                decoded_output = tokenize_generate_decode(model, tokenizer, queries[q_id]["text"], 5, 5, True)
             else:
                 decoded_output = tokenize_generate_decode_constraint(model, tokenizer, queries[q_id]["text"], trie)
 
-            decoded_output_sub = re.sub("[,!\.]+", " ", decoded_output)
+            decoded_output_sub = re.sub("[,!\.()-]+", " ", decoded_output)
             decoded_output_sub = re.sub("(\\n)+", " ", decoded_output_sub)
             decoded_output_sub = re.sub("(<\/s>)+", " ", decoded_output_sub)
 
-            print(decoded_output_sub)
+            #print(decoded_output_sub)
 
             res_labels[q_id] = textlabel_2_binarylabel(decoded_output_sub.split(" "))
     return res_labels
@@ -127,12 +134,12 @@ def full_evaluate_prompt(model: object, tokenizer: object, queries: dict, qrels:
     output_full_metrics(args, prompt_id, prompt, used_set, metrics)
     return metrics
 
-def output_prompt_labels(model : object, tokenizer : object, queries : dict, prompt : str, args : object, used_set : str):
+def output_prompt_labels(model : object, tokenizer : object, queries : dict, prompt : str, args : object, used_set : str, constraint : bool = False, self_consistency : bool = False):
     # Replace prompt with query info
-    queries_dict = create_qdid_prompt(queries, prompt)
+    queries_dict = create_qdid_prompt(queries, prompt) if not self_consistency else create_qdid_prompt_self_consistency(queries, prompt)
 
     # 0-shot inference from queries
-    pred_labels = query_inference(model, tokenizer, queries_dict)
+    pred_labels = query_inference(model, tokenizer, queries_dict, constraint)
 
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
 

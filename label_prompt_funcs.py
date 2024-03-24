@@ -4,8 +4,8 @@ import typing
 # Local Files
 from utils import safe_open_w
 
-ENTAILMENT_LABELS = {"entailment", "yes", "y"}
-CONTRADICTION_LABELS = {"contradiction", "no", "not", "n"}
+ENTAILMENT_LABELS = {"entailment", "yes", "y", "yes.", "(yes)"}
+CONTRADICTION_LABELS = {"contradiction", "not", "no", "n", "no.", "(no)"}
 
 def textlabel_2_binarylabel(text_label: list[str]) -> int:
     for label in text_label:
@@ -17,6 +17,8 @@ def textlabel_2_binarylabel(text_label: list[str]) -> int:
 
 def label_2_SemEval2024(labels : dict) -> dict:
     return {q_id : {"Prediction" : "Entailment" if labels[q_id] == 1 else "Contradiction"} for q_id in labels}
+
+# Base queries and prompts
 
 def extract_info_from_query(query : dict) -> dict:
     relevant_info = {}
@@ -61,3 +63,32 @@ def generate_pos_prompts(mistral_prompts : dict):
         output_file.write(json.dumps(prompt_combinations, ensure_ascii=False, indent=4))
 
     return prompt_combinations
+
+# Code that is very similiar to base prompts, but for self consistency queries
+
+def extract_self_consistency_info(query : dict) -> dict:
+    relevant_info = extract_info_from_query(query)
+    relevant_info["entail"] = query["entail"]
+    relevant_info["contradict"] = query["contradict"]
+    return relevant_info
+
+def generate_query_self_consistency(text_to_replace: dict, prompt: str) -> str:
+    prompt = generate_query_from_prompt(text_to_replace, prompt)
+    prompt = prompt.replace("$entail", text_to_replace["entail"])
+    prompt = prompt.replace("$contradict", text_to_replace["contradict"])
+    return prompt
+
+def create_qid_prompt_self_consistency_label_dict(queries : dict, qrels : dict, prompt : str) -> dict:
+    queries_dict = {}
+    for q_id in queries:
+        queries_dict[q_id] = { 
+            "text" : generate_query_self_consistency(extract_self_consistency_info(queries[q_id]), prompt), 
+            "gold_label" : textlabel_2_binarylabel([qrels[q_id]["Label"].strip()])
+        }
+    return queries_dict
+
+def create_qdid_prompt_self_consistency(queries : dict, prompt : str) -> dict:
+    queries_dict = {}
+    for q_id in queries:
+        queries_dict[q_id] = {"text" : generate_query_self_consistency(extract_self_consistency_info(queries[q_id]), prompt)}
+    return queries_dict
