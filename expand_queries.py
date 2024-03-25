@@ -13,7 +13,7 @@ def main():
     parser = argparse.ArgumentParser()
 
     # Model and checkpoint paths, including a merging flag
-    parser.add_argument('--exp_name', type=str, help='name of the experiment', default='contradiction_explanation')
+    parser.add_argument('--exp_name', type=str, help='name of the experiment', default='contradiction')
 
     # Model and checkpoint paths, including a merging flag
     parser.add_argument('--model', type=str, help='name of the model used to generate and combine prompts', default='mistralai/Mistral-7B-Instruct-v0.2')
@@ -23,7 +23,9 @@ def main():
     args = parser.parse_known_args()
     parser.add_argument('--queries', type=str, help='path to queries file', default=f'queries/queries2024_{args[0].used_set}.json')
     parser.add_argument('--qrels', type=str, help='path to qrels file', default=f'qrels/qrels2024_{args[0].used_set}.json')
-    parser.add_argument('--prompts', type=str, help='path to prompts file', default="prompts/AddPrompts.json")
+
+    parser.add_argument('--prompt_file', type=str, help='path to prompts file', default="prompts/AddPrompts.json")
+    parser.add_argument('--prompt_name', type=str, help='name of prompt to use', default="explain_contradiction")
 
     # Task to run
     parser.add_argument('--task', type=str, help='task to run', default='output_labels', choices=['expand_text']) # expand_text
@@ -45,7 +47,7 @@ def main():
     # Load dataset, queries, qrels and prompts
     queries = json.load(open(args.queries))
     qrels = json.load(open(args.qrels))
-    prompt = json.load(open(args.prompts))["explain_contradiction"]
+    prompt = json.load(open(args.prompt_file))[args.prompt_name]
 
     eval_prompt.output_prompt_res(model, tokenizer, queries, qrels, prompt, args, args.used_set)
 

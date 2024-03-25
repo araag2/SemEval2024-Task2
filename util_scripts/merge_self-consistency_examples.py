@@ -1,10 +1,8 @@
 import os
 import json
 import argparse
-import torch
 
-from transformers import AutoModelForCausalLM
-from peft import PeftModel
+from tqdm import tqdm
 
 def safe_open_w(path: str):
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -13,9 +11,9 @@ def safe_open_w(path: str):
 def main():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('-og_queries', type=str, default='../queries/queries2024_test.json')
-    parser.add_argument('-entail_queries', type=str, default='../outputs/entailment_explanation2024-03-22_23-53_test-set.json')
-    parser.add_argument('-contradict_queries', type=str, default='../outputs/contradiction_explanation2024-03-22_23-17_test-set.json')
+    parser.add_argument('--og_queries', type=str, default='../queries/queries2024_test.json')
+    parser.add_argument('--entail_queries', type=str, default='../outputs/entailment2024-03-25_15-40_dev-set.json')
+    parser.add_argument('--contradict_queries', type=str, default='../outputs/contradiction2024-03-25_15-38_dev-set.json')
     args = parser.parse_args()
 
     og_q = json.load(open(args.og_queries))
@@ -24,10 +22,10 @@ def main():
 
     res = {}
 
-    for q_id in og_q:
-        res[f'{q_id}_self-consistency'] = og_q[q_id]
-        res[f'{q_id}_self-consistency']["entail"] = entail_q[q_id]["expanded_text"] 
-        res[f'{q_id}_self-consistency']["contradict"] = contradict_q[q_id]["expanded_text"]
+    for q_id in tqdm(og_q):
+        res[f'{q_id}'] = og_q[q_id]
+        res[f'{q_id}']["entail"] = entail_q[q_id]["expanded_text"] 
+        res[f'{q_id}']["contradict"] = contradict_q[q_id]["expanded_text"]
 
     with safe_open_w(f'{args.og_queries[:-5]}_self-consistency.json') as out_f:
         json.dump(res, out_f, indent=4)
