@@ -20,32 +20,40 @@ def label_2_SemEval2024(labels : dict) -> dict:
 
 # Base queries and prompts
 
-def extract_info_from_query(query : dict) -> dict:
+TASK_TYPES = {"base" : [], "self_consistency" : ["entail", "contradict"], "explain_answer" : ["explain"]}
+
+def extract_info_from_query(query : dict, task_type : str = "base") -> dict:
     relevant_info = {}
     relevant_info["hypothesis"] = query["Statement"]
     relevant_info["primary_evidence"] = query["Primary_id_txt"]
     relevant_info["secondary_evidence"] = query["Secondary_id_txt"] if "Secondary_id_txt" in query else ""
+    if task_type in TASK_TYPES:
+        for task in TASK_TYPES[task_type]:
+            relevant_info[task] = query[task]
     return relevant_info
 
-def generate_query_from_prompt(text_to_replace: dict, prompt: str) -> str:
+def generate_query_from_prompt(text_to_replace: dict, prompt: str, task_type : str = "base") -> str:
     prompt = prompt.replace("$primary_evidence", text_to_replace["primary_evidence"])
     prompt = prompt.replace("$secondary_evidence", text_to_replace["secondary_evidence"])
     prompt = prompt.replace("$hypothesis", text_to_replace["hypothesis"])
+    if task_type in TASK_TYPES:
+        for task in TASK_TYPES[task_type]:
+            prompt = prompt.replace(f"${task}", text_to_replace[task])
     return prompt
 
-def create_qid_prompt_label_dict(queries : dict, qrels : dict, prompt : str) -> dict:
+def create_qid_prompt_label_dict(queries : dict, qrels : dict, prompt : str, task_type : str = "base") -> dict:
     queries_dict = {}
     for q_id in queries:
         queries_dict[q_id] = { 
-            "text" : generate_query_from_prompt(extract_info_from_query(queries[q_id]), prompt), 
+            "text" : generate_query_from_prompt(extract_info_from_query(queries[q_id], task_type), prompt, task_type), 
             "gold_label" : textlabel_2_binarylabel([qrels[q_id]["Label"].strip()])
         }
     return queries_dict
 
-def create_qdid_prompt(queries : dict, prompt : str) -> dict:
+def create_qdid_prompt(queries : dict, prompt : str, task_type : str = "base") -> dict:
     queries_dict = {}
     for q_id in queries:
-        queries_dict[q_id] = {"text" : generate_query_from_prompt(extract_info_from_query(queries[q_id]), prompt)}
+        queries_dict[q_id] = {"text" : generate_query_from_prompt(extract_info_from_query(queries[q_id]), prompt, task_type)}
     return queries_dict
 
 def generate_pos_prompts(mistral_prompts : dict):
@@ -63,32 +71,3 @@ def generate_pos_prompts(mistral_prompts : dict):
         output_file.write(json.dumps(prompt_combinations, ensure_ascii=False, indent=4))
 
     return prompt_combinations
-
-# Code that is very similiar to base prompts, but for self consistency queries
-
-def extract_self_consistency_info(query : dict) -> dict:
-    relevant_info = extract_info_from_query(query)
-    relevant_info["entail"] = query["entail"]
-    relevant_info["contradict"] = query["contradict"]
-    return relevant_info
-
-def generate_query_self_consistency(text_to_replace: dict, prompt: str) -> str:
-    prompt = generate_query_from_prompt(text_to_replace, prompt)
-    prompt = prompt.replace("$entail", text_to_replace["entail"])
-    prompt = prompt.replace("$contradict", text_to_replace["contradict"])
-    return prompt
-
-def create_qid_prompt_self_consistency_label_dict(queries : dict, qrels : dict, prompt : str) -> dict:
-    queries_dict = {}
-    for q_id in queries:
-        queries_dict[q_id] = { 
-            "text" : generate_query_self_consistency(extract_self_consistency_info(queries[q_id]), prompt), 
-            "gold_label" : textlabel_2_binarylabel([qrels[q_id]["Label"].strip()])
-        }
-    return queries_dict
-
-def create_qdid_prompt_self_consistency(queries : dict, prompt : str) -> dict:
-    queries_dict = {}
-    for q_id in queries:
-        queries_dict[q_id] = {"text" : generate_query_self_consistency(extract_self_consistency_info(queries[q_id]), prompt)}
-    return queries_dict

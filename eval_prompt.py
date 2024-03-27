@@ -16,6 +16,10 @@ from sklearn.metrics import f1_score, precision_score, recall_score
 #Constraint Decoding
 from genre.trie import MarisaTrie
 
+class MyMarisaTrie(MarisaTrie):
+    def __init__(self, data): super().__init__(data)
+    def get(self, data, tokenizer, length_to_ignore): return super().get([tokenizer.bos_token_id] + data[length_to_ignore:])
+
 def tokenize_generate_decode(model : object, tokenizer : object, text : str, max_new_tokens : int = 50, top_k : int = 5, do_sample : bool = True) -> str:   
     tokenized = tokenizer(text, return_tensors="pt")
     tokenized["input_ids"] = tokenized.input_ids.to(device="cuda")
@@ -34,7 +38,7 @@ def tokenize_generate_decode_constraint(model : object, tokenizer : object, text
     #outputs =  model.generate(**tokenized, pad_token_id=tokenizer.eos_token_id, max_new_tokens = 2, do_sample = True, top_k = 10)
     #print(f'Tensors -> {outputs[0][tokenized["input_ids"].shape[1]:]} that decode to {tokenizer.decode(outputs[0][tokenized["input_ids"].shape[1]:]).strip()}')
 
-    outputs =  model.generate(**tokenized, pad_token_id=tokenizer.eos_token_id, max_new_tokens = 2, do_sample = True, top_k = 10, prefix_allowed_tokens_fn=lambda batch_id, sent: trie.get(sent.tolist()))
+    outputs =  model.generate(**tokenized, pad_token_id=tokenizer.eos_token_id, max_new_tokens = 2, do_sample = True, top_k = 10, prefix_allowed_tokens_fn=lambda batch_id, sent: trie.get(sent.tolist(), tokenizer, tokenized["input_ids"].shape[1]))
     return tokenizer.decode(outputs[0][tokenized["input_ids"].shape[1]:]).strip()
 
 def query_inference(model : object, tokenizer : object, queries : dict, constraint : bool = False) -> dict:
@@ -43,7 +47,7 @@ def query_inference(model : object, tokenizer : object, queries : dict, constrai
     #trie = MarisaTrie([ [0]+tokenizer.encode(‘Yes’) , [0]+tokenizer.encode(‘No’)])
 
     # Tokens for Yes and No
-    trie = MarisaTrie([[7929, 28723], [7929,  13], [ 7929, 28725], [627, 2255]]) if constraint else None
+    trie = MarisaTrie([[7929, 28723], [7929,  13], [7929, 28725], [627, 2255]]) if constraint else None
 
     with torch.inference_mode():
         for q_id in tqdm(queries):
@@ -120,9 +124,9 @@ def output_full_metrics(args : dict, prompt_id : str, full_prompt : str, used_se
     with safe_open_w(f'{args.output_dir}combination_output/{timestamp}_{args.model.split("/")[-1]}_{used_set}-set.json') as output_file:
         output_file.write(json.dumps(results, ensure_ascii=False, indent=4))
 
-def full_evaluate_prompt(model: object, tokenizer: object, queries: dict, qrels: dict, prompt_id : str, prompt: str, args : object, used_set : str) -> dict:
+def full_evaluate_prompt(model: object, tokenizer: object, queries: dict, qrels: dict, prompt_id : str, prompt: str, args : object, used_set : str, task_type : str = "base") -> dict:
     # Replace prompt with query info
-    queries_dict = create_qid_prompt_label_dict(queries, qrels, prompt)
+    queries_dict = create_qid_prompt_label_dict(queries, qrels, prompt, task_type)
 
     # 0-shot inference from queries TODO
     pred_labels = query_inference(model, tokenizer, queries_dict, constraint=True)
@@ -134,9 +138,9 @@ def full_evaluate_prompt(model: object, tokenizer: object, queries: dict, qrels:
     output_full_metrics(args, prompt_id, prompt, used_set, metrics)
     return metrics
 
-def output_prompt_labels(model : object, tokenizer : object, queries : dict, prompt : str, args : object, used_set : str, constraint : bool = False, self_consistency : bool = False):
+def output_prompt_labels(model : object, tokenizer : object, queries : dict, prompt : str, args : object, used_set : str, constraint : bool = False, task_type : str = "base"):
     # Replace prompt with query info
-    queries_dict = create_qdid_prompt(queries, prompt) if not self_consistency else create_qdid_prompt_self_consistency(queries, prompt)
+    queries_dict = create_qdid_prompt(queries, prompt, task_type)
 
     # 0-shot inference from queries
     pred_labels = query_inference(model, tokenizer, queries_dict, constraint)
@@ -147,9 +151,9 @@ def output_prompt_labels(model : object, tokenizer : object, queries : dict, pro
     with safe_open_w(f'{args.output_dir}{args.exp_name if "exp_name" in args else ""}{timestamp}_{used_set}-set.json') as output_file:
         output_file.write(json.dumps(label_2_SemEval2024(pred_labels), ensure_ascii=False, indent=4))
 
-def output_prompt_res(model : object, tokenizer : object, queries : dict, qrels : str, prompt : str, args : object, used_set : str):
+def output_prompt_res(model : object, tokenizer : object, queries : dict, qrels : str, prompt : str, args : object, used_set : str, task_type : str = "base"):
     # Replace prompt with query info
-    queries = create_qid_prompt_label_dict(queries, qrels, prompt)
+    queries = create_qid_prompt_label_dict(queries, qrels, prompt, task_type)
 
     with torch.inference_mode():
         for q_id in tqdm(queries):

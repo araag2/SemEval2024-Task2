@@ -32,7 +32,7 @@ def preprocess_dataset(args : argparse, prompt : str , split : str):
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--model_name', type=str, default="models/Mistral-7B-Instruct-v0.2/run_13/end_model/compiled/", help='model to train')
+    parser.add_argument('--model_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='model to train')
     parser.add_argument('--tokenizer_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='tokenizer to use for the model')
     parser.add_argument('--exp_name', type=str, default="Run13 re-train SemEval2024 Task2 Append-Text train", help='Describes the conducted experiment')
     parser.add_argument('--run', type=int, default=1, help='run number for wandb logging')

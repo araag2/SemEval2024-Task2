@@ -37,7 +37,9 @@ def main():
     parser.add_argument('--prompt_name', type=str, help='name of the prompt to use', default='best_combination_prompt')
 
     # Task to run
-    parser.add_argument('--task', type=str, help='task to run', default='output_labels', choices=['output_labels', 'self_consistency', 'evaluate']) # output_labels | self_consistency | evaluate
+    parser.add_argument('--task', type=str, help='task to run', default='output_labels', choices=['output_labels', 'evaluate']) # output_labels | self_consistency | evaluate
+
+    parser.add_argument('--task_type', type=str, help='task type to run', default='base', choices=['base', 'self_consistency', 'explain_answer']) # output_labels | self_consistency | evaluate
 
     # Output directory
     parser.add_argument('--output_dir', type=str, help='path to output_dir', default="outputs/")
@@ -65,11 +67,11 @@ def main():
     qrels = json.load(open(args.qrels))
     prompt = json.load(open(args.prompt_file))[args.prompt_name]
 
-    if args.task == "output_labels" or args.task == "self_consistency":
-        eval_prompt.output_prompt_labels(model, tokenizer, queries, prompt, args, args.used_set, args.constraint, args.task == "self_consistency")
+    if args.task == "output_labels":
+        eval_prompt.output_prompt_labels(model, tokenizer, queries, prompt, args, args.used_set, args.constraint, args.task_type)
 
     elif args.task == "evaluate":
-        eval_prompt.full_evaluate_prompt(model, tokenizer, queries, qrels, "id-best_combination_prompt", prompt, args, args.used_set)
+        eval_prompt.full_evaluate_prompt(model, tokenizer, queries, qrels, "id-best_combination_prompt", prompt, args, args.used_set, args.task_type)
 
 if __name__ == '__main__':
     main()

@@ -27,9 +27,6 @@ def main():
     parser.add_argument('--prompt_file', type=str, help='path to prompts file', default="prompts/AddPrompts.json")
     parser.add_argument('--prompt_name', type=str, help='name of prompt to use', default="explain_contradiction")
 
-    # Task to run
-    parser.add_argument('--task', type=str, help='task to run', default='output_labels', choices=['expand_text']) # expand_text
-
     # Output directory
     parser.add_argument('--output_dir', type=str, help='path to output_dir', default="outputs/")
 
