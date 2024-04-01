@@ -28,8 +28,8 @@ def extract_info_from_query(query : dict, task_type : str = "base") -> dict:
     relevant_info["primary_evidence"] = query["Primary_id_txt"]
     relevant_info["secondary_evidence"] = query["Secondary_id_txt"] if "Secondary_id_txt" in query else ""
     if task_type in TASK_TYPES:
-        for task in TASK_TYPES[task_type]:
-            relevant_info[task] = query[task]
+        for field in TASK_TYPES[task_type]:
+            relevant_info[field] = query[field]
     return relevant_info
 
 def generate_query_from_prompt(text_to_replace: dict, prompt: str, task_type : str = "base") -> str:
@@ -37,8 +37,8 @@ def generate_query_from_prompt(text_to_replace: dict, prompt: str, task_type : s
     prompt = prompt.replace("$secondary_evidence", text_to_replace["secondary_evidence"])
     prompt = prompt.replace("$hypothesis", text_to_replace["hypothesis"])
     if task_type in TASK_TYPES:
-        for task in TASK_TYPES[task_type]:
-            prompt = prompt.replace(f"${task}", text_to_replace[task])
+        for field in TASK_TYPES[task_type]:
+            prompt = prompt.replace(f"${field}", text_to_replace[field])
     return prompt
 
 def create_qid_prompt_label_dict(queries : dict, qrels : dict, prompt : str, task_type : str = "base") -> dict:
@@ -53,7 +53,7 @@ def create_qid_prompt_label_dict(queries : dict, qrels : dict, prompt : str, tas
 def create_qdid_prompt(queries : dict, prompt : str, task_type : str = "base") -> dict:
     queries_dict = {}
     for q_id in queries:
-        queries_dict[q_id] = {"text" : generate_query_from_prompt(extract_info_from_query(queries[q_id]), prompt, task_type)}
+        queries_dict[q_id] = {"text" : generate_query_from_prompt(extract_info_from_query(queries[q_id], task_type), prompt, task_type)}
     return queries_dict
 
 def generate_pos_prompts(mistral_prompts : dict):

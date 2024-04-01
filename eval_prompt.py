@@ -5,7 +5,7 @@ import re
 
 # Local Files
 from utils import safe_open_w
-from label_prompt_funcs import textlabel_2_binarylabel, label_2_SemEval2024, create_qid_prompt_label_dict, create_qdid_prompt, create_qdid_prompt_self_consistency
+from label_prompt_funcs import textlabel_2_binarylabel, label_2_SemEval2024, create_qid_prompt_label_dict, create_qdid_prompt
 
 # Util libs
 from datetime import datetime

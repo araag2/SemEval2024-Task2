@@ -12,7 +12,7 @@ def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--exp_name', type=str, help='name of the experiment', default='explain_e-c')
-    parser.add_argument('--og_queries', type=str, default='../queries/queries2024_test.json')
+    parser.add_argument('--og_queries', type=str, default='../qrels/qrels2024_test.json')
     parser.add_argument('--entail_queries', type=str, default='../outputs/entailment2024-03-25_15-40_dev-set.json')
     parser.add_argument('--contradict_queries', type=str, default='../outputs/contradiction2024-03-25_15-38_dev-set.json')
     args = parser.parse_args()

@@ -19,7 +19,7 @@ from trl import SFTTrainer, DataCollatorForCompletionOnlyLM
 
 def preprocess_dataset(args : argparse, prompt : str , split : str):
     # Load JSON
-    set_examples = create_qid_prompt_label_dict(json.load(open(f'{args.queries}queries2024_{split}.json')), json.load(open(f'{args.qrels}qrels2024_{split}.json')), prompt)
+    set_examples = create_qid_prompt_label_dict(json.load(open(f'{args.queries}queries2024_{split}.json')), json.load(open(f'{args.qrels}qrels2024_{split}.json')), prompt, args.task_type)
     
     set_dict = {"id" : [], "text" : []}
     for q_id in set_examples:
@@ -34,19 +34,25 @@ def parse_args():
 
     parser.add_argument('--model_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='model to train')
     parser.add_argument('--tokenizer_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='tokenizer to use for the model')
-    parser.add_argument('--exp_name', type=str, default="Run13 re-train SemEval2024 Task2 Append-Text train", help='Describes the conducted experiment')
+    parser.add_argument('--exp_name', type=str, default="Run_1 Explain_Answer_Mistral", help='Describes the conducted experiment')
     parser.add_argument('--run', type=int, default=1, help='run number for wandb logging')
 
     # I/O paths for models, CT, queries and qrels
     parser.add_argument('--save_dir', type=str, default="models/run_13_re-train/", help='path to model save dir')
 
-    parser.add_argument("--used_prompt", default="prompts/MistralPrompts.json", type=str)
+    parser.add_argument("--prompt_file", default="prompts/AddPrompts.json", type=str)
+    parser.add_argument("--prompt_name", default="explain_entailment_or_contradiction_prompt", type=str)
+
+
     parser.add_argument("--queries", default="queries/", type=str)
     parser.add_argument("--qrels", default="qrels/", type=str)
-    parser.add_argument("--train_split_name", default="train_appended-text", type=str)
+
+    parser.add_argument("--train_split_name", default="train_explain", type=str)
+    parser.add_argument("--dev_split_name", default="dev_explain", type=str)
+    parser.add_argument("--task_type", default="explain", type=str, help="Type of task to train on (explain, base, self_consistency)")
 
     #Model Hyperparamenters
-    parser.add_argument("--max_length", type=int, default=6000)
+    parser.add_argument("--max_length", type=int, default=7000)
     parser.add_argument("--batch_size", default=1, type=int)
     parser.add_argument("--pooling", default="mean")
     parser.add_argument("--train_epochs", default=5, type=int)
@@ -117,9 +123,9 @@ def main():
     model, peft_config, tokenizer = create_model_and_tokenizer(args)
 
     # Load dataset and prompt
-    prompt = json.load(open(args.used_prompt))["best_combination_prompt"]
+    prompt = json.load(open(args.prompt_file))[args.prompt_name]
     train_dataset = preprocess_dataset(args, prompt, args.train_split_name)
-    eval_dataset = preprocess_dataset(args, prompt, "dev")
+    eval_dataset = preprocess_dataset(args, prompt, args.dev_split_name)
 
     training_arguments = TrainingArguments(
         output_dir = args.save_dir,

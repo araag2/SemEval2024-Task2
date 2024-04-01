@@ -20,7 +20,7 @@ def main():
     parser.add_argument('--no-merge', dest='merge', action='store_true', help='boolean flag to set if model is merging')
     parser.set_defaults(merge=False)
 
-    parser.add_argument('--checkpoint', type=str, help='path to model checkpoint, used if merging', default="models/Mistral-7B-Instruct-v0.2/run_7/checkpoint-12388/")
+    parser.add_argument('--checkpoint', type=str, help='path to model checkpoint, used if merging', default="models/run_1_explain/checkpoint-850/")
 
     parser.add_argument('--constraint', dest='constraint', action='store_true', help='boolean flag to set if model is constrained on Yes or No')
     parser.add_argument('--no-constraint', dest='constraint', action='store_true', help='boolean flag to set if model is constrained on Yes or No')
@@ -33,8 +33,8 @@ def main():
     parser.add_argument('--queries', type=str, help='path to queries file', default=f'queries/queries2024_{args[0].used_set}.json')
     parser.add_argument('--qrels', type=str, help='path to qrels file', default=f'qrels/qrels2024_{args[0].used_set}.json')
     
-    parser.add_argument('--prompt_file', type=str, help='path to prompts file', default="prompts/MistralPrompts.json")
-    parser.add_argument('--prompt_name', type=str, help='name of the prompt to use', default='best_combination_prompt')
+    parser.add_argument('--prompt_file', type=str, help='path to prompts file', default="prompts/AddPrompts.json")
+    parser.add_argument('--prompt_name', type=str, help='name of the prompt to use', default='explain_entailment_or_contradiction_prompt')
 
     # Task to run
     parser.add_argument('--task', type=str, help='task to run', default='output_labels', choices=['output_labels', 'evaluate']) # output_labels | self_consistency | evaluate
