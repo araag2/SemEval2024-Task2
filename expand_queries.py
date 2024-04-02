@@ -13,7 +13,7 @@ def main():
     parser = argparse.ArgumentParser()
 
     # Model and checkpoint paths, including a merging flag
-    parser.add_argument('--exp_name', type=str, help='name of the experiment', default='contradiction')
+    parser.add_argument('--exp_name', type=str, help='name of the experiment', default='self-consistency_entailment_')
 
     # Model and checkpoint paths, including a merging flag
     parser.add_argument('--model', type=str, help='name of the model used to generate and combine prompts', default='mistralai/Mistral-7B-Instruct-v0.2')
@@ -25,7 +25,7 @@ def main():
     parser.add_argument('--qrels', type=str, help='path to qrels file', default=f'qrels/qrels2024_{args[0].used_set}.json')
 
     parser.add_argument('--prompt_file', type=str, help='path to prompts file', default="prompts/AddPrompts.json")
-    parser.add_argument('--prompt_name', type=str, help='name of prompt to use', default="explain_contradiction")
+    parser.add_argument('--prompt_name', type=str, help='name of prompt to use', default="explain_entailment")
 
     # Output directory
     parser.add_argument('--output_dir', type=str, help='path to output_dir', default="outputs/")

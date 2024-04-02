@@ -1,0 +1,1662 @@
+{
+    "1adc970c-d433-44d0-aa09-d3834986f7a2": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00066573",
+        "Statement": "there is a 13.2% difference between the results from the two the primary trial cohorts",
+        "Label": "Contradiction",
+        "explain": "The statement \"there is a 13.2% difference between the results from the two primary trial cohorts\" is entailed by the information provided in the CTRs. \n\nJustification: \nThe percentage difference in the number of participants between Arm/Group Exemestane (87.8%) and Arm/Group Anastrozole (89.0%) amounts to 1.2%, but the expert's statement mentions a 13.2% difference. This discrepancy can arise due to rounding errors in the CTR or miscommunication in the expert's statement. However, if we consider the absolute difference in percentage values, the 1.2% difference between the two groups is equivalent to a 12.6% difference when expressed as a percentage of Arm/Group Anastrozole. This value is close to the expert's stated difference (13.2%). Therefore, the expert's statement is a valid conclusion drawn from the data in the CTRs."
+    },
+    "6b9162d0-0816-46d4-81af-c60028dcc63b": {
+        "Type": "Comparison",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00425854",
+        "Secondary_id": "NCT01224678",
+        "Statement": "Patients with significantly elevated ejection fraction are excluded from the primary trial, but can still be eligible for the secondary trial if they are 55 years of age or over",
+        "Label": "Contradiction",
+        "explain": "The statement is not directly entailed by the information in the CTRs. In the primary trial, patients with cardiac left ventricular function with resting ejection fraction < 50% are excluded. The expert's statement mentions \"significantly elevated ejection fraction,\" which is not explicitly mentioned in either CTR and is not equivalent to a resting ejection fraction below 50%. In the secondary trial, there is no mention of ejection fraction at all."
+    },
+    "0b6cc8e3-69ee-4a91-b93d-2ad3fddce65f": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT02273973",
+        "Secondary_id": "NCT00281697",
+        "Statement": "a significant number of the participants in the secondary trial and the primary trial suffered from Enterocolitis",
+        "Label": "Contradiction",
+        "explain": "Contradicted. The primary trial reports only one instance of Enterocolitis out of 167 participants (0.60%), whereas the secondary trial reports zero incidents (0.00%)."
+    },
+    "cc1f712a-2116-4e40-9810-f315e3fa5ff8": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00593346",
+        "Statement": "the primary trial does not report the PFS or objective response rate of its patient cohort",
+        "Label": "Entailment",
+        "explain": "Contradicted. \n\nJustification: \n\nThe primary trial reports the local control using ipsilateral breast tumor recurrence rates as the outcome measure. This measure can indicate disease-free survival (DFS), which is closely related to Progression-free survival (PFS) and objective response rate. However, the primary trial explicitly mentions the measurement of local control and provides data on the percentage of participants with no recurrence after 2 years. Therefore, it contradicts the statement that the primary trial does not report the PFS or objective response rate."
+    },
+    "904061c0-14fa-4f13-9118-9a41e24fa8eb": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT02340221",
+        "Statement": "Prior treatment with fulvestrant or with a phosphatidylinositol 3-kinase (PI3K) inhibitor will not prevent a patient from participating in the primary trial",
+        "Label": "Contradiction",
+        "explain": "Contradicted \n\nJustifications:\n\nThe primary CTR explicitly states that one of the exclusion criteria is \"Prior treatment with fulvestrant\" and \"Prior treatment with a phosphatidylinositol 3-kinase (PI3K) inhibitor\" in the Eligibility Criteria section. Therefore, the statement \"Prior treatment with fulvestrant or with a phosphatidylinositol 3-kinase (PI3K) inhibitor will not prevent a patient from participating in the primary trial\" contradicts the information provided in the CTR."
+    },
+    "43ee7645-ce1e-42d5-9a74-3e379f6f367b": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00281697",
+        "Statement": "only patients with a HER2-positive status can take part in the primary trial",
+        "Label": "Contradiction",
+        "explain": "The statement \"only patients with a HER2-positive status can take part in the primary trial\" is contradicted by the provided information in the primary trial's Inclusion Criteria. Patients with an unknown HER2 status or for whom determination of HER2 status is not possible are eligible for the study. This contradicts the assumption that only patients with a HER2-positive status can participate in the trial.\n\nExplanation:\n\nThe primary trial's Inclusion Criteria state that \"Patients with unknown HER2 status, and for whom determination of HER2 status is not possible, are eligible for this study.\" This indicates that the study accepts participants who have not been definitively identified as HER2-positive. The statement, \"only patients with a HER2-positive status can take part in the primary trial,\" is incorrect based on the information provided in the CTR."
+    },
+    "0cef8c8e-7986-46c7-a597-c5733a9899c0": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00915603",
+        "Statement": "the shortest PFS in cohort 1 of the primary trial was under 7 months, in cohort 2 the shortest was just over 7 months",
+        "Label": "Contradiction",
+        "explain": "Based on the provided information, the statement is contradicted by the data in the CTRs. In the primary trial, the shortest PFS in cohort 1 was 5.6 months, which is under 7 months, while in cohort 2, the shortest PFS was 7.1 months, which is just over 7 months. Therefore, the statement is not entailed by the provided CTRs."
+    },
+    "43ce26e5-03fa-4e9d-b0eb-6ea356295753": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT01998906",
+        "Statement": "Both cohorts of the primary trial undergo a total of 17 cycles, each lasting 3 weeks .",
+        "Label": "Entailment",
+        "explain": "Justification for entailment: The primary trial's Intervention 1 and 2 both have cycles lasting 3 weeks, and both cohorts receive a maximum of 17 cycles. The number of cycles and their duration are explicitly stated in the CTR for both interventions, fulfilling the conditions in the expert's statement."
+    },
+    "3facad41-0221-42f8-834d-470e65c4aad5": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00428922",
+        "Statement": "the outcome measurement of the primary trial is The length of time during and after the treatment that a patient survives with the disease ",
+        "Label": "Contradiction",
+        "explain": "The statement \"the outcome measurement of the primary trial is The length of time during and after the treatment that a patient survives with the disease\" is entailed by the CTR. \n\nExplanation: \n\nThe primary trial's outcome measurement is stated as \"Progression-free Survival (PFS)\" in the given CTR. According to the definition provided by the American Society of Clinical Oncology (ASCO), PFS is \"the length of time during and after the treatment of a disease, such as cancer, that a patient lives without the disease getting worse.\" (Source: ASCO, 2022) \n\nTherefore, the statement \"the outcome measurement of the primary trial is The length of time during and after the treatment that a patient survives with the disease\" is a clear description of the PFS endpoint, and it is entailed by the information presented in the CTR."
+    },
+    "9cbc00e9-3a2d-4471-a93e-72c95132fb6a": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01912612",
+        "Statement": "The only case of congestive heart failure in the primary trial occurred in cohort 1",
+        "Label": "Entailment",
+        "explain": "The statement \"The only case of congestive heart failure in the primary trial occurred in cohort 1\" is entailed by the given data if we assume that all 35 participants in the primary trial were distributed across cohorts and that the single occurrence of congestive heart failure happened in cohort 1. This assumption aligns with the data provided in the CTR as the total number of adverse events in cohort 1 is 1, the number of adverse events related to congestive heart failure in cohort 1 is also 1, and the total number of participants in cohort 1 is not specified but can be inferred to be at least 1 based on the occurrence of the adverse event.\n\nTherefore, according to the provided data, the only case of congestive heart failure occurred in cohort 1, which matches the claim made in the expert's statement.\n\nAdditionally, the expert's statement does not contradict the information given in the CTRs as the statement only claims that the single occurrence of congestive heart failure occurred in cohort 1, which is consistent with the CTR data."
+    },
+    "8b91cab9-d858-45f3-bf8d-3d6fc55b4818": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT02419807",
+        "Statement": "The the primary trial results section reports two different measurements",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the primary trial CTR. The CTR states that two different methods, Tc and ICG, were used to detect sentinel lymph nodes in the primary trial, and the results section provides the proportions of nodes detected by each method. Therefore, the statement correctly identifies the presence of two measurements in the primary trial results section."
+    },
+    "4a75574c-fa86-4e62-a210-81c7b98a3807": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00022516",
+        "Statement": "T4 N2 M4 patients are eligible for the primary trial",
+        "Label": "Contradiction",
+        "explain": "The statement \"T4 N2 M4 patients are eligible for the primary trial\" is contradictory to the information in the CTR. \n\nThe eligibility criteria in the primary trial explicitly state that \"T4 disease\" is not eligible. T4 disease refers to advanced breast cancer with local invasion beyond the breast, and \"N2\" and \"M4\" denote lymph node involvement and distant metastases, respectively. Thus, the presence of T4 N2 M4 disease would render a patient ineligible for the primary trial as per the provided CTR."
+    },
+    "d0b50aeb-aad8-4a8d-aae6-5c58a7d382c7": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT02419807",
+        "Statement": "The the primary trial results section reports two different measurements, for all 3 cohorts.",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed by the primary trial results. The primary trial reports results for two different methods (Tc and ICG) of detecting sentinel lymph nodes (SLNs) for all participants analyzed, and the statement specifically mentions \"two different measurements for all 3 cohorts.\" Therefore, the statement accurately reflects the information presented in the CTRs."
+    },
+    "b0b61978-57db-4a1c-812c-509e8b05f2dc": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT03098550",
+        "Statement": "both cohorts of the primary trial receive identical interventions, the difference between the two cohorts is the types of cancer that the patients have",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the given CTRs. In both the TNBC and NSCLC cohorts of the primary trial, the patients receive identical interventions in terms of the medications (Nivolumab and Daratumumab) and dosage/schedule. The difference lies in the types of cancer diagnosed in each cohort, as stated in the description. Therefore, the expert's statement accurately reflects the information in the CTRs."
+    },
+    "24b85b44-b9e6-4c28-b3aa-1bd97102b7f1": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT01929395",
+        "Statement": "Patients must have a palpable carcinoma to be included in the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement \"Patients must have a palpable carcinoma to be included in the primary trial\" is contradicted by the information in the CTR. The inclusion criteria for Phase 1 of the primary trial state that patients with palpable invasive breast cancer or ductal carcinoma in situ are eligible for the study. However, the inclusion criteria for Phase 2 also allow for patients with non-palpable neoplasms to participate, as long as they have a tumor that is visible and enhances on prone MRI and is greater than 1 cm in diameter. Therefore, not all patients in the primary trial have palpable carcinomas."
+    },
+    "fbb62216-2cf2-4813-ad41-12a86940610f": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT03176238",
+        "Statement": "Anaemia was the most common adverse event in cohort 1 and 2 of the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement is entailed. In the Primary Trial Adverse Events 1 section, Anaemia occurred in 7/199 (3.52%) participants of cohort 1 and in 2/36 (5.56%) participants of cohort 2. The total number of participants for each cohort is 199 and 36, respectively. The sum of anaemia cases across both cohorts is 9 (7+2), and the total number of participants in both cohorts is 235 (199+36). Therefore, the proportion of anaemia cases is 9/235 = 0.0381, which is approximately equal to 39%. Although the expert's statement mentions percentages as 44.44% for cohort 2, it does not affect the entailment, as the comparison made between the two cohorts is for the occurrence of Anaemia as the most common adverse event, which holds true."
+    },
+    "961a956e-fece-4baa-a2ad-d3a5320bd9d2": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT01644890",
+        "Statement": "The shortest PFS in cohort 1 of the primary trial was less than 3 weeks",
+        "Label": "Contradiction",
+        "explain": "The expert's statement cannot be entailed by the provided CTR data. There is no information in the CTRs regarding the distribution of PFS in the NK105 or Paclitaxel cohorts that indicates any participant experienced a PFS of less than 3 weeks. The CTRs only provide the median PFS for each cohort and the respective confidence intervals."
+    },
+    "97fd111c-6969-43ab-93af-b3dff09960e5": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00328783",
+        "Statement": "The adverse events section in the primary trial is reports the incidence rate of 12 different Aes",
+        "Label": "Contradiction",
+        "explain": "The statement should be contradicted. \n\nExplanation: \nAccording to the provided CTRs, the adverse events section in the primary trial reports an incidence rate of 0/0 for all adverse events, implying no adverse events were reported in the trial. However, the expert's statement claims that there are reports of 12 different adverse events in the primary trial. This contradiction is evident, as the CTR does not substantiate the claim made by the expert."
+    },
+    "eb1bfb08-eba0-4130-b328-00f56c0f84a6": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00191789",
+        "Secondary_id": "NCT00876395",
+        "Statement": "Diarrhoea is the most common adverse event in the primary trial and the secondary trial",
+        "Label": "Contradiction",
+        "explain": "Contradiction.\n\nThe statement \"Diarrhoea is the most common adverse event in the primary trial and the secondary trial\" is contradicted by the provided Clinical Trial Reports (CTRs). \n\nIn the primary CTR, the total number of adverse events related to diarrhoea is 5, and the total number of adverse events is 17. Thus, the proportion of diarrhoea events is 5/17 = 0.294 (29.4%). \n\nIn the secondary CTR, the total number of adverse events related to diarrhoea is 0, and the total number of adverse events is 40. Therefore, the proportion of diarrhoea events is 0/40 = 0 (0.0%). \n\nSince the proportion of diarrhoea events is different in the two trials, the statement is contradicted."
+    },
+    "b1219e71-fbf5-4bba-8a93-a27ae444e3e1": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00274469",
+        "Statement": "to be eligible for the primary trial patients must be diagnosed with hormone receptor positive advanced breast cancer, but can not have received any previous treatment for this advanced cancer",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the Primary Trial's Inclusion Criteria (\"Confirmed hormone receptor positive advanced breast cancer\") and Exclusion Criteria (\"Previous treatment for advanced breast cancer\")."
+    },
+    "f10f3b84-e039-4a02-a98b-86d149d9a16f": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00438100",
+        "Statement": "ongoing flucytosine treatments are not permitted for participants of the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement \"ongoing flucytosine treatments are not permitted for participants of the primary trial\" is entailed by the CTRs as the exclusion criteria for the primary trial explicitly states \"Being treated with flucytosine\" as a reason for exclusion."
+    },
+    "0ddb07ae-6e70-436d-8723-f609e59c57da": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT01118624",
+        "Statement": "the primary trial participants recieve doses of Pralatrexate that are calculated based on bodyweight",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed by the primary trial's intervention description as it states, \"Study drug 190 mg/m^2,\" which implies dosing calculations based on bodyweight (m^2) for the administration of Pralatrexate."
+    },
+    "c10eea1a-5768-442d-ae07-20b4f8f4b583": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT02924883",
+        "Statement": "Only patients with triple negative breast cancer are eligible for the primary trial",
+        "Label": "Contradiction",
+        "explain": "Contradicted. The primary trial inclusion criteria specify that the condition for patient inclusion is HER-2 positive BC, not triple negative BC alone."
+    },
+    "2ef186d0-b4ab-44de-b785-a63e9e95851a": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT02273973",
+        "Secondary_id": "NCT00281697",
+        "Statement": "most participants in the secondary trial and the primary trial did not suffer from Enterocolitis",
+        "Label": "Entailment",
+        "explain": "The statement \"most participants in the secondary trial and the primary trial did not suffer from Enterocolitis\" is entailed by the provided CTR data. The total number of Enterocolitis cases in both trials is 2 (in Adverse Events 1 of the primary trial and Adverse Events 1 of the secondary trial). The total number of participants in both trials is 167 (in Adverse Events 1 of the primary trial) + 458 (in Adverse Events 1 of the secondary trial) = 625. Therefore, most participants did not suffer from Enterocolitis, as the number of Enterocolitis cases is a minor fraction of the total number of participants."
+    },
+    "fef5aedb-21c0-4130-b8a3-cb1df5017c7a": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00328783",
+        "Statement": "The adverse events section in the primary trial is empty",
+        "Label": "Entailment",
+        "explain": "The statement \"The adverse events section in the primary trial is empty\" is entailed by the provided description in the CTR for the primary trial, as the description states that the Total number of Adverse Events is 0/0 in the Adverse Events section for that trial."
+    },
+    "2655c892-216e-4b96-a8f2-6f64403215c5": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01905592",
+        "Statement": "there were 4 types of Adverse events which did not affect any of the patients in cohort 1 of the primary trial",
+        "Label": "Contradiction",
+        "explain": "The statement is contradicted by the provided CTR data. In the Primary Trial's Adverse Events 1 section, there are no instances of Thrombocytopenia, Anaemia, Leukopenia, or Neutropenia reported for cohort 1, which contradicts the expert's claim that there were \"4 types of Adverse events which did not affect any of the patients in cohort 1.\" Instead, the CTR indicates that these specific adverse events occurred in other cohorts or not at all."
+    },
+    "2825d63b-8f22-4fb8-829f-9567845251c6": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT02186015",
+        "Statement": "adults and children can take part in the primary trial",
+        "Label": "Contradiction",
+        "explain": "The statement \"adults and children can take part in the primary trial\" is contradicted by the CTR as stated in the inclusion criteria: \"Female\" and \"Age 18 years or older.\" Therefore, the statement is not entailed by the CTR information provided."
+    },
+    "6b35bc10-f591-4b84-abac-40a74be949fa": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT02340221",
+        "Statement": "Prior treatment with fulvestrant or with a phosphatidylinositol 3-kinase (PI3K) inhibitor is not admissible for the primary trial",
+        "Label": "Entailment",
+        "explain": "The expert's statement should be entailed. The primary trial's inclusion criteria explicitly mention that participants who have prior treatment with fulvestrant or a PI3K inhibitor are not eligible (Section: Primary Trial, Inclusion Criteria, Line: Participants for whom endocrine therapy (example, fulvestrant) is recommended and treatment with cytotoxic chemotherapy is not indicated at time of entry into the study but have prior treatment with fulvestrant, and Line: Prior treatment with a phosphatidylinositol 3-kinase (PI3K) inhibitor, mammalian target of rapamycin (mTOR) inhibitor, or protein kinase B (AKT) inhibitor are excluded.). Therefore, the expert's statement is consistent with the provided data from the CTR."
+    },
+    "a5baab2c-9c32-4301-a574-4ba5a0c2eb00": {
+        "Type": "Comparison",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT01439945",
+        "Secondary_id": "NCT01998906",
+        "Statement": "Presence of hot flashes for at least 4 month prior to study registration is required for all patients that want to participate in the primary trial or the secondary trial.",
+        "Label": "Contradiction",
+        "explain": "The statement is contradicted by the primary CTR. In the primary CTR, it is stated that the presence of hot flashes for 30 days prior to study registration is a requirement, which is shorter than the 4 months required by the expert's statement. Specifically, the following text from the primary CTR contradicts the expert's statement: \"Presence of hot flashes for 30 days prior to study registration.\""
+    },
+    "70677d5f-7022-404c-8410-d1f89366d92f": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT00856492",
+        "Secondary_id": "NCT00009945",
+        "Statement": "the secondary trial and the primary trial both measure the pCR and tumor diameter of their patient cohorts.",
+        "Label": "Contradiction",
+        "explain": "The statement \"the secondary trial and the primary trial both measure the pCR and tumor diameter of their patient cohorts\" is entailed by the given Clinical Trial Reports (CTRs). \n\nThe primary trial measures the pCR rate in both Arm 1 and Arm 2/3 using the absence of residual invasive cancer in both the breast and axillary lymph nodes as the defining criterion. This information is provided under the Outcome Measurement section and the Results sections for both arms. No mention of tumor diameter is made in the primary trial.\n\nThe secondary trial, however, focuses on disease-free survival (DFS) as the outcome measure. Although the statement made by the clinical trials expert does not explicitly reference the measurement of pCR and tumor diameter in the same breath as the primary trial, the fact that both trials assess pCR, even if not together with tumor diameter, satisfies the condition stated in the expert's statement. Therefore, the statement is entailed.\n\nAdditionally, neither the primary nor the secondary trial mentions the measurement of tumor diameter in their outcome measurements or results. However, the statement's truthfulness does not depend on the measurement of tumor diameter in these trials. It only needs to be true that both trials measure pCR in their respective patient cohorts."
+    },
+    "f46a7d27-a94f-4389-a1a0-4a8f5177b354": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT02679755",
+        "Statement": "None of the individual Aes recorded in the primary trial affect more than than one patient",
+        "Label": "Contradiction",
+        "explain": "Contradicted. In the primary trial, anaemia was reported in 4 patients, febrile neutropenia in 3 patients, neutropenia in 2 patients (one in each trial), and pancytopenia in one patient. These adverse events affected multiple patients, hence the expert's statement is contradicted by the data provided in the CTRs."
+    },
+    "fe876bb0-7ce3-4197-81ad-920f1f77938e": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00066573",
+        "Statement": "there is a minimal difference between the results from the two the primary trial cohorts",
+        "Label": "Entailment",
+        "explain": "The statement \"there is a minimal difference between the results from the two primary trial cohorts\" is entailed by the provided information in the CTRs, as both trials involve the same outcome measurement (Event-free Survival), the treatments are given orally (exemestane and anastrozole), and the time frame is 5 years. The difference in percentage of participants between the two arms is small (88% for exemestane and 89% for anastrozole), which can be considered as minimal. Therefore, the statement harmonizes with the clinical trial data and finds substantiation in the CTRs."
+    },
+    "f45ff82d-e0f5-456a-9d78-ddc2dc6ab929": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00121992",
+        "Statement": "to be eligible for the primary trial candidates must be over the age of 18, have a severe disability and Adequate hepatic, renal and heart functions aswell as Adequate hematology levels.",
+        "Label": "Contradiction",
+        "explain": "The statement should be entailed by the primary trial CTR. The statement \"to be eligible for the primary trial candidates must be over the age of 18 and have adequate hepatic, renal and heart functions as well as adequate hematology levels\" is consistent with the inclusion criteria of the primary trial which states \"Age between 18 years and 70 years\" and \"Adequate hepatic, renal and heart functions. Adequate hematology levels.\" (Primary Trial: Inclusion Criteria). There is no contradiction as the statement does not conflict with any exclusion criteria or the rest of the primary trial's information."
+    },
+    "4f705481-5dd0-414c-b375-c56e8c235b42": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01042535",
+        "Statement": "The most common adverse event in the primary trial was skin infection",
+        "Label": "Entailment",
+        "explain": "Contradicted.\n\nJustification:\n\nThe statement is contradicted by the data provided in the CTRs. According to the Primary Trial Adverse Events section, the total number of adverse events is 14, and skin infection occurred in 2 participants (4.88%). However, the statement claims that skin infection was the most common adverse event, which is incorrect based on the given data."
+    },
+    "614d7ade-0fa7-4d77-bc19-1d3a2f2f48c2": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00924352",
+        "Statement": "Febrile Neutropenia was the most common adverse event recorded in the primary trial, affecting most patients in the trial",
+        "Label": "Contradiction",
+        "explain": "Contradiction. The statement \"Febrile Neutropenia was the most common adverse event recorded in the primary trial, affecting most patients in the trial\" is contradictory to the information in the CTR. In the CTR, Febrile Neutropenia affected only 3 out of 56 patients (5.36%), which is not the most common adverse event nor did it affect the majority of the patients."
+    },
+    "c09fa61c-967a-40ae-96b0-c87b7cde237b": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT02679755",
+        "Statement": "None of the individual Aes recorded in the primary trial affect more than 10% of the population.",
+        "Label": "Entailment",
+        "explain": "The statement is contradicted by the data in the Primary Trial Adverse Events section. Four out of the fifteen adverse events (AEs), specifically anaemia, febrile neutropenia, neutropenia, and pancytopenia, affected more than 10% of the participants in the primary trial. (18.00% total AEs, and 4.00%, 3.00%, 1.00%, and 0.66% for individual AEs respectively)."
+    },
+    "4309860d-042d-45a4-8a0a-a9fdd075247a": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT02915744",
+        "Statement": "Cohort 1 and 2 of the primary trial do not receive NKTR-102 by infusion",
+        "Label": "Contradiction",
+        "explain": "Contradiction. The CTR for the primary trial states that in Group A, NKTR-102 is administered via intravenous infusion, so Cohort 1 and 2 of this group do indeed receive NKTR-102 by infusion."
+    },
+    "f2275929-7cfe-4bb1-a9f6-6bd0c4d5bf85": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT01262027",
+        "Secondary_id": "NCT02301988",
+        "Statement": "the primary trial and the secondary trial use identical outcome measurements",
+        "Label": "Contradiction",
+        "explain": "Contradicted\n\nJustification: \n\nThe primary trial measures the overall response (CR, PR, SD) of participants using RECIST criteria, whereas the secondary trial measures the percentage of participants with pCR in breast and axilla as defined by ypT0/Tis ypN0 in the AJCC Staging System. These two outcome measurements are not identical, as they assess different aspects of the treatment effect."
+    },
+    "59cd7909-00c3-4c23-9a08-a42dbc8eabdd": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00503906",
+        "Statement": "Participants of the primary trial will not receive the intervention for a set number of cycles, the cycles will continue until disease progression",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the primary trial Intervention section, as it states that participants will receive the treatments \"until disease progression.\" This means that participants will not receive a set number of cycles, but rather will continue to receive the treatments as long as their disease does not progress. The statement does not contradict the provided CTR information."
+    },
+    "e6a4e9a6-56b8-4a30-9743-eb02688c090f": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00550771",
+        "Statement": "A patient with a node positive T2 N2 M0 adenocarcinoma of the breast would be eligible for the primary trial, as would a patient with a node negative adenocarcinoma of the breast with a tumor diameter of 1.5cm",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the primary trial inclusion criteria. The patient with a node positive T2 N2 M0 adenocarcinoma of the breast meets the requirement of having node-positive breast carcinoma (N1-2). The patient with a node negative adenocarcinoma of the breast with a tumor diameter of 1.5cm meets the alternative requirement of having node-negative breast carcinoma and a tumor size greater than 1 cm. Both patients also meet the other inclusion criteria such as willingness to participate, being of female gender, age eligibility, histology confirmation, having undergone complete resection, and meeting other laboratory and clinical requirements."
+    },
+    "82a3e542-f784-44d7-90f6-34d7e969283c": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00240071",
+        "Statement": "the primary trial participants receive more than one type of medication during the study",
+        "Label": "Entailment",
+        "explain": "The statement is entailed. The primary trial participants did receive more than one type of medication during the study as stated in the CTR: \"All patients received Avastin (Bevacizumab) 15 mg/kg IV every three weeks as well as continuing with hormonal therapy they previously were taking.\""
+    },
+    "fb360514-14be-45ab-8b74-ea5a7eb181d7": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01852032",
+        "Secondary_id": "NCT01830933",
+        "Statement": "the primary trial and the secondary trial do not report adverse events",
+        "Label": "Entailment",
+        "explain": "The statement is entailed based on the provided CTRs. The CTRs both report that there were no adverse events in their respective trials. Therefore, the statement that \"the primary trial and the secondary trial do not report adverse events\" is true and harmonizes with the clinical trial data."
+    },
+    "7137dec6-5c98-4156-8035-7bbaaf0b649d": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT01125566",
+        "Statement": "ECOG score < 2 is necessary to be eligible for the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement \"ECOG score < 2 is necessary to be eligible for the primary trial\" is contradicted by the CTR. According to the primary trial's inclusion criteria, patients with an ECOG score of 0 or 1 are eligible for participation."
+    },
+    "015dd869-db90-45a9-a951-9dc7dc2b2e01": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00063570",
+        "Statement": "patients with a Malignant brain tumour or colon cancer diagnosis are eligible for the primary trial",
+        "Label": "Contradiction",
+        "explain": "The statement is contradicted by the Primary Trial's Inclusion Criteria. The Primary Trial is only for patients with disease that can be measured and does not specify Malignant brain tumour or colon cancer as a requirement for participation."
+    },
+    "3a4003f6-ff1c-43d8-be48-f767266b2cf5": {
+        "Type": "Comparison",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00820170",
+        "Secondary_id": "NCT00263588",
+        "Statement": "the secondary trial and the primary trial do not have the same inclusion and exclusion conditions",
+        "Label": "Entailment",
+        "explain": "The statement is entailed. The primary and secondary trials have distinct inclusion and exclusion criteria. For instance, the primary trial includes patients with invasive adenocarcinoma of the breast, while the secondary trial includes patients with ErbB2(HER2) overexpressing breast cancer. The primary trial permits prior chemotherapy, while the secondary trial requires prior treatment of brain metastases with Whole Brain Radiotherapy (WBR) and/or Stereotactic Radiosurgery (SRS). These are just some examples, but the primary and secondary trials have numerous differences regarding inclusion and exclusion criteria."
+    },
+    "47ba01d6-edc7-4acb-ab49-b0e86f4eeaf7": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00915603",
+        "Statement": "at least 2 participants of the primary trial, at least one from each cohort, had a Progression-Free Survival of 10.8 months",
+        "Label": "Entailment",
+        "explain": "Justified if: There are participants in both the Paclitaxel/Bevacizumab/Everolimus and Paclitaxel/Bevacizumab/Placebo arms who have a Progression-Free Survival of 10.8 months. For instance, the 95% Confidence Interval for the Paclitaxel/Bevacizumab/Everolimus arm includes 10.8 months, and there could be a participant with an exact value of 10.8 months. Similarly, there might be a participant in the Paclitaxel/Bevacizumab/Placebo arm with a Progression-Free Survival of 10.8 months.\n\nContradicted if: If there is no record of any participant in both arms having a Progression-Free Survival of 10.8 months. The provided CTRs do not explicitly state whether such participants exist or not. Therefore, based on the given information, it is inconclusive whether the statement is entailed or contradicted."
+    },
+    "f3cb9150-32c6-4877-9a87-4fac45a24948": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00450723",
+        "Secondary_id": "NCT00290758",
+        "Statement": "Between the secondary trial and the primary trial, all the recorded casesof Musculoskeletal adverse events occurred in cohort 2 of the secondary trial",
+        "Label": "Contradiction",
+        "explain": "The statement should be contradicted based on the provided CTR data, as there were no reported Musculoskeletal adverse events in the primary trial, whereas in the secondary trial there was only one case reported in the first cohort (1/62 or 1.61%). The statement implies that all Musculoskeletal adverse events were reported in cohort 2 of the secondary trial, but the data does not support this claim."
+    },
+    "9d8b26d6-d574-4717-88b6-77458bc683f3": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00733408",
+        "Statement": "Syncope was the most common adverse event recorded in the primary trial",
+        "Label": "Contradiction",
+        "explain": "Contradicted. The statement that \"Syncope was the most common adverse event recorded in the primary trial\" is contradicted by the provided data in the Primary Trial: Adverse Events 1 section, which shows that the most frequently reported adverse events were Infection, Pain, and Muscle Weakness, each occurring in one participant (1.82%). Syncope, which is a loss of consciousness, was reported only once (1.82%), making it not the most common adverse event."
+    },
+    "51be7c95-8da4-419c-950c-91ebdd2c3fe5": {
+        "Type": "Comparison",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT01572727",
+        "Secondary_id": "NCT00328783",
+        "Statement": "All patients in the primary trial receive higher doses of BKM120 than patients in the secondary trial",
+        "Label": "Contradiction",
+        "explain": "The statement is contradicted by the provided CTRs. The primary trial specifies that patients receive BKM120 plus paclitaxel, but there is no information about the dosages of BKM120 given to the patients in this trial. In the secondary trial, the intervention involves an Active Breathing Coordinator (ABC), and no information about the use of any drugs, including BKM120, is provided. Therefore, there is no comparison of dosages between the two trials, making the assertion that \"All patients in the primary trial receive higher doses of BKM120 than patients in the secondary trial\" incorrect."
+    },
+    "07042b0f-d422-49c3-8d53-81319927a4b3": {
+        "Type": "Comparison",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00121134",
+        "Secondary_id": "NCT03098550",
+        "Statement": "all participants of the primary trial have stage 2 or 3 histologically or cytologically confirmed invasive breast cancer, there is no specific stage of cancer required for entry to the secondary trial",
+        "Label": "Entailment",
+        "explain": "The statement is contradicted by the primary trial's inclusion criteria, which explicitly states that only participants with histologically or cytologically confirmed invasive breast cancer in preoperative stages II-III per AJCC 6th edition can join the study. The secondary trial's inclusion criteria do not have such a restriction, which makes the statement incorrect for both trials."
+    },
+    "32361e21-ee57-4c34-9390-833ba5048a10": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00570921",
+        "Statement": "the primary trial participants are administered Fulvestrant intramuscularly (to the deltoid) and Everolimus orally",
+        "Label": "Contradiction",
+        "explain": "The statement \"the primary trial participants are administered Fulvestrant intramuscularly (to the deltoid) and Everolimus orally\" is contradicted by the given CTRs. The primary trial specifies that Fulvestrant is administered intramuscularly to the gluteus maximus, while Everolimus is given orally but not to the deltoid. This contradicts the statement, which incorrectly specifies the injection site for Fulvestrant."
+    },
+    "88668508-dfd4-4a39-91cd-cf1654a6dfc4": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00593346",
+        "Statement": "the primary trial does not report the PFS or objective response rate of its patient cohort, instead reporting the proportion of patients which experience dermatitis",
+        "Label": "Contradiction",
+        "explain": "Contradicted. \n\nThe primary trial reports the local control using ipsilateral breast tumor recurrence rates, which is a measure of the efficacy of the treatment in preventing tumor recurrence after 2 years. The lack of reporting of PFS (Progression-Free Survival) or objective response rate does not contradict the statement as these are different measures from the one reported. However, the report of the proportion of patients who experienced dermatitis in the secondary trial is different from the outcome measure in the primary trial. Therefore, the statement is contradicted as it incorrectly asserts that the primary trial does not report any efficacy measures."
+    },
+    "dca4c9f7-bb2a-4f73-b390-93b7ced87c73": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT00503750",
+        "Secondary_id": "NCT00005879",
+        "Statement": "The results from the secondary trial and the primary trial are non-comparable",
+        "Label": "Entailment",
+        "explain": "The statement can be entailed based on the following reasons:\n\n1. Different outcome measurements were used in both trials, making direct comparison difficult. In the primary trial, the number of participants with complete pathologic response was assessed, while in the secondary trial, the change in Masood Score was evaluated. \n\n2. The time frames for outcome measurement also differed between the trials. In the primary trial, pCR was assessed at 8 weeks post-intervention, whereas the Masood Score was measured from baseline to 6 months in the secondary trial. \n\n3. The interventions in the trials were different, with the primary trial evaluating a combination of trastuzumab and Abraxane followed by trastuzumab and vinorelbine, and the secondary trial comparing placebo with arzoxifene.\n\n4. The patient populations were also distinct between the trials, with the primary trial focusing on HER2-positive breast cancers and the secondary trial evaluating a postmenopausal population for the prevention of invasive breast cancer.\n\n5. Lastly, the units of measurement are different between the trials. In the primary trial, the outcome measurement is in the form of a count (number of participants), while in the secondary trial, the outcome measurement is continuous (change in Masood Score) on a different scale. \n\nTherefore, based on the information provided in the CTRs, the statement \"The results from the secondary trial and the primary trial are non-comparable\" is entailed."
+    },
+    "e7604382-09cd-43b4-998f-a51b33f25c5a": {
+        "Type": "Comparison",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00290732",
+        "Secondary_id": "NCT00232505",
+        "Statement": "the primary trial and the secondary trial participants do not receive any medication orally",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the provided CTRs.\n\nJustification:\n\nThe primary CTR specifies intraductal administration of dextrose or PLD, and the secondary CTR mentions intravenous administration of cetuximab and carboplatin. Neither trial involves oral medication administration for Intervention 1, and the statement asserts that participants do not receive any medication orally in both trials."
+    },
+    "75affd49-4905-4d43-9a5c-ef795281bac4": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00193037",
+        "Statement": "neither of the interventions in the primary trial resulted in an Objective Benefit for more than 40% of patients.",
+        "Label": "Entailment",
+        "explain": "The statement can be contradicted based on the data provided in the CTRs. In Arm A of the primary trial, the ORR was reported to be 28% (16-42) among 42 analyzed patients. In Arm B, the ORR was reported to be 31% (18-45) among 44 analyzed patients. Both percentages exceed 40%, which contradicts the statement."
+    },
+    "2e76c74a-b6dd-47d8-a674-c1e80b0a3a65": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00274469",
+        "Statement": "to be eligible for the primary trial patients must be diagnosed with hormone receptor positive advanced breast cancer, and have received prior chemotherapy for this cancer.",
+        "Label": "Contradiction",
+        "explain": "Contradiction. The statement contradicts the exclusion criteria in the primary CTR, which states that previous treatment for advanced breast cancer is a reason for exclusion, whereas the expert statement allows for patients who have received prior chemotherapy for advanced breast cancer."
+    },
+    "8c6314f7-34f5-42a7-ba66-b95d050a6315": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT01644890",
+        "Statement": "The shortest PFS in cohort 1 of the primary trial was 1.4 months below average",
+        "Label": "Entailment",
+        "explain": "The statement \"The shortest PFS in cohort 1 of the primary trial was 1.4 months below average\" cannot be directly justified or contradicted based on the information provided in the CTRs.\n\nThe CTRs do not mention the average PFS for cohort 1, nor do they provide any information regarding the minimum PFS value for any individual in cohort 1. Therefore, it is impossible to determine if the statement is entailed or contradicted based on the information given.\n\nHowever, to determine if the statement is entailed or contradicted, we would need access to the full dataset of the primary trial, including the individual PFS values for all participants in cohort 1. Then, we could calculate the average PFS for cohort 1 and verify if the minimum value was indeed 1.4 months below average."
+    },
+    "f114846e-79d8-4712-add0-bb34b65d418f": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00357110",
+        "Statement": "there were 6 recorded deaths in cohort 1 of the primary trial and 7 in cohort 2.",
+        "Label": "Contradiction",
+        "explain": "The statement can be entailed based on the provided information in the CTRs. The primary trial's results mention the number of deaths in each arm (Fulvestrant + Anastrozole and Anastrozole); specifically, there are 6 recorded deaths in cohort 1 (Fulvestrant + Anastrozole) and 7 in cohort 2 (Anastrozole). This information directly supports the statement made by the clinical trial expert."
+    },
+    "812bd63c-4bfb-49cb-8fa9-baa3f8f6dabe": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT01416389",
+        "Statement": "the primary trial reports the changes in the number of lesions for patients in its cohorts.",
+        "Label": "Contradiction",
+        "explain": "The statement is contradicted by the primary trial CTR as it does not report the changes in the number of lesions but instead reports the changes in tumor size (sum of target lesion measurements) using log ratios."
+    },
+    "b1d28450-fc7d-496a-9c7c-bf711b28f8e4": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00876395",
+        "Statement": "all pregnant patients accepted into the primary trial have undergone Prior treatment for breast cancer with endocrine therapy",
+        "Label": "Contradiction",
+        "explain": "The statement is contradicted by the Primary Trial Inclusion Criteria, which states that \"Pregnant patients are excluded.\" Therefore, no pregnant patients were accepted into the trial, and thus, none could have undergone prior endocrine therapy."
+    },
+    "c7dc582a-4a58-4cb5-b980-b2d2b6a128c3": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00331630",
+        "Statement": "no cardiac or neural adverse events were recorded in the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement is contradicted by the Adverse Events section of the Primary Trial report, where one instance each of Dry Eyes and Diarrhea, which are not cardiac or neural adverse events, were reported."
+    },
+    "a805f174-2707-4302-a195-05153ea8523e": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT02186015",
+        "Statement": "Only adults can take part in the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the CTRs. \n\nJustification: \n\nThe primary CTR specifies \"Female\" and \"Age > 18 years\" within its inclusion criteria, which confirms that only adults (people aged 18 years and older) are eligible to participate in the trial. This condition aligns with the statement made by the expert."
+    },
+    "e4aeb013-7713-4b73-acbd-f8379cc6a494": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00005879",
+        "Statement": "there was a higher percentage of patients with slipped disks in cohort 2 of the primary trial than in cohort 1",
+        "Label": "Entailment",
+        "explain": "The statement \"there was a higher percentage of patients with slipped disks in cohort 2 of the primary trial than in cohort 1\" is contradicted by the CTRs provided since the number of patients with slipped disks is zero in both cohorts of the primary trial (Adverse Events 1 for cohort 1 and Adverse Events 2 for cohort 2)."
+    },
+    "b8eaa8fd-61cf-4ca9-aaec-267d61c1fae3": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT01808573",
+        "Statement": "All patients in cohort 1 of the primary trial had a PFS of over 7 months, with the highest PFS being just under 10 months",
+        "Label": "Entailment",
+        "explain": "The statement \"All patients in cohort 1 of the primary trial had a PFS of over 7 months, with the highest PFS being just under 10 months\" can be entailed by the CTR information as follows:\n\n1. According to the Primary Trial description, the outcome measurement for the trial is Progression Free Survival (PFS).\n2. The Results 1 section states that the Arm/Group titled \"Neratinib Plus Capecitabine\" had a Mean (95% Confidence Interval) PFS of 8.8 (7.8 to 9.8) months. Since 8.8 months is more than 7 months, all patients in this arm/group had a PFS of over 7 months.\n3. The highest PFS mentioned in the statement can be identified with the highest value in the Results 1 section, which is 9.8 months.\n\nTherefore, the expert's statement is entailed by the provided Clinical Trial Report data."
+    },
+    "2729a321-709b-4392-9604-dd7237bedb17": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00093795",
+        "Statement": "the majority of participants in cohort 1 and 2 of the primary trial achieved Disease-free Survival for 5 years.",
+        "Label": "Entailment",
+        "explain": "The statement \"the majority of participants in cohort 1 and 2 of the primary trial achieved Disease-free Survival for 5 years\" is entailed by the information in the CTRs. \n\nJustification:\nThe outcome measurement in the primary trial states that Disease-free Survival is measured as the percentage of patients alive and cancer-free for a 5-year time frame. In Results 1 for cohort 1 (Group 1: TAC X 6), the percentage of patients achieving Disease-free Survival is 80.1 (78.0 to 82.0). In Results 2 for cohort 2 (Group 2: AC X 4 Then P X 4), the percentage of patients achieving Disease-free Survival is 82.2 (80.2 to 84.0). Although the exact numbers of patients achieving 5-year Disease-free Survival are not mentioned, the percentages given for each group indicate that a majority of patients in both groups fell within the range of achieving Disease-free Survival based on the defined measurement criteria."
+    },
+    "8e9611fc-89f8-44cb-af09-8d71a13ca082": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT02915744",
+        "Statement": "Cohort 1 and 2 of the primary trial do not receive the same intervention",
+        "Label": "Entailment",
+        "explain": "The statement is entailed. The CTRs explicitly state that Group A receives NKTR-102 and Group B receives TPC (Treatment of Physician's Choice), which are different interventions."
+    },
+    "b9491012-49ba-4eb1-8230-1966f54ea012": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00617539",
+        "Statement": "Patients with Extracranial metastases can be eligible for the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the primary CTR as it allows for the presence of extracranial metastases in eligible patients. However, they must still meet all other inclusion criteria, such as radiographically confirmed brain metastases with disease progression and no surgical or stereotactic radiosurgery candidacy. (Primary CTR: ELIGIBILITY CRITERIA, DISEASE CHARACTERISTICS: \"Extracranial metastases allowed\")."
+    },
+    "62e449ad-16b3-479d-94a5-ffc435b5e99c": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00063570",
+        "Statement": "patients with a Malignant brain tumour diagnosis are excluded from the primary trial",
+        "Label": "Entailment",
+        "explain": "Contradicted. The primary trial's inclusion criteria state \"Must not have cancer that has spread to the brain,\" but the expert's statement refers specifically to patients with a \"Malignant brain tumour diagnosis,\" which is different from having cancer that has spread to the brain. The two concepts are related but not the same and contradict each other regarding the patient population described in the CTR."
+    },
+    "565d7982-aa9a-4c01-987c-1d67bc9c212d": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00438100",
+        "Statement": "ongoing flucytosine treatments are necessary for all participants of the primary trial, treatments must have started at least 6 months before study entry",
+        "Label": "Contradiction",
+        "explain": "Contradicted. The secondary trial explicitly states that participants cannot be treated with flucytosine (Exclusion Criteria). The primary trial also includes participants being treated with other pyrimidine fluoride antineoplastic agents (Exclusion Criteria), and it is not mentioned in the statement that these agents need to be pyrimidine fluoride antineoplastics other than flucytosine. Therefore, the statement that \"ongoing flucytosine treatments are necessary for all participants of the primary trial\" contradicts the provided CTR information."
+    },
+    "7271e0db-bb82-423f-ad95-5ffa84fab97e": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01216176",
+        "Secondary_id": "NCT00325234",
+        "Statement": "There are more cases of Urosepsis in the primary trial than in the secondary trial",
+        "Label": "Entailment",
+        "explain": "The statement \"There are more cases of Urosepsis in the primary trial than in the secondary trial\" is contradicted by the provided CTR data. In the primary trial, there were 2 cases of Urosepsis out of 12 participants (16.67%), whereas in the secondary trial, there were 0 cases of Urosepsis out of 66 participants (0.00%)."
+    },
+    "6402e13a-7cfb-4774-b7f9-80ecb79fda2a": {
+        "Type": "Comparison",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT01011946",
+        "Secondary_id": "NCT00066573",
+        "Statement": "the primary trial participants are not administered any oral medication whereas the secondary trial patients only receive treatment orally.",
+        "Label": "Entailment",
+        "explain": "Contradiction. The primary trial involves the administration of Positron Emission Mammography, which is not an oral medication. The secondary trial, however, only lists two oral medications: exemestane and anastrozole. Thus, the statement contradicts the information provided in the CTRs for the primary trial."
+    },
+    "734423d5-4b47-4448-ab98-811015d626f0": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01307891",
+        "Statement": "There were multiple patients which suffered Neutropenia in both cohorts of the primary trial",
+        "Label": "Contradiction",
+        "explain": "Contradicted. \n\nJustification: \n\nThe statement \"There were multiple patients which suffered Neutropenia in both cohorts of the primary trial\" is contradicted by the CTRs provided. According to the data presented, there was only one patient in the first cohort and one patient in the second cohort who experienced Neutropenia respectively. Therefore, there were no patients with Neutropenia in both cohorts."
+    },
+    "e9fd065c-342c-4dfb-9c1c-a4c0c44d0acd": {
+        "Type": "Comparison",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00612560",
+        "Secondary_id": "NCT01216176",
+        "Statement": "All the primary trial participants are administered Anastrazole in a pill form, but none of the secondary trial receive any Anastrazole",
+        "Label": "Contradiction",
+        "explain": "The statement is contradicted by the provided Clinical Trial Reports. \n\nJustification:\n\nIn the primary trial, Arm A participants receive both flaxseed and 1 mg anastrozole per day in pill form. Arm B participants only receive flaxseed without anastrozole.\n\nIn contrast, in the secondary trial, participants in Cohort A receive dual treatment with either 1 mg anastrozole orally once daily or a placebo, along with AZD0530 175 mg orally once daily. This indicates that some participants in the secondary trial do receive anastrozole, but the statement states that none of the secondary trial participants receive Anastrozole."
+    },
+    "32ed503c-1cfd-44f6-b8bb-23d9d175d73d": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00572728",
+        "Statement": "Patients must be able to undergo a PET scan to participate in the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the Primary Trial's Inclusion Criteria as it specifies that patients must be able to lie still for 1.5 hours for PET scanning to be eligible for participation."
+    },
+    "175044aa-72b1-405d-8506-30002f5098e4": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00606931",
+        "Statement": "There adverse events section in the primary trial describes the number of patients that suffered Hypotension, Hemorrhage and Bradycardia when taking part in the study",
+        "Label": "Contradiction",
+        "explain": "The statement should be contradicted based on the provided CTR information. In the CTR for the primary trial, the Adverse Events section indicates that the total number of adverse events, including but not limited to Hypotension, Hemorrhage, and Bradycardia, was 0."
+    },
+    "045ad91e-44fa-42cc-ac22-a7aab26a9009": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00240071",
+        "Statement": "the primary trial participants are administered Avastin, Bevacizumab and radiotherapy as part of the intervention",
+        "Label": "Contradiction",
+        "explain": "The statement \"the primary trial participants are administered Avastin, Bevacizumab and radiotherapy as part of the intervention\" is contradicted by the information provided in the CTR. \n\nIn the primary CTR, it is mentioned that \"All patients received Avastin (Bevacizumab) 15 mg/kg IV every three weeks as well as continuing with hormonal therapy they previously were taking.\" Radiotherapy is not listed as a component of the intervention in the primary CTR. Therefore, the statement made by the clinical trials expert is contradictory to the provided information."
+    },
+    "00822101-fa21-4a26-bf45-3b1f535da005": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00281697",
+        "Statement": "a patient with a HER2-positive status can not take part in the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement \"a patient with a HER2-positive status cannot take part in the primary trial\" is entailed by the information in the inclusion criteria of the primary trial, as HER2-positive status is listed as an exclusion criterion. (ELIGIBILITY CRITERIA section, HER2-positive status)"
+    },
+    "06f798d1-2956-4903-83e9-58a41fa425f7": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01830933",
+        "Secondary_id": "NCT00852930",
+        "Statement": "the primary trial and the secondary trial do not record any cardiac or infection related adverse events",
+        "Label": "Entailment",
+        "explain": "The statement is entailed based on the provided CTR data since neither the primary nor secondary trials report any adverse events related to cardiac or infection issues in their respective sections. \n\nExplanation:\n\nThe expert statement claims that both primary and secondary trials did not record any adverse events related to cardiac or infection issues. The provided CTR data corroborates this claim as both trials report a total of zero adverse events for each category in the cardiac and infection-related sections. Therefore, there is no contradiction between the expert statement and the data presented in the CTRs, and the statement is entailed."
+    },
+    "8648c7df-582a-42a9-9330-414b2430ac56": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00009945",
+        "Statement": "none of the individual adverse events in the primary trial affect more than 100 patients, in total less than 30 patients suffer adverse events",
+        "Label": "Contradiction",
+        "explain": "The statement can be entailed by the data in the CTRs, as the total number of patients who experienced adverse events in the primary trial (340) is less than 30% of the total number of patients in the trial (1612), and none of the individual adverse events affected more than 100 patients. Similarly, in the secondary trial, the total number of patients who experienced adverse events (350) is less than 30% of the total number of patients (1623), and none of the individual adverse events affected more than 100 patients in this trial as well. The specific adverse events and their counts are listed in the Adverse Events sections of the CTRs."
+    },
+    "89f610a7-9e81-43a4-8c1e-5503233b2be1": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT01596751",
+        "Statement": "Breast cancer patients must have documented stable disease to participate in the primary trial",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed by the CTR for the primary trial as the inclusion criteria state that patients must have \"measurable disease, as defined by RECIST guidelines or evaluable disease. Bone metastases must be evaluable.\" This definition of eligibility directly relates to the expert's statement about documented stable disease. Additionally, the CTR mentions that patients with pulmonary metastases as their only site of disease may enroll, and these patients will not undergo biopsy. This exception does not contradict the expert's statement, as it does not negate the requirement for \"documented stable disease\" for other patients.\n\nThe statement does not contradict the secondary trial as it also mentions \"breast cancer patients\" which aligns with the primary trial's focus. There is no contradictory information in the secondary trial's inclusion or exclusion criteria related to stable disease."
+    },
+    "b0046821-ba27-4a90-8869-cb708b843aa4": {
+        "Type": "Comparison",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00612560",
+        "Secondary_id": "NCT01216176",
+        "Statement": "All the primary trial participants are administered flaxseed, but none of the secondary trial receive any flaxseed",
+        "Label": "Entailment",
+        "explain": "Contradicted\n\nExplanation:\n\nThe statement \"All the primary trial participants are administered flaxseed, but none of the secondary trial receive any flaxseed\" contradicts the information in the CTRs. In the primary trial, Arm A participants received flaxseed in combination with anastrozole, while Arm B participants received flaxseed alone and placebo pills. In contrast, the secondary trial involves a different intervention, in which no flaxseed is administered to any cohort."
+    },
+    "d1b217ae-76f3-4ba6-958e-5b2558703ba4": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01912612",
+        "Statement": "several cases of congestive heart failure in the primary trial occurred in cohort 1, but none in cohort 2",
+        "Label": "Contradiction",
+        "explain": "The statement \"several cases of congestive heart failure in the primary trial occurred in cohort 1, but none in cohort 2\" is a contradiction of the provided CTRs. The statement infers that there were multiple instances of congestive heart failure in cohort 1 of the primary trial, whereas the CTR states that only one instance occurred in the entire trial population (across all cohorts) in the primary trial. Furthermore, the absence of any cases of congestive heart failure in cohort 2 according to the statement contradicts the CTR data for the secondary trial, which also reports no instances. Therefore, this statement contradicts the provided clinical trial data.\n\nReferenced parts of the CTRs:\nPrimary Trial: Adverse Events 1 (total cases and congestive heart failure cases)\nSecondary Trial: Adverse Events (total cases and congestive heart failure cases in each cohort)"
+    },
+    "8ddf8b88-6e06-4c71-9e28-45f73a637af0": {
+        "Type": "Comparison",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT01011946",
+        "Secondary_id": "NCT00066573",
+        "Statement": "the primary trial participants are administered oral and topical medication, whereas the secondary trial patients only receive treatment orally.",
+        "Label": "Contradiction",
+        "explain": "Contradicted. \n\nExplanation:\n\nThe statement that \"the primary trial participants are administered oral and topical medication, whereas the secondary trial patients only receive treatment orally\" is contradictory to the information provided in the CTRs. \n\nIn the primary trial, patients receive Positron Emission Mammography (PEM) which is not an oral or topical medication but a medical imaging procedure. The statement erroneously includes PEM in the category of oral and topical medication due to the mention of \"oral and topical medication\" in the statement. The primary trial participants receive various scans, mammography, MRI, US, and biopsy which are not oral or topical medications.\n\nIn contrast, the secondary trial participants receive oral exemestane and anastrozole, as stated in the CTR. The statement correctly identifies that the secondary trial patients only receive oral medication. \n\nHence, the statement is contradicted as it incorrectly includes Positron Emission Mammography (a non-oral/topical medication) under oral and topical medication for the primary trial."
+    },
+    "0ea29bd5-20be-40ea-8ad7-705d283d1d48": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00093795",
+        "Statement": "the majority of participants in cohort 1 and 2 of the primary trial suffered some kind of disease Recurrence, Contralateral Breast Cancer, Second Primary Cancer, Death From Any Cause Prior to Recurrence or Second Primary Cancer",
+        "Label": "Contradiction",
+        "explain": "Contradicted.\n\nJustification: \n\nThe statement \"the majority of participants in cohort 1 and 2 of the primary trial suffered some kind of disease Recurrence, Contralateral Breast Cancer, Second Primary Cancer, Death From Any Cause Prior to Recurrence or Second Primary Cancer\" is contradicted by the provided data in the CTRs as follows:\n\n1. Disease-free Survival percentage data in Results 1 and 2 show that 80.1% and 82.2% of participants in Group 1 and 2, respectively, remained disease-free within 5 years, implying a lower percentage of participants suffered from recurrence, contralateral breast cancer, second primary cancer, death from any cause prior to recurrence, or second primary cancer.\n\n2. The CTRs do not provide evidence that supports the majority of participants in either cohort suffered from the stated conditions."
+    },
+    "e147796d-2edd-42d1-ac53-300fb8bd5eb6": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00374322",
+        "Statement": "80% of patients in the primary trial received a placebo intervention",
+        "Label": "Contradiction",
+        "explain": "Contradicted. The CTR states that in the primary trial, participants in both the intervention and placebo groups received treatment orally once daily for a maximum of 12 months. Therefore, it is not true that 80% of patients received a placebo intervention."
+    },
+    "6b33b4ae-36f2-4a53-a954-6f246f6e023d": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT02445586",
+        "Statement": "Patients wanting to take part in the primary trial must have a Known and documented HER2+ status and an LVEF of at least 50 percent (%)",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the primary trial inclusion criteria as both HER2-positive status and an LVEF of at least 50 percent are stated as inclusion criteria in the CTR."
+    },
+    "06fad978-1dc3-46f5-b45f-5ac6577f28b9": {
+        "Type": "Comparison",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00325234",
+        "Secondary_id": "NCT00274469",
+        "Statement": "Patients must be female and have confirmed advanced colon cancer to be eligible for the secondary trial and the primary trial",
+        "Label": "Contradiction",
+        "explain": "The statement is contradicted by both CTRs, as neither trial includes patients with confirmed advanced colon cancer as inclusion criteria. The primary CTR specifies that patients must have a histologic or cytologic diagnosis of advanced breast cancer, while the secondary CTR only requires a diagnosis of confirmed hormone receptor positive advanced breast cancer. Therefore, patients with advanced colon cancer do not meet the criteria for either trial."
+    },
+    "878c09e7-3fd9-404e-921e-5b549e9578fb": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT02658734",
+        "Statement": "Most patients in the primary trial experienced a grade 1 adverse events, the least common severity was grade 4.",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the data in the Primary Trial Results 1 section. The expert's statement agrees with the information in the CTR that most participants (75.7%) experienced a grade 1 adverse event, and the least common severities were grade 4 (2.9%)."
+    },
+    "3a0c517d-9b9a-4497-9675-50ff12cd02b7": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT02131064",
+        "Statement": "in cohort 1 of the primary trial there were more cases of Left ventricular dysfunction than Abdominal pain",
+        "Label": "Entailment",
+        "explain": "The statement is contradicted by the data in the provided CTRs. In the Primary Trial, there were only 2 cases of Left ventricular dysfunction (2/219 or 0.91%) and none of Abdominal pain upper (0/219 or 0.00%). Therefore, the statement that \"there were more cases of Left ventricular dysfunction than Abdominal pain\" in Cohort 1 of the Primary Trial is not supported by the data."
+    },
+    "9abb10d7-496e-44fd-915d-d86aedf6c9b6": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT02445586",
+        "Statement": "Patients wanting to take part in the primary trial must have a Known and documented TNBC status and an LVEF of at least 50 percent (%)",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed by the Primary Trial's Inclusion Criteria, as it includes both \"Known and documented HER2-negative or TNBC status\" as an eligibility requirement (though not explicitly stated as \"TNBC\" status, breast cancer without HER2 positivity is a common definition of TNBC), and \"Adequate organ function,\" which includes LVEF of at least 50 percent. Therefore, the statement is justified based on the information provided in the Primary Trial's CTR."
+    },
+    "8460a212-8054-4bd2-b4e6-af1d137a2f79": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT03012477",
+        "Secondary_id": "NCT02419807",
+        "Statement": "the primary trial and the secondary trial report their results using different units of measure",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the provided descriptions. In the Primary Trial, the outcome measure is reported as a percentage of participants, while in the Secondary Trial, the outcome measure is reported as a proportion of nodes. However, both units of measure can be converted to a common unit, i.e., percentage. The conversion from proportion to percentage would involve multiplying by 100 to obtain the percentage. Therefore, the statement is entailed as the trials report their results using different units of measure that can be converted to a common unit.\n\nSpecific parts of the CTRs used to support this answer:\nPrimary Trial: Results 1 - Measure Type: percentage of participants\nSecondary Trial: Results 1 - Proportion of SNs, Measure Type: proportion of nodes"
+    },
+    "a3390ae6-d41d-4dc7-899e-de9534adfd6b": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00477464",
+        "Statement": "the primary trial participants receive significantly higher doses of Capecitabine than of Lapatinib",
+        "Label": "Entailment",
+        "explain": "The statement is contradicted by the given CTR information. In the primary trial, participants took capecititabine at 1000 mg/m^2 twice daily on the first day through the fourteenth day of each 21-day cycle, which sums up to 2000 mg/cycle. However, they took lapatinib at 1250 mg once daily, which is a smaller dose. Therefore, the statement that \"the primary trial participants receive significantly higher doses of Capecitabine than of Lapatinib\" is contradicted by the provided data in the CTRs."
+    },
+    "17bbea92-8f92-41f3-9b9d-cf6e62cf6798": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00445458",
+        "Statement": "the primary trial reports the percentage of patients treated with Neratinib in Combination With Paclitaxel that suffer side effects that are serious enough to prevent an increase in dose or level of that treatment.",
+        "Label": "Entailment",
+        "explain": "The provided statement is not directly entailed by the given CTRs, as the CTRs do not report the percentage of patients who experienced dose-limiting toxicities (DLTs) for each treatment arm, only the number of subjects who experienced DLTs. The statement makes a claim about the percentage, not the count of participants. The required data is not present in the provided CTRs."
+    },
+    "794269ca-e7ec-4a65-ace5-b0f24a8cdc15": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT00633464",
+        "Secondary_id": "NCT01644890",
+        "Statement": "the primary trial measures the Percentage of Participants in its cohorts With Objective Response whereas the secondary trial measures PFS",
+        "Label": "Entailment",
+        "explain": "The statement should not be contradicted. While the primary trial measures the Percentage of Participants with Objective Response (OR), and the secondary trial measures Progression Free Survival (PFS), these concepts are not directly comparable and do not contradict each other. The primary trial assesses the efficacy of treatments in terms of the proportion of participants who experience a clinically significant response based on RECIST criteria, while the secondary trial evaluates the length of time until disease progression. These are related but distinct measures. Therefore, the difference in outcome measurements does not contradict the information given in the CTRs."
+    },
+    "4dfff980-6a2b-4f01-9194-6ec831d6fed7": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00733408",
+        "Statement": "Infections were the most common adverse events recorded in the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the CTR data. In the Primary Trial Adverse Events section, the total number of adverse events is reported as 5/55 (9.09%). The most common type of adverse event mentioned in the CTR is Infection, occurring in 2/55 (3.64%) participants. This frequency of Infection is higher than any other adverse event mentioned in the primary trial (including Pain and Muscle Weakness, each occurring in 1/55 or 1.82% of participants). Therefore, the statement that \"Infections were the most common adverse events recorded in the primary trial\" is an accurate reflection of the data presented in the CTR."
+    },
+    "dc4c57b0-8c75-494e-81b0-3528df85ebff": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT00852930",
+        "Secondary_id": "NCT02915744",
+        "Statement": "neither the secondary trial or the primary trial record the Overall Survival (OS) of Patients in their cohorts",
+        "Label": "Contradiction",
+        "explain": "Contradicted\n\nJustification: \n\nIn the secondary trial, the outcome measurement is defined as Overall Survival (OS) of Patients. The results section also includes the median OS for each arm (NKTR-102 and TPC) with their respective confidence intervals. Similarly, in the primary trial, although the outcome measurement is LDex (Bioimpedance), the results section still reports the median and interquartile range for LDex in each arm of the study. Both trials do record the OS of their patients, contradicting the expert's statement."
+    },
+    "8d9f94e3-871b-4fb4-a522-0a73d9d0ec3c": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT00305448",
+        "Secondary_id": "NCT00425854",
+        "Statement": "the secondary trial and the primary trial use Objective Response as the outcome measurement for their interventions, however they use different definitions of complete response ",
+        "Label": "Contradiction",
+        "explain": "The statement should be entailed, as both trials use the same term \"Objective Response\" for measuring the effectiveness of interventions. However, the definitions of complete response (CR) differ: in the primary trial, CR is defined as having an overall response of CR or PR with confirmation criteria per RECIST, while in the secondary trial, CR is not explicitly defined but is measured according to RECIST version 1.0. The primary trial also includes PR in the definition of ORR, while the secondary trial only considers CR as OR for Cohort B. Despite these differences, the use of the same term \"Objective Response\" to describe the outcome measurement in both trials is a common factor."
+    },
+    "251a20d8-2555-4929-9d01-c02311bdc93f": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00754325",
+        "Statement": "a higher proportion of patients suffered Disease Progression or Death in cohort 2 of the primary trial than in cohort 1",
+        "Label": "Entailment",
+        "explain": "The statement \"a higher proportion of patients suffered Disease Progression or Death in cohort 2 of the primary trial than in cohort 1\" is contradicted by the data provided in the CTRs. The number of participants who suffered disease progression or death in both arms are:\n\n- Arm 1 (Fulvestrant and Dasatinib): 19 out of 50 analyzed\n- Arm 2 (Fulvestrant only): 16 out of 49 analyzed\n\nThe proportion of participants with Disease Progression or Death in arm 1 (28%) is less than in arm 2 (32.7%), contradicting the initial statement."
+    },
+    "dd2f3c3d-fa95-4fca-a3f0-795fd4f3abf1": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT00852930",
+        "Secondary_id": "NCT02915744",
+        "Statement": "the secondary trial and the primary trial do not record the same metrics in their results section",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the provided information in the CTRs. The primary trial measures the change in LDex units as an outcome measure, whereas the secondary trial measures the overall survival (OS) in months. The statement acknowledges that different metrics are used in each trial. Therefore, the statement is an accurate reflection of the information in both trials and is entailed by the CTRs."
+    },
+    "f0273b8c-460d-46fe-9c52-8ff4b08e439b": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00127933",
+        "Statement": "eliane is a 56 year old woman, and elizabeth is a 32 year old woman, both eliane and elizabeth can both be eligible for the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the CTRs. \n\nExplanation:\n\nBoth Eliane and Elizabeth can meet the inclusion criteria of the primary trial, as they are women with breast cancer aged 18 and above, regardless of their age difference. The inclusion criteria state that the patients can have either HER2-neu-negative or HER2-neu-positive breast cancer, which does not exclude Eliane (who is not specified to have HER2-neu status) or Elizabeth. Additionally, the exclusion criteria are not a barrier for either Eliane or Elizabeth, as they do not have evidence of metastatic disease outside of ipsilateral axillary lymph nodes (as per the primary trial's exclusion criteria) and have not undergone previous systemic or local primary treatments (as per both primary and secondary trial's exclusion criteria). Therefore, both Eliane and Elizabeth can be eligible for the primary trial as per the information provided in the CTRs."
+    },
+    "bc2024fc-5b39-4fa6-badf-f034d6fe8bb8": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT01596751",
+        "Statement": "Breast cancer patients must have documented progressive disease to participate in the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement \"Breast cancer patients must have documented progressive disease to participate in the primary trial\" is entailed by the CTR's inclusion criteria, which specify that patients have to have measurable or evaluable disease with evidence of progression. (CTR: Inclusion Criteria: Measurable disease, as defined by RECIST guidelines or evaluable disease. Bone metastases must be evaluable.)"
+    },
+    "c2217d42-e90c-4ffe-b084-e653b9ace4d5": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01830933",
+        "Secondary_id": "NCT00852930",
+        "Statement": "the primary trial and the secondary trial do not record any cardiac or infection related adverse events, but they both record several instances of epilepsy",
+        "Label": "Contradiction",
+        "explain": "The statement is contradicted by the provided CTRs as they do not mention any record of \"cardiac or infection related adverse events\" in either trial. However, they do report zero instances of epilepsy in both trials (Primary Trial: Adverse Events 1 and 2; Secondary Trial: Adverse Events 1 and 2), but this does not support the statement as it only mentions that \"they both record several instances of epilepsy,\" and it does not state that these are the only adverse events recorded."
+    },
+    "080da381-b5dd-46d3-99c4-18112da153c1": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT02244580",
+        "Secondary_id": "NCT03176238",
+        "Statement": "There less cases of Acute myocardial infarction, Cardiopulmonary failure and Supraventricular tachycardia in cohort 1 of the secondary trial than in cohort 2 of the primary trial",
+        "Label": "Contradiction",
+        "explain": "Contradicted. \n\nThe statement asserts that there are fewer cases of Acute myocardial infarction, Cardiopulmonary failure, and Supraventricular tachycardia in cohort 1 of the secondary trial than in cohort 2 of the primary trial. However, the provided CTR data does not support this claim.\n\nIn the primary trial, there were no occurrences of Acute myocardial infarction, Cardiopulmonary failure, and Supraventricular tachycardia in either cohort 1 (Adverse Events 1: Total: 0/0) or cohort 2 (not provided). In contrast, the secondary trial reported one occurrence of Cardiopulmonary failure and zero occurrences of Acute myocardial infarction and Supraventricular tachycardia in cohort 1, while the numbers for cohort 2 are not provided in the given data.\n\nTherefore, without the complete Adverse Events data for cohort 2 of the secondary trial, it is not possible to compare the occurrence rates directly and validate the entailment of the expert's statement. Furthermore, the given statement contradicts the information presented in the CTR, as it asserts that there are fewer cases in cohort 1 of the secondary trial but the data shows an equal number of occurrences between the two trials for the mentioned adverse events."
+    },
+    "c100a7cd-e3a2-4901-a3e0-12336f769c7b": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00258960",
+        "Secondary_id": "NCT00121992",
+        "Statement": "the secondary trial reported 1 single case of Conjunctivitis, whereas the primary trial reported 16",
+        "Label": "Contradiction",
+        "explain": "Contradicted. The statement contradicts the primary trial report, as it claims that the secondary trial reported only one case of conjunctivitis, whereas the primary trial reported one case as well, but in the context of a different set of adverse events."
+    },
+    "ec1e269e-470d-43d9-8f23-8a19a5c96fcc": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT03176238",
+        "Statement": "Anaemia was the most common adverse event in cohort 1 of the primary trial and tachycardia was the most common in cohort 2",
+        "Label": "Contradiction",
+        "explain": "The statement \"Anaemia was the most common adverse event in cohort 1 of the primary trial and tachycardia was the most common in cohort 2\" is contradicted by the provided CTRs. \n\nJustification: \n\nFor the primary trial, the percentage of participants with Anaemia in cohort 1 was 3.52%, whereas in cohort 2, the percentage of participants with Anaemia was 1.01%. In comparison, the percentage of participants in cohort 1 with tachycardia was 0.00%, while for those in cohort 2, it was 2.78%. The CTRs explicitly indicate the number of participants experiencing these adverse events, and their percentages within each cohort. Hence, the statement that \"Anaemia was the most common adverse event in cohort 1 of the primary trial and tachycardia was the most common in cohort 2\" contradicts the data presented in the primary trial's Adverse Events section."
+    },
+    "21611c2a-e6eb-4012-a209-9b6781e1f260": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00606931",
+        "Statement": "There is no adverse events section in the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement is contradicted by the information in the primary trial's Adverse Events section, as it clearly states \"Adverse Events 1: Total: 0\", indicating that there is indeed an adverse events section in the primary trial, contrary to the statement's claim."
+    },
+    "d1b7105d-0b7d-4b10-92a7-d63243ff0629": {
+        "Type": "Comparison",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00425854",
+        "Secondary_id": "NCT01224678",
+        "Statement": "Patients with significantly low ejection fraction are excluded from the primary trial, but can still be eligible for the secondary trial if they are 55 years of age or younger ",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the CTRs.\n\nExplanation:\n\nThe primary trial excludes patients with a cardiac left ventricular function with resting ejection fraction below 50% (ELIGIBILITY CRITERIA, Exclusion Criteria, Primary Trial). On the other hand, the secondary trial includes premenopausal women 55 years of age or younger (ELIGIBILITY CRITERIA, Secondary Trial). The statement asserts that patients with significantly low ejection fraction (implicitly below 50%) are still eligible for the secondary trial as long as they are 55 years of age or younger. Given that the primary trial excludes this population and the secondary trial includes them under specific conditions, the statement's entailment is consistent with the CTRs."
+    },
+    "7f3fe97e-68ee-470f-b06e-21cdddb67aa8": {
+        "Type": "Comparison",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00121134",
+        "Secondary_id": "NCT03098550",
+        "Statement": "all participants of the primary trial have stage 3 cytologically confirmed invasive breast cancer, there is no specific stage of cancer required for entry to the secondary trial",
+        "Label": "Contradiction",
+        "explain": "Contradicted. \n\nJustification: The primary trial specifies that participants must have histologically or cytologically confirmed invasive breast cancer, preoperative stages II-III per AJCC 6th edition (section: Inclusion Criteria). The secondary trial does not specify any particular stage of cancer as a requirement for entry (section: Inclusion Criteria). Therefore, the statement \"all participants of the primary trial have stage 3 cytologically confirmed invasive breast cancer, there is no specific stage of cancer required for entry to the secondary trial\" contradicts the provided CTR information."
+    },
+    "ce8464bd-951e-44aa-97d9-10b917b055ce": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00005879",
+        "Statement": "there was a significantly higher percentage of patients with slipped disks in cohort 2 of the primary trial than in cohort 1",
+        "Label": "Contradiction",
+        "explain": "Contradicted.\n\nThe statement \"there was a significantly higher percentage of patients with slipped disks in cohort 2 of the primary trial than in cohort 1\" is contradicted by the information in the provided Adverse Events sections of both trials. According to the primary CTR, neither cohort had any recorded cases of slipped disks (0/101 for cohort 1 and 0/98 for cohort 2). Therefore, the statement is contradictory to the CTR and cannot be entailed."
+    },
+    "0131ebe3-746b-45a5-ba60-fdd326974fec": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT01262027",
+        "Secondary_id": "NCT02301988",
+        "Statement": "the primary trial and the secondary trial use comparable outcome measurements",
+        "Label": "Entailment",
+        "explain": "The statement \"the primary trial and the secondary trial use comparable outcome measurements\" can be justified as follows:\n\nBoth trials use outcome measurements related to the response of participants to their respective treatments. In the primary trial, the outcome is measured by the number of participants with a Complete Response (CR), Partial Response (PR), Stable Disease (SD), or Mixed response. This is based on RECIST criteria. In the secondary trial, the outcome measurement is the percentage of participants with Pathological Complete Response (pCR) in the breast and axilla based on the American Joint Committee on Cancer (AJCC) Staging System. While the specific measurements are not identical (number of participants with certain response categories versus percentage of participants with pCR), they both relate to the response of participants to the treatment.\n\nHowever, it is important to note that the time frames for assessing the response differ between the two trials. In the primary trial, response is assessed over a 6-month period, while in the secondary trial, pCR is assessed at a surgery visit, approximately weeks 14 to 19.\n\nTherefore, while the outcome measurements are related, they may not be directly comparable due to the difference in time frames and specific measurement methods. However, they both provide valuable information on the response of participants to treatment, allowing for meaningful comparisons and analyses.\n\nThus, the statement can be considered partially entailed. The trials do use comparable outcome measurements, but it's important to consider the differences in the specific measures and the time frames for assessment."
+    },
+    "b1dd7632-ed92-40a9-9293-bce68619c658": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00376597",
+        "Statement": "Patients with stage 4 cancer are excluded from the primary trial, only patients with stage 2 and 3 cancer can be eligible",
+        "Label": "Contradiction",
+        "explain": "The statement is contradicted by the primary CTR as it excludes patients with stage I-III breast cancer, including stage III, which is a more advanced stage than stage 2."
+    },
+    "45ccd2c8-6e02-4f0f-a370-eed18d26e6dc": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00570921",
+        "Statement": "the primary trial participants are administered Fulvestrant intramuscularly and Everolimus orally",
+        "Label": "Entailment",
+        "explain": "The statement is contradicted by the primary trial CTR as it specifies different routes of administration for Fulvestrant and Everolimus. In the primary trial, Fulvestrant is given intramuscularly, while Everolimus is given orally."
+    },
+    "4a15ec5e-4904-4f01-a0a2-c51e83c8c070": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT01042938",
+        "Statement": "the primary trial reports the Severity of Dermatitis in Radiation Treatment Site for the Curcumin C3 Complex cohort and the placebo cohort",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the CTRs. The primary trial report clearly states that the outcome measurement is the severity of radiation dermatitis and reports the mean (standard deviation) for the Curcumin C3 Complex and placebo cohorts. Therefore, the statement accurately summarizes the content of the CTRs."
+    },
+    "b9e29ea8-6847-40d4-b5c3-81c496101695": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT01808573",
+        "Statement": "All patients in cohort 1 of the primary trial had a PFS of over 8.8 months, with the highest PFS being just under 10 months",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed by the CTRs. In the Primary Trial Results 1, the mean (95% confidence interval) of PFS for patients in the Neratinib Plus Capecitabine arm is reported as 8.8 (7.8 to 9.8) months. This means that all patients in this arm had a PFS above 8.8 months, and the highest PFS was just under 10 months (since the upper bound of the confidence interval is less than 10 months). Similarly, in Results 2 of the Primary Trial, the mean (95% confidence interval) of PFS for patients in the Lapatinib Plus Capecitabine arm is 6.6 (5.9 to 7.4) months, which is below the 8.8 months threshold specified in the expert's statement. Therefore, the statement is only entailed with respect to cohort 1 in the primary trial. However, it is not contradicted by the data in the secondary trial as no PFS data is provided for cohort 1 of that trial."
+    },
+    "2a2c16a7-f427-4fdb-8153-94aac304e4b8": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT01998906",
+        "Statement": "Both cohorts of the primary trial undergo a total of 17 cycles, each lasting 3 weeks , patients receive the same types and dosages of medication throughout all 17 cycles",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed by the CTRs. Both Intervention 1 and Intervention 2 have 17 cycles in total, with each cycle lasting 3 weeks. The specific medications and their dosages remain the same throughout all cycles for each intervention, as detailed in the CTRs."
+    },
+    "618a3ae1-b22c-4c35-86a6-190c1b5b5d21": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00375427",
+        "Statement": "Patients must have a Life expectancy of at least 1 year to enroll in the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the primary trial's inclusion criteria, as it specifies a life expectancy of at least 1 year as a condition for patient eligibility. (Primary Trial: Inclusion criteria)."
+    },
+    "e62f5a3f-0091-4980-9822-db8f4dc2502a": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT01042938",
+        "Statement": "the primary trial reports the Severity of Dermatitis in Radiation Treatment Site for the Curcumin C3 Complex cohort and the placebo cohort, there is no difference in the results from these two cohorts",
+        "Label": "Contradiction",
+        "explain": "The statement \"the primary trial reports the Severity of Dermatitis in Radiation Treatment Site for the Curcumin C3 Complex cohort and the placebo cohort, there is no difference in the results from these two cohorts\" can be contradicted based on the provided CTRs.\n\nExplanation:\n\nAccording to the given CTRs, the mean (standard deviation) of severity of dermatitis for Curcumin C3 Complex cohort is 2.6 (0.994), and for the placebo cohort is 3.4 (0.554). These data show that there is a difference in the mean severity of dermatitis between the two cohorts, contradicting the stated claim of no difference."
+    },
+    "4a41ac73-538a-43e5-b7ce-8c8e2d56286e": {
+        "Type": "Comparison",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00290758",
+        "Secondary_id": "NCT02370238",
+        "Statement": "Women currently undergoing endocrine therapy are excluded from the secondary trial and the primary trial, unless they are recieiving adjuvant therapy.",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed in both the primary and secondary trials as stated:\n\nIn the primary trial, the exclusion criteria list \"No evidence of breast cancer, unless all systemic therapy (including endocrine therapy) was completed at least 1 year ago.\"\n\nIn the secondary trial, the exclusion criteria list \"Prior therapy for metastatic TNBC (chemotherapy, hormone therapy or biological therapy), Patients may receive bisphosphonates and other therapies to treat bone metastases, however if used, bone lesions will not be considered as measurable disease. Women currently receiving adjuvant endocrine therapy are eligible.\"\n\nTherefore, the statement \"Women currently undergoing endocrine therapy are excluded from the secondary trial and the primary trial, unless they are receiving adjuvant therapy\" is in line with the provided CTRs."
+    },
+    "75a65913-5655-4377-b441-ecdd4dd75175": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00376597",
+        "Statement": "Patients with stage 4 cancer are excluded from the primary trial",
+        "Label": "Entailment",
+        "explain": "Contradiction. \n\nThe primary trial eligibility criteria do not exclude patients with stage 4 cancer. In fact, patients with a history of other invasive malignancies, including stage 4 cancer, are eligible as long as they have completed treatment and are 5 years post-diagnosis."
+    },
+    "1329dec6-fb2c-4219-9db6-3fef9d94b316": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT02131064",
+        "Statement": "in cohort 1 of the primary trial there were 10 more cases of Left ventricular dysfunction than Abdominal pain",
+        "Label": "Contradiction",
+        "explain": "Contradiction. \n\nThe statement \"in cohort 1 of the primary trial there were 10 more cases of Left ventricular dysfunction than Abdominal pain\" contradicts the provided data in the CTRs because the number of cases for Left ventricular dysfunction (2) is less than the number of cases for Abdominal pain (2) in cohort 1 of the primary trial."
+    },
+    "29b2fa29-5a76-4877-95bb-1a8de7973d33": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00191815",
+        "Statement": "Only 6/67 patients in cohort 1 of the primary trial suffered adverse events",
+        "Label": "Entailment",
+        "explain": "The statement \"Only 6/67 patients in cohort 1 of the primary trial suffered adverse events\" is contradicted by the data provided in the CTR. According to the CTR, a total of 12 adverse events were reported in cohort 1 of the primary trial, affecting 12 out of 67 patients (18.06%), not 6 out of 67 as stated in the expert's claim."
+    },
+    "7edba90d-076d-4f55-b9d6-a1765ceb48bd": {
+        "Type": "Comparison",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00290732",
+        "Secondary_id": "NCT00232505",
+        "Statement": "the primary trial and the secondary trial participants do not receive any medication by IV",
+        "Label": "Contradiction",
+        "explain": "The statement should be contradicted. In the primary trial, participants received intraductal administration of dextrose or PLD, which is not given intravenously (IV). However, in the secondary trial, patients receive IV infusions of cetuximab as part of both intervention arms."
+    },
+    "ba9daeb9-796d-49ab-a30c-4d8acbdf4d37": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00754325",
+        "Statement": "in the primary trial, patients that received Fulvestrant were much more likely  to suffer Disease Progression or Death than patients receiving herceptin",
+        "Label": "Contradiction",
+        "explain": "Contradicted. \n\nThe CTRs do not provide sufficient evidence to support the statement. \n\nThe statement asserts that patients in Arm 1 (fulvestrant plus dasatinib) are more likely to suffer Disease Progression or Death than those in Arm 2 (fulvestrant only). However, the provided data shows that Arm 1 had 35 participants and Arm 2 had 40 participants. The number of participants with Disease Progression or Death is unspecified in the results, and the CTRs do not provide enough information on the demographics and baseline characteristics of each participant to make an accurate comparison between the arms. Additionally, the time frames for follow-up in both trials are the same, so there is no evidence that patients in Arm 1 had a shorter PFS or higher rate of Disease Progression or Death than those in Arm 2 based on the given information."
+    },
+    "1314146f-2869-4525-8034-7f732d238385": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00009945",
+        "Statement": "none of the individual adverse events in the primary trial affect more than 100 patients.",
+        "Label": "Entailment",
+        "explain": "The statement is contradicted by both CTRs provided. In the Primary Trial's Adverse Events 1 section, Anemia (10/1612 = 0.62%) and Cardiac disorders - Other, specify (6/1612 = 0.37%) each affect more than 100 patients (10 and 6, respectively, out of a total of 1612) in the Primary Trial. Similarly, in the Secondary Trial's Adverse Events 2 section, Myocardial infarction (4/1623 = 0.25%) also affects more than 100 patients in the context of the 1623 participants."
+    },
+    "7c7418d2-32d7-4517-874b-eb3db24ea16a": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00121992",
+        "Statement": "to be eligible for the primary trial candidates must be over the age of 18, have a Karnofsky score over 80 and Adequate hepatic, renal and heart functions aswell as Adequate hematology levels.",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the primary trial's inclusion criteria. The statement \"candidates must be over the age of 18, have a Karnofsky score over 80 and Adequate hepatic, renal and heart functions as well as Adequate hematology levels\" directly aligns with the following criteria in the primary trial: \"Age between 18 years and 70 years\", \"Karnofsky performance status index > 80 %\", \"Adequate hepatic, renal and heart functions\", and \"Adequate hematology levels\"."
+    },
+    "1f6a14ae-e22b-4b40-b389-217570dbf38e": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00900627",
+        "Statement": "50% of cohort 2 patients in the primary trial suffered  Dose Limiting Toxicities ",
+        "Label": "Entailment",
+        "explain": "The statement \"50% of cohort 2 patients in the primary trial suffered Dose Limiting Toxicities\" contradicts the information in Results 2 of the CTR, which shows that only 1 out of 2 participants in cohort 2 (Arm/Group 2) experienced a Dose Limiting Toxicity. The number of patients and the number of Dose Limiting Toxicities reported in Cohort 2 of the primary trial are inconsistent with the statement."
+    },
+    "5c1e360c-fd93-4dd4-b855-71ba416d34cb": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00263588",
+        "Statement": "patients must be able to receive medication orally to participate in the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement \"patients must be able to swallow an oral medication\" as stated in the inclusion criteria of the primary CTR entails the statement \"patients must be able to receive medication orally to participate in the primary trial.\""
+    },
+    "c7a953b0-ac96-4e0a-9c1d-98cf8af2861d": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01852032",
+        "Secondary_id": "NCT01830933",
+        "Statement": "the primary trial and the secondary trial report the same types of adverse events",
+        "Label": "Contradiction",
+        "explain": "The statement \"the primary trial and the secondary trial report the same types of adverse events\" is contradicted by the provided CTRs. In the Primary Trial report, there is only one Adverse Events section with a total of 0 adverse events reported. On the other hand, in the Secondary Trial there are two Adverse Events sections, both reporting 0 adverse events for each section. However, there is no mention or implication that both sections of the Secondary Trial report the same types of adverse events. Therefore, without any additional context or information, the statement is not entailed by the provided CTRs."
+    },
+    "48f516ff-abb4-4312-9b00-02f53fb16218": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00944047",
+        "Statement": "under a quater of the primary trial patients in the intervention arm experienced Pathologic Complete Response",
+        "Label": "Contradiction",
+        "explain": "To determine if the statement \"under a quarter of the primary trial patients in the intervention arm experienced Pathologic Complete Response\" is entailed or contradicted, we need to examine the results section of both trials and calculate the percentage of participants in the intervention arm of the primary trial who experienced Pathologic Complete Response.\n\nIn the Results 1 section of the primary trial:\n- The overall number of participants analyzed in the intervention arm was 32.\n\nTo find the percentage of participants who experienced Pathologic Complete Response, we need to look for this information in the CTR. However, no data on Pathologic Complete Response is provided in the Results 1 section for the intervention arm. Therefore, based on the given information, we cannot entail or contradict the expert statement.\n\nThe statement is contradictory if the percentage of participants who experienced Pathologic Complete Response is less than 25%. Without this data, we cannot make a definitive judgment."
+    },
+    "978d19fc-e7f6-485e-b8bd-cfcde06441ab": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00022516",
+        "Statement": "T1 N0 M0 patients are eligible for the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement is entailed. According to the primary CTR, T1 N0 M0 patients are explicitly stated as being eligible for the trial in the Disease Characteristics section. Therefore, the expert's statement aligns with the CTR information and is entailed."
+    },
+    "0a6d1b4c-244e-44e2-a229-62e4cbdfa979": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT01581619",
+        "Secondary_id": "NCT00106002",
+        "Statement": "the results of the secondary trial and the primary trial are non-comparable",
+        "Label": "Entailment",
+        "explain": "The statement can be entailed by the information provided in the CTRs based on the following justifications:\n\n1. Incomparability of the trials' outcome measures:\n   The primary trial focuses on the safety of external-beam PBI utilizing 40 Gy in ten daily fractions over two weeks for female breast cancer patients, while the secondary trial assesses the overall tumor response using RECIST criteria for Pemetrexed treatment. These trials address different aspects of treatment: safety vs. efficacy.\n\n2. Different time frames:\n   The time frames of the trials are also not comparable. The safety trial has a longer time frame (2 years) than the secondary trial (every 3 cycles or approximately 6-7 weeks).\n\n3. Different types of participants:\n   The trials include different patient populations, with the safety trial focusing on breast cancer patients, whereas the secondary trial involves a different type of cancer and treatment.\n\nTherefore, the non-comparability of the results is a valid observation given the differences in the trials' objectives, time frames, and patient populations."
+    },
+    "9bcc31df-c1f6-4785-9235-f673213acf3a": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00333775",
+        "Statement": "both the primary trial cohorts receive identical doses of Docetaxel ",
+        "Label": "Entailment",
+        "explain": "The statement \"both the primary trial cohorts receive identical doses of Docetaxel\" is entailed by the CTRs provided. This is because both intervention groups in the primary trial receive the same dose of Docetaxel at 100 mg/m^2."
+    },
+    "63a0a9fc-80b9-450f-b2c6-7aee37ce26a9": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00904033",
+        "Statement": "neither of the cohorts in the primary trial are required to undergo surgery or receive any oral medication as part of the intervention",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed by the information in the CTRs, as neither Intervention 1 nor Intervention 2 for the primary trial involves surgery or any oral medication other than the calcitriol pill taken once weekly for the Calcitriol Arm and the Calcitriol+ Exercise Arm."
+    },
+    "75cf4ec2-9f2b-4d5b-8772-af247eaca07b": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00232505",
+        "Statement": "Patients with Histologically confirmed breast cancer stage I-III are not eligible for the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement is contradicted by the CTR as patients in the primary trial have histologically confirmed breast cancer, but it is specifically for metastatic (stage IV) disease. Therefore, stage I-III breast cancer is excluded from the primary trial, which is the opposite of the statement."
+    },
+    "553f00ea-5197-4233-b1e0-e5727856b599": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00331630",
+        "Statement": "no cardiac or bowel-related adverse events were recorded in the primary trial",
+        "Label": "Contradiction",
+        "explain": "The statement is contradicted by the CTR data from the \"Adverse Events\" section of the primary trial. In this trial, one participant experienced diarrhea, which is a bowel-related adverse event. Therefore, the statement is not entailed by the CTR information."
+    },
+    "57b2ae97-0d1d-4d5d-bc4b-109e8e5acb32": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01224678",
+        "Secondary_id": "NCT01042535",
+        "Statement": "There were more cases of mental health disorders, PLEUROPERICARDITIS, ATRIAL THROMBOSIS  and Anemia in the secondary trial than in the primary trial",
+        "Label": "Contradiction",
+        "explain": "Contradicted. The provided statement is not entailed by the data in the CTRs. The statement suggests an increase in cases of mental health disorders, pleurpericarditis, atrial thrombosis, and anemia in the secondary trial compared to the primary trial. However, the CTRs do not provide data on mental health disorders or pleurpericarditis in either trial. The data for anemia only mentions its occurrence in both trials, but not with sufficient detail to support a comparison regarding an increase in cases. The statement contradicts the information in the CTRs as it makes assertions beyond the data provided."
+    },
+    "215a5c4a-d90c-4500-8284-0679ce311734": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00263588",
+        "Statement": "patients must have HER2- breast cancer to participate in the primary trial",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed by the CTR information provided for the primary trial as the inclusion criteria explicitly state \"ErbB2(HER2)overexpressing breast cancer.\""
+    },
+    "e9a4bd91-f58b-4234-9037-75e0699d1bbd": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT01118624",
+        "Statement": "the primary trial participants recieve less than 300mg/m^2 doses of Pralatrexate",
+        "Label": "Entailment",
+        "explain": "Contradicted. The primary trial participants receive a study drug of 190 mg/m^2 for 2 to 4 weeks, which is higher than less than 300 mg/m^2 as stated in the expert's claim."
+    },
+    "7d52734c-0801-413d-9ae2-d190b972cde5": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT00503750",
+        "Secondary_id": "NCT00005879",
+        "Statement": "The results from the secondary trial and the primary trial can be compared by changing the units from days to months",
+        "Label": "Contradiction",
+        "explain": "The given statement is entailed by the CTR data as the time frames for outcome measurement in both trials are provided: primary trial at 8 weeks and secondary trial from baseline to 6 months. To compare the results, it is necessary to convert the time units to the same scale. Since 8 weeks is equal to approximately 2 months and 6 months are stated explicitly, no further conversion is needed. The statement does not contradict the provided CTR descriptions."
+    },
+    "5de9caeb-9dd5-4535-8fe3-289450d9c626": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00820222",
+        "Statement": "the primary trial results show that the Trastuzumab Plus Capecitabine group had a higher precentage of patients with CNS Metastases than the Lapatinib Plus Capecitabine group.",
+        "Label": "Entailment",
+        "explain": "Contradiction. \n\nThe CTRs do not provide sufficient evidence to support the statement that the Trastuzumab Plus Capecitabine group had a higher percentage of patients with CNS Metastases than the Lapatinib Plus Capecitabine group. \n\nThe CTRs only report the number of participants with CNS Metastases (as assessed by independent review) in the results sections, without specifying the number or percentage for each arm/group. Additionally, there is no information about the baseline characteristics of the participants regarding the presence or absence of CNS Metastases before randomization, which is crucial to make such a comparison.\n\nTherefore, the statement cannot be entailed based on the provided CTRs."
+    },
+    "bebfc78e-b35f-4677-8342-9567a7e795a1": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00091442",
+        "Secondary_id": "NCT01439945",
+        "Statement": "There is one case of Diarrhea in the secondary trial and none in the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement should be contradicted. The statement asserts that there is one case of diarrhea in the secondary trial and none in the primary trial, but the CTRs provide information that contradicts this statement. The primary trial Adverse Events section does not list any cases of diarrhea, as stated in the CTR. However, the secondary trial Adverse Events section lists one case of diarrhea. Therefore, the statement is contradictory to the information in the CTRs."
+    },
+    "faa65e54-aa04-4595-8dae-05cf00b4c887": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT02301988",
+        "Statement": "Only cohort 1 patients of the primary trial are administered Ipatasertib",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the information provided in the CTR. The ELIGIBILITY CRITERIA section of the primary trial does not mention any specific conditions for administering Ipatasertib to only a subset of patients, but the INTERVENTION 1 section specifies that Ipatasertib is given to participants in that cohort. Therefore, the statement \"only cohort 1 patients of the primary trial are administered Ipatasertib\" is an accurate reflection of the trial data."
+    },
+    "751fd763-89fa-4d52-8bda-f09b490a5e78": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00357110",
+        "Statement": "there were no recorded deaths in the primary trial cohorts.",
+        "Label": "Entailment",
+        "explain": "Contradiction.\n\nJustification:\n\nThe primary trial's outcome measurement defines an event as death from any cause. According to Results 1, there were 6 participants in the fulvestrant + anastrozole arm, and Results 2 states that there were 7 participants in the anastrozole arm, but no information about deaths in either arm is provided. Therefore, it is impossible for there to be no recorded deaths in both arms based on the available CTR data."
+    },
+    "c40fdf91-9f81-454a-bba9-ec5c950cef6e": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00374322",
+        "Statement": "One patient cohort in the primary trial received a placebo intervention",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the given CTR information. \n\nJustification: \nIn the primary trial, there is a cohort of patients who were assigned to the placebo intervention (INTERVENTION 2). Therefore, the statement made by the clinical trial expert is in accordance with the data provided in the CTR and does not contradict it."
+    },
+    "31105b43-832b-48bc-a78d-ee90c155ca44": {
+        "Type": "Comparison",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT01439945",
+        "Secondary_id": "NCT01998906",
+        "Statement": "Presence of hot flashes for  30 days prior to study registration is required for all patients that want to participate in the primary trial, but not necessary for entry to the secondary trial.",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the primary CTR but not the secondary CTR.\n\nJustification:\n\nIn the primary CTR, the presence of hot flashes for 30 days prior to study registration is a requirement for patient inclusion (ELIGIBILITY CRITERIA). In contrast, the secondary CTR does not mention this requirement for hot flashes in its inclusion criteria. Instead, only locally advanced breast cancer and being female and 18 years of age or older are the specified inclusion criteria. Therefore, the presence of hot flashes prior to study registration is not a requirement for entry into the secondary trial."
+    },
+    "49ba06b2-576d-4db2-80b6-51673416f2ba": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT01928186",
+        "Secondary_id": "NCT02340221",
+        "Statement": "the primary trial and the secondary trial measure the Percent Change in Net Influx Constant (Ki) by FLT PET in their patient cohorts",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed. Both trials use FLT PET to measure the Percent Change in Net Influx Constant (Ki), making it a valid comparison. The primary trial explicitly states \"Percent change between pre-treatment (baseline) and post-therapy PET measurements in breast tumors will be computed,\" which aligns with the general concept of measuring Ki by FLT PET as described in the secondary trial."
+    },
+    "3cb71095-8e01-40dc-bbf5-eeffed55f354": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00232505",
+        "Statement": "Patients with Histologically confirmed breast cancer stage I-IV are not eligible for the primary trial",
+        "Label": "Contradiction",
+        "explain": "Contradicted. \n\nThe statement \"Patients with Histologically confirmed breast cancer stage I-IV are not eligible for the primary trial\" is contradicted by the eligibility criteria provided for the primary trial, which states that patients must have \"metastatic (stage IV) breast cancer (MBC) with measurable disease by RECIST criteria.\" Therefore, patients with stage I-III breast cancer, which is not metastatic or has non-measurable disease, are in fact ineligible for the primary trial according to the CTR, contrary to the statement made by the clinical trial expert."
+    },
+    "09fc4356-6154-427e-b710-ed5df6470aff": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00900627",
+        "Statement": "50% of cohort 2 patients in the primary trial suffered Keratitis",
+        "Label": "Contradiction",
+        "explain": "The statement \"50% of cohort 2 patients in the primary trial suffered Keratitis\" is contradicted by the provided CTR information. According to Results 1 for Cohort A (Arm/Group Title: AZD8931 160 mg bd), which corresponds to Cohort 2 in the statement, only one patient experienced Keratitis (Result 1: Eye disorders: Keratitis: 1). Therefore, less than 50% of the participants in this cohort suffered from Keratitis."
+    },
+    "446f3c69-0de5-475c-a8e2-ff40ece90672": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT02924883",
+        "Statement": "Only patients with HER2+ve breast cancer are eligible for the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement \"Only patients with HER2+ve breast cancer are eligible for the primary trial\" is entailed by the primary trial's inclusion criteria, specifically where it mentions \"HER-2 positive BC as defined by an immunohistochemistry score of 3 or gene amplified by in-situ hybridization as defined by a ratio of greater than or equal to (>=) 2.0 for the number of HER2 gene copies to the number of chromosome 17 copies.\""
+    },
+    "cdadcb0a-20c5-47f7-a63a-39f5c6f26ae2": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00445458",
+        "Statement": "the primary trial reports the percentage of patients treated with Neratinib in Combination With Paclitaxel that suffer 0 side effects",
+        "Label": "Contradiction",
+        "explain": "The statement is contradicted by the provided CTR data. \n\nExplanation:\n\nThe statement claims that \"the percentage of patients treated with Neratinib in Combination With Paclitaxel that suffer 0 side effects\" is reported in the primary trial. However, the primary trial reports the number of participants in each arm that experienced no dose-limiting toxicity, not the percentage of participants who experienced no side effects at all. Additionally, the CTR does not mention any information about side effects other than dose-limiting toxicity, which further undermines the statement's claim. Therefore, the statement is contradicted by the provided CTR data."
+    },
+    "f0e845f9-8991-45b5-a520-51e934756f7a": {
+        "Type": "Comparison",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00688909",
+        "Secondary_id": "NCT00450723",
+        "Statement": "The the primary trial intervention involves one drug taken orally and the secondary trial intervention is based on a medical procedure.",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the provided CTRs. In the primary trial, Letrozole is taken orally as a drug intervention, while in the secondary trial, no specific information about the intervention being taken orally is given, but the intervention is a medical procedure (Sentinel Lymph Node Biopsy) which is not taken orally. However, the statement does not contradict the CTRs as it correctly identifies that the primary trial involves a drug intervention and the secondary trial involves a medical procedure."
+    },
+    "a0065d58-e03b-4dd0-9c81-cbbf651a6d45": {
+        "Type": "Comparison",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00820170",
+        "Secondary_id": "NCT00263588",
+        "Statement": "any patient eligible for the secondary trial will also be eligible for the primary trial ",
+        "Label": "Contradiction",
+        "explain": "Contradicted. \n\nExplanation: \n\nThe primary trial's inclusion criteria for the breast cancer diagnosis and eligibility based on ER/PR/HER2 disease status, HER2 status, prior therapies, and other factors are distinct from the secondary trial's eligibility criteria which focuses on ErbB2(HER2) overexpressing breast cancer, brain metastases, and prior treatment history. Therefore, not all patients eligible for the secondary trial would be eligible for the primary trial, and the given statement is contradicted."
+    },
+    "b2cdbcb8-de26-4a44-8a94-dd68c13f7e41": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT01125566",
+        "Statement": "ECOG score > 2 is necessary to be eligible for the primary trial",
+        "Label": "Contradiction",
+        "explain": "The statement is contradicted by the primary trial inclusion criteria, as the Eastern Cooperative Oncology Group (ECOG) score of 0 or 1 is required for patient eligibility in the primary trial. (Primary Trial: Inclusion criteria: Eastern Cooperative Oncology Group (ECOG) score of 0 or 1)"
+    },
+    "973f090a-8967-4d75-bb8e-6166c868337c": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT02301988",
+        "Statement": "cohort 1 patients of the primary trial are administered higher doses of Ipatasertib and  Placebo than cohort 2 patients",
+        "Label": "Contradiction",
+        "explain": "The statement \"cohort 1 patients of the primary trial are administered higher doses of Ipatasertib and Placebo than cohort 2 patients\" is contradicted by the provided data in the CTR. In both trials, the interventions for each cohort specify the same dosage and administration schedule for Ipatasertib and Placebo. Therefore, there is no entailment or justification for the statement as it contradicts the provided information in the CTRs. (Refer to the INTERVENTION sections in the provided CTR.)"
+    },
+    "79ca2ee8-6c9c-40e6-a87c-925b50d3d3d2": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT01929395",
+        "Statement": "Patients must have several visible carcinomas in the stomach and neck areas to be included in the primary trial",
+        "Label": "Contradiction",
+        "explain": "The statement is not entailed by the provided CTRs as there is no mention of carcinomas in the stomach and neck areas in the inclusion criteria of either the primary or secondary trial."
+    },
+    "1d1f57f8-85f7-448c-a4bb-15957da568fd": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00106002",
+        "Statement": "the primary trial intervention protocol will continue until patients achieve complete response or suffer disease progression",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the primary trial's INTERVENTION section, which explicitly states that the Pemetrexed intervention will continue until a complete response is achieved or disease progression occurs."
+    },
+    "9f7d476e-9db3-4c00-abe6-4c2f0160470a": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00944047",
+        "Statement": "under 30% of the primary trial patients in the intervention arm experienced Pathologic Complete Response",
+        "Label": "Entailment",
+        "explain": "The statement \"under 30% of the primary trial patients in the intervention arm experienced Pathologic Complete Response\" contradicts the CTR data. According to the Results 1 section of the CTR, 26 out of 32 participants (81.25%) in the intervention arm experienced Pathologic Complete Response."
+    },
+    "a5e388b9-da3c-437e-a6af-7ba76ad8bf1d": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00333775",
+        "Statement": "both the primary trial cohorts receive identical doses of Docetaxel, with cohort 1 also receiving 100 mg/m^2 of Placebo",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed by both CTRs. The primary trial states that cohort 1 received placebo, which is equivalent to receiving a dose of 0 mg/m^2. Since intervention 1 for the primary trial and intervention 1 for the secondary trial both involve administering docetaxel at a dose of 100 mg/m^2, the statement that both cohorts receive identical doses of Docetaxel is true. Additionally, the statement that cohort 1 of the primary trial receives 100 mg/m^2 of placebo aligns with the statement that both cohorts receive identical doses of Docetaxel plus an additional 0 mg/m^2 of placebo in the secondary trial."
+    },
+    "3adcc8fc-b76b-407a-a006-729a13f571fb": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT03098550",
+        "Statement": "both cohorts of the primary trial receive identical interventions, the difference between the two cohorts is the types of cancer that the patients have, with cohort 1 all being diagnosed with HER2 positive cancer and cohort 2 being PR-",
+        "Label": "Contradiction",
+        "explain": "Contradiction. The statement \"both cohorts of the primary trial receive identical interventions, the difference between the two cohorts is the types of cancer that the patients have, with cohort 1 all being diagnosed with HER2 positive cancer and cohort 2 being PR-\" contradicts the provided CTR information, as the two cohorts in the primary trial do not have HER2 positive or PR cancer diagnoses; instead, they all have triple-negative breast cancer (TNBC) for cohort 1 and non-small cell lung cancer (NSCLC) for cohort 2."
+    },
+    "68379456-775b-463b-bfdb-d8aa42c9124b": {
+        "Type": "Comparison",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00325234",
+        "Secondary_id": "NCT00274469",
+        "Statement": "Patients must be female and have confirmed advanced breast cancer to be eligible for the secondary trial and the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement \"Patients must be female and have confirmed advanced breast cancer to be eligible for the secondary trial and the primary trial\" is entailed by both CTRs since:\n\n1. Both trials involve patients with advanced breast cancer (CTR1: Inclusion Criteria: Females with histologic or cytologic diagnosis of advanced breast cancer and CTR2: Confirmed hormone receptor positive advanced breast cancer).\n2. The primary trial has no exclusion related to gender or hormone receptor status, and the secondary trial only includes postmenopausal women with hormone receptor positive advanced breast cancer but does not have any exclusion related to gender.\n\nThus, the statement is an accurate and valid generalization based on the given CTRs."
+    },
+    "5d0ccb93-71ec-4079-92c6-d7cbf951a7bb": {
+        "Type": "Comparison",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00290758",
+        "Secondary_id": "NCT02370238",
+        "Statement": "Women currently undergoing endocrine therapy are excluded from the secondary trial and the primary trial",
+        "Label": "Entailment",
+        "explain": "Contradicted.\n\nJustifications:\n\n1. In the primary trial, the exclusion criteria do not mention women currently undergoing endocrine therapy as being ineligible.\n2. In the secondary trial, the exclusion criteria state that women previously diagnosed with breast cancer will not be eligible unless all systemic therapy (including endocrine therapy) was completed at least one year previously. It does not mention that currently undergoing endocrine therapy is an exclusion criterion."
+    },
+    "f04d9695-81b8-4d70-877b-59caddf901bd": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00450723",
+        "Secondary_id": "NCT00290758",
+        "Statement": "Between the secondary trial and the primary trial, all the recorded case of Dyspnea occurred in cohort 1 of the secondary trial",
+        "Label": "Entailment",
+        "explain": "The statement is contradicted by the provided CTR data. In the primary trial, there is no recorded case of Dyspnea in Adverse Events 1 or Adverse Events 2. However, in the secondary trial, there is one reported case in Adverse Events 1. Since the statement claims that all recorded cases of Dyspnea occurred in the secondary trial and specifically in cohort 1, it contradicts the information in the CTR that indicates the absence of Dyspnea in the primary trial."
+    },
+    "f42e1874-343a-43ed-bb0c-884509c4793c": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT00633464",
+        "Secondary_id": "NCT01644890",
+        "Statement": "the primary trial measures the Percentage of Participants in its cohorts With Objective Response whereas the secondary trial measures Number of Participants With Disease Progression (PD) or Death",
+        "Label": "Contradiction",
+        "explain": "The statement is not directly entailed by the provided CTRs as they measure different outcome measures: The primary trial measures the percentage of participants with objective response, while the secondary trial measures the number of participants with disease progression or death. Therefore, no clear relationship between the percentage of participants with objective response and the number of participants with disease progression or death can be established based on the given information."
+    },
+    "30483d7e-7703-459c-bd10-e2bd259c2a4f": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01905592",
+        "Statement": "there were two types of Adverse events which did not affect any of the patients in cohort 1 of the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement \"there were two types of Adverse events which did not affect any of the patients in cohort 1 of the primary trial\" is contradicted by the CTR data, as there were no adverse events listed in Cohort 1 of the primary trial for any specific type mentioned by the expert. According to the given data, Nausea and Constipation were the only adverse events not affecting all patients in Cohort 1, but the expert mentioned two unspecified types of events. Therefore, the statement cannot be entailed based on the given CTR information."
+    },
+    "7cde9a22-a91f-4feb-892d-7cbd35f96a27": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT01416389",
+        "Statement": "the primary trial reports the changes in tumor size for patients in its cohorts.",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the provided CTRs. In both trials, tumor size changes are reported as an outcome measure, specifically as the log ratio of tumor size at the end of Cycle 2 to the baseline. Therefore, the expert's statement aligns with the clinical trial data, as it acknowledges the reporting of tumor size changes in the primary trial."
+    },
+    "16c29502-4683-4087-9410-ff1b786556f5": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01042535",
+        "Statement": "The least common adverse event in the primary trial was Constipation ",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed by the data in the primary trial CTR under the Adverse Events section, specifically the line stating \"Constipation 1/41 (2.44%)\" which indicates that constipation was the least common adverse event observed in the trial."
+    },
+    "5c975af8-6b7f-4a5d-b4a6-257c76763ce9": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT02244580",
+        "Secondary_id": "NCT03176238",
+        "Statement": "There more cases of Acute myocardial infarction, Cardiopulmonary failure and Supraventricular tachycardia in cohort 1 of the secondary trial than in the entire patient cohort of the primary trial",
+        "Label": "Entailment",
+        "explain": "Contradicted. \n\nIn the CTR for the primary trial, there is no record of any cases of Acute myocardial infarction, Cardiopulmonary failure, or Supraventricular tachycardia in the Adverse Events section. Therefore, the statement that there are more cases in cohort 1 of the secondary trial than in the entire patient cohort of the primary trial is contradictory to the information present in the CTRs."
+    },
+    "1c4e3fe3-b5fe-4ea3-8d9e-0ce1502080e7": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT02370238",
+        "Statement": "There were more total AEs in cohort 1 of  the primary trial than cohort 2",
+        "Label": "Contradiction",
+        "explain": "The statement \"There were more total AEs in cohort 1 of the primary trial than cohort 2\" is entailed by the provided Clinical Trial Reports (CTRs). The justification lies in the number of adverse events (AEs) reported, which is 13/61 (21.31%) in cohort 1 of the primary trial and 12/60 (20.00%) in cohort 2 of the secondary trial. Since the total number of AEs in the first trial is greater than that of the second trial, the statement is an accurate reflection of the data presented in the CTRs."
+    },
+    "8e91e404-086e-4063-8d54-83d1b8ebd969": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00191815",
+        "Statement": "over 1/6 patients in cohort 1 of the primary trial suffered adverse events",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed by the information in the Primary Trial's Adverse Events section since 1 adverse event occurred in 67 patients, which is equivalent to over 1/6 (approximately 1.67%) of the patient cohort in the Primary trial."
+    },
+    "b8322b23-a4f6-4cba-9761-be826b509de7": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01224678",
+        "Secondary_id": "NCT01042535",
+        "Statement": "There were more cases of Eye disorders, Abdominal pain, Febrile neutropenia and Anemia in the secondary trial than in the primary trial",
+        "Label": "Entailment",
+        "explain": "The statement is contradicted by the provided CTR data. In the primary trial, there were no cases of Eye disorders, Abdominal pain, Febrile neutropenia, or Anemia reported. In contrast, the secondary trial had 1 case each of Eye disorders (other, visual disturbance), Abdominal pain, Febrile neutropenia, and Anemia out of a smaller participant cohort. Thus, the statement that \"there were more cases\" of these specific adverse events in the secondary trial is inconsistent with the given CTR data for these events."
+    },
+    "4519d1cf-7f78-4aa8-85d6-ac94f7eb75a3": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00091442",
+        "Secondary_id": "NCT01439945",
+        "Statement": "There is only one case of Diarrhea in the secondary trial and over 14 different types of Aes recorded in the primary trial cohorts",
+        "Label": "Contradiction",
+        "explain": "The statement can be contradicted by the CTRs. \n\nJustification: \n\nThe statement asserts that \"there is only one case of Diarrhea in the secondary trial and over 14 different types of Aes recorded in the primary trial cohorts.\" However, according to the CTRs provided:\n\n1. In the primary trial, Adverse Event Section 1 lists 15.82% (59/373) of total participants experiencing adverse events, but it does not list Diarrhea among them.\n2. In the primary trial, Adverse Event Section 2 lists 18.30% (69/377) of total participants with adverse events, and there is one case of Diarrhea (1/377, 0.27%).\n3. In the secondary trial, Adverse Event Section 1 lists 0.00% (0/92) of total participants having adverse events and only Diarrhea is mentioned in Adverse Event Section 2 (1/93, 1.08%).\n\nGiven this information, the statement contradicts the CTRs because there is one instance of Diarrhea reported in the secondary trial, but the statement claims there isn't."
+    },
+    "4b97a844-8d52-48bb-8eda-ca205268f016": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00375427",
+        "Statement": "Patients must have a Life expectancy of 75+ years to enroll in the primary trial",
+        "Label": "Contradiction",
+        "explain": "Contradicted. The inclusion criteria in the primary CTR state that patients must have a life expectancy of 1 year. This directly contradicts the expert statement that patients must have a life expectancy of 75+ years to enroll in the primary trial."
+    },
+    "2a03c17f-3afe-40f1-a0db-4b876ee8c700": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT01928186",
+        "Secondary_id": "NCT02340221",
+        "Statement": "the primary trial and the secondary trial have non-comparable outcome measurements for their results",
+        "Label": "Entailment",
+        "explain": "The statement is entailed.\n\nThe primary trial measures the percent change in Net Influx Constant (Ki) by FLT PET from baseline to up to 6 weeks after treatment, while the secondary trial measures Progression-Free Survival (PFS) as assessed by investigator using RECIST v1.1, a completely different outcome measurement. Therefore, the two trials are indeed non-comparable based on their outcome measurements."
+    },
+    "3ba42f68-a643-4d10-afd0-cbb358d05a6f": {
+        "Type": "Comparison",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT01572727",
+        "Secondary_id": "NCT00328783",
+        "Statement": "All patients in the primary trial receive higher doses of Paclitaxel than patients in the secondary trial",
+        "Label": "Entailment",
+        "explain": "Contradicted.\n\nJustification:\n\nThe statement asserts that all patients in the primary trial receive higher doses of Paclitaxel than patients in the secondary trial. However, the CTRs provided do not mention the dosage of Paclitaxel for both trials. The primary CTR only specifies that patients receive Paclitaxel in addition to BKM120 or a placebo. The secondary CTR mentions Paclitaxel without specifying a dosage. Therefore, without explicit information about the dosages of Paclitaxel in both trials, we cannot conclude that all patients in the primary trial receive higher doses of Paclitaxel."
+    },
+    "0a079cca-abde-42cf-9cec-a76e7a380e14": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00904033",
+        "Statement": "neither of the cohorts in the primary trial are required to undergo surgery as part of the intervention",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the given CTR information. In neither the Intervention 1 nor Intervention 2 descriptions is surgery mentioned as a component of the intervention for either arm."
+    },
+    "9c033072-5f94-4d79-af47-126d531f0d6e": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01216176",
+        "Secondary_id": "NCT00325234",
+        "Statement": "There are more cases of Holocraneal cephale and Catheter - related infections in the primary trial than in the secondary trial",
+        "Label": "Contradiction",
+        "explain": "Contradiction. \n\nThe statement asserts that there are more cases of holocranial cephale and catheter-related infections in the primary trial than in the secondary trial. However, the CTRs do not provide information on holocranial cephale or catheter-related infections. Therefore, no justification can be made based on the information available in the CTRs to establish entailment or contradiction. Instead, the statement contradicts the CTRs as they do not contain the specified information."
+    },
+    "a52b2d4f-0b06-4960-a9c3-88cb92df0980": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00477464",
+        "Statement": "the primary trial participants receive Capecitabine less often than they receive Lapatinib",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed by the CTR information. In the primary trial, Capecitabine is administered at 1000 mg/m^2 twice daily on the first day through the fourteenth day of each 21-day cycle, which translates to a total of 52.5 mg/m^2 per day. Lapatinib is given at a daily dosage of 1250 mg. Since the total amount of Capecitabine each participant receives within a 21-day cycle is less than that of Lapatinib daily (52.5 mg/m^2 vs 1250 mg), it follows that Capecitabine is received less frequently than Lapatinib."
+    },
+    "a792bbac-0e8a-4bf7-9cc5-56fad481e2fb": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00127933",
+        "Statement": "eliane is a 56 year old woman, and alex is a 32 year old man, both eliane and alex can both be eligible for the primary trial",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed by the CTRs. The primary trial includes women with newly diagnosed, invasive breast cancer, regardless of age or HER2-neu status as long as they meet the other stated inclusion criteria. Eliane, being a woman with newly diagnosed breast cancer at the age of 56, and meeting the remaining inclusion conditions, is eligible. Likewise, Alex's eligibility for the same trial can be inferred due to his diagnosis of invasive breast cancer, regardless of age or HER2-neu status. The statement does not contradict the provided CTRs."
+    },
+    "1842904b-5371-49ee-b6f4-8831b879098b": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00924352",
+        "Statement": "Febrile Neutropenia was the most common adverse event recorded in the primary trial, affecting more than 5% of patients",
+        "Label": "Entailment",
+        "explain": "The statement \"Febrile Neutropenia was the most common adverse event recorded in the primary trial, affecting more than 5% of patients\" is entailed by the information provided in the CTR, as Febrile Neutropenia occurred in 3/56 (5.36%) of patients."
+    },
+    "324562e6-2b61-4a07-b937-86f99689f2d5": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00191789",
+        "Secondary_id": "NCT00876395",
+        "Statement": "Diarrhoea is the most common adverse event in the primary trial, and Anaemia is the most common in the secondary trial",
+        "Label": "Entailment",
+        "explain": "Contradicted. The statement is not entailed by the provided data in the CTRs. In the primary trial, diarrhea has a higher incidence (7.69%) than anemia (1.54%). However, in the secondary trial, anemia has a higher incidence (1.27%) than diarrhea (7.69%). Therefore, neither diagnosis is the most common adverse event in both trials."
+    },
+    "74e376d7-5713-43f3-93f1-9608059c9547": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00193037",
+        "Statement": "neither of the interventions in the primary trial resulted in an Objective Benefit for more than 40% of patients, in fact over 86% of patients receiving the Docetaxel Then Liposomal Doxorubicin intervention suffered fatal complications",
+        "Label": "Contradiction",
+        "explain": "The expert's statement contradicts the information provided in both CTRs, specifically the RESULTS sections. In the primary trial, the ORR for Arm A (Liposomal doxorubicin then Docetaxel) was 28% (16-42) and for Arm B (Docetaxel then Liposomal doxorubicin) was 31% (18-45). None of these percentages reach or exceed 40%. Furthermore, the expert's statement about fatal complications only applies to Arm B in the secondary trial, but no such information is mentioned in either primary CTR. Therefore, the expert's statement contradicts the provided data in the CTRs."
+    },
+    "0e609fad-9a28-4fb6-90b6-32a731e3b02c": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT03012477",
+        "Secondary_id": "NCT02419807",
+        "Statement": "the primary trial and the secondary trial report their results as perecentages but use different units of measure.",
+        "Label": "Contradiction",
+        "explain": "The statement should be entailed, as both trials report percentages but the units of measure for the proportions of participants or nodes detected are explicitly stated in each Results section. No contradiction is present in the provided information. (CTR 1 - Results 1: percentage of participants with ORR, CTR 2 - Results 1: proportion of SNs detected by Tc method, proportion of SNs detected by ICG method)."
+    },
+    "236780db-9e59-4dc9-8da0-e786287011cf": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00106002",
+        "Statement": "the primary trial intervention protocol lasts a total of 14 days",
+        "Label": "Contradiction",
+        "explain": "The expert's statement is contradicted by the primary trial CTR. In the CTR, it is mentioned that the primary trial intervention of Pemetrexed is given every 14 days, but it does not state that the entire protocol or treatment lasts only 14 days. Instead, the intervention continues until complete response or disease progression."
+    },
+    "6d621974-c719-46df-8a50-d94e49583e33": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00876395",
+        "Statement": "all patients accepted into the primary trial have undergone Prior treatment for breast cancer with endocrine therapy",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the CTR. The inclusion criteria of the primary trial allow patients who have undergone endocrine therapy for breast cancer as long as it is discontinued at randomization. Therefore, all patients accepted into the trial have the potential to have undergone prior treatment with endocrine therapy."
+    },
+    "a9907a2e-254a-45ca-af50-3e44fd2f7af3": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT01307891",
+        "Statement": "There was one case of  Neutropenia in both cohorts of the primary trial",
+        "Label": "Entailment",
+        "explain": "Contradicted. The CTRs clearly state that there was only one instance of Neutropenia in each cohort of the primary trial, not in both cohorts combined."
+    },
+    "40f699a1-fbc6-40de-8e80-85b28f71632f": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT02658734",
+        "Statement": "Most patients in the primary trial experienced a grade 1 adverse events, the least common severity was grade 5, which only affected 8/70 patients.",
+        "Label": "Contradiction",
+        "explain": "Justified - The expert's statement agrees with the data in the CTR as stated in Results 1. The expert mentioned that most patients (75.7%) experienced a grade 1 adverse event, and the least common severity was grade 5, which occurred in 17.1% of the participants - this correlates with the given numbers from the CTR (53 participants had a grade 1 adverse event, 12 participants had a grade 5 adverse event, and the total number of participants was 70)."
+    },
+    "6499b181-7a23-4073-8459-ad46ff02b20f": {
+        "Type": "Single",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00503906",
+        "Statement": "Participants of the primary trial will receive the intervention for a total of 12 cycles (28 days)",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed. The primary trial's intervention specification states that each cycle lasts 28 days, and the participants will be treated until disease progression. Since the secondary trial's statement refers to a total of 12 cycles, which equals 12 * 28 = 336 days, and 336 / 28 = 12.21 cycles, the participants in the primary trial will indeed receive the intervention for a total of approximately 12 cycles."
+    },
+    "2da13cd4-7189-4f85-be4d-5c1e213ae293": {
+        "Type": "Single",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT02370238",
+        "Statement": "The most common AE in the primary trial was Non-cardiac chest pain, which affected less than 5% of participants in cohort 1.",
+        "Label": "Entailment",
+        "explain": "Contradiction. The primary trial data shows that the total frequency of Non-cardiac chest pain was 2/61 (3.28%), which is more than 5% and contradicts the expert's claim of it being the most common AE with less than 5% occurrence."
+    },
+    "a9bb6de9-c6f8-4c99-81cd-f101cbaab387": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00617539",
+        "Statement": "Patients must have no radiographically confirmed metastases to the brain in order to be eligible for the primary trial",
+        "Label": "Contradiction",
+        "explain": "Contradicted. The primary trial explicitly states that patients must have radiographically confirmed metastases to the brain for eligibility. Therefore, the expert's statement contradicts this requirement. (Primary CTR, Disease Characteristics)"
+    },
+    "7e5fd062-6ec3-480f-ab0e-e117eba2ffe7": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00217399",
+        "Statement": "All the primary trial patients achieved either Disappearance of all target lesions, >=30% decrease in the sum of the longest diameter of target lesions or a tumor that is neither growing nor shrinking.",
+        "Label": "Entailment",
+        "explain": "The statement is entailed by the Primary Trial CTR information, specifically the OUTCOME MEASUREMENT section that describes the clinical outcome assessment using RECIST,V1.0, which includes definitions for Complete Response (CR), Partial Response (PR), and Stable Disease (SD), and the requirement for a patient to have clinical benefit if CR + PR + SD > 24 weeks. The RESULTS 1 section of the Primary Trial also indicates that all participants in the Sorafenib and Anastrozole arm achieved either PR or SD, which aligns with the statement's requirement that patients achieved either CR, PR, or SD."
+    },
+    "016943fa-57ea-4293-8131-03292ea1836c": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00550771",
+        "Statement": "A patient with a node positive T2 N2 M0 adenocarcinoma of the breast would be eligible for the primary trial, as would a patient with a node negative adenocarcinoma of the breast with a tumor diameter of over 2cm",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed by the CTR. The patient with a node positive T2 N2 M0 adenocarcinoma meets the inclusion criteria for the primary trial as it states \"node-positive: T1-3, N1-2, M0\" and \"HER2-positive by fluorescence in situ hybridization (FISH) or 3+ using immunohistochemistry\". A patient with a node negative breast cancer with a tumor diameter over 2cm also meets the inclusion criteria as it falls under \"node-negative AND tumor >2 cm\". Therefore, both scenarios entailed by the expert statement harmonize with the information provided in the CTR."
+    },
+    "402f0dbf-cf67-4425-b300-a0a3df4d59d3": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT00305448",
+        "Secondary_id": "NCT00425854",
+        "Statement": "the secondary trial and the primary trial use Objective Response as the outcome measurement for their interventions. ",
+        "Label": "Entailment",
+        "explain": "The statement is entailed. \n\nJustification: \n\nBoth trials define Objective Response as a response of complete response (CR) or partial response (PR), and measure it based on the Response Evaluation Criteria in Solid Tumors (RECIST). The statement correctly reflects this common outcome measurement between the two trials."
+    },
+    "62be4676-099f-4c42-8029-773af8fde6f7": {
+        "Type": "Single",
+        "Section_id": "Eligibility",
+        "Primary_id": "NCT00572728",
+        "Statement": "Patients must be bedbound or severaly disabled to participate in the primary trial",
+        "Label": "Contradiction",
+        "explain": "Contradiction \n\nJustification: \n\nThe participation requirement in the primary trial explicitly states \"Able to lie still for 1.5 hours for PET scanning.\" This contradicts the statement that patients must be bedbound or severely disabled to participate in the trial. The eligibility criteria do not indicate that patients need to be bedbound or severely disabled in order to participate. Therefore, the stated claim is inconsistent with the information provided in the primary trial's inclusion criteria."
+    },
+    "1180dd58-61b8-4c48-ab00-7d458e68c85b": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT01581619",
+        "Secondary_id": "NCT00106002",
+        "Statement": "the results of the secondary trial and the primary trial report the same outcome measures",
+        "Label": "Contradiction",
+        "explain": "Contradicted.\n\nThe statements report on different outcome measures. The primary trial is concerned with safety outcomes (skin/subcutaneous toxicity, pulmonary toxicity, fat necrosis, and rib fractures) from the partial breast irradiation using 40 Gy in ten daily fractions over two weeks. In contrast, the secondary trial measures overall tumor response using Response Evaluation Criteria In Solid Tumors criteria in patients receiving Pemetrexed 600 mg/m2, intravenously, every 14 days until complete response or disease progression. Therefore, the results of the two trials cannot be reported to have the same outcome measures."
+    },
+    "566bdc2d-7c4a-4547-87da-ac81447ecca8": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00820222",
+        "Statement": "the primary trial results show that the Trastuzumab Plus Capecitabine group had a higher precentage of patients with Grade 3 or 4 skin/subcutaneous or pulmonary toxicities, than the Lapatinib Plus Capecitabine group.",
+        "Label": "Contradiction",
+        "explain": "The statement is entailed by the primary trial results. The CTR for both trials (Primary and Secondary) provide information about the type and frequency of adverse events for each arm. In the given statement, the expert is comparing the percentage of participants in each group who experienced Grade 3 or 4 skin/subcutaneous or pulmonary toxicities. The CTR for the Trastuzumab Plus Capecitabine group (Results 2) indicates a higher number of participants with a total of 22 events, compared to the Lapatinib Plus Capecitabine group (Results 1) with 13 events. The statement's assertion aligns with the data provided in the CTR, making it entailed.\n\nCTR references:\nResults 1: Arm/Group Title: Lapatinib Plus Capecitabine; Total number of Grade 3 or 4 skin/subcutaneous or pulmonary toxicities: 13\nResults 2: Arm/Group Title: Trastuzumab Plus Capecitabine; Total number of Grade 3 or 4 skin/subcutaneous or pulmonary toxicities: 22."
+    },
+    "d310ec4e-993e-4827-8dc5-9aca053972db": {
+        "Type": "Comparison",
+        "Section_id": "Intervention",
+        "Primary_id": "NCT00688909",
+        "Secondary_id": "NCT00450723",
+        "Statement": "The the primary trial intervention involves one drug taken orally and the secondary trial intervention is based on a medical procedure.",
+        "Label": "Contradiction",
+        "explain": "Entailed. The primary trial intervention \"Letrozole\" is a drug taken orally, while the secondary trial intervention \"Sentinel Lymph Node Biopsy\" is a medical procedure, and the statement accurately reflects the difference between the interventions in the two trials. There is no contradiction in the statement with the provided descriptions."
+    },
+    "a5617ae4-05a3-42d0-9e14-141de5f8c010": {
+        "Type": "Comparison",
+        "Section_id": "Adverse Events",
+        "Primary_id": "NCT00258960",
+        "Secondary_id": "NCT00121992",
+        "Statement": "the secondary trial reported 1 single case of Conjunctivitis, whereas the primary trial did not report any",
+        "Label": "Entailment",
+        "explain": "The statement is contradicted by the provided data as the primary CTR does not report any cases of conjunctivitis (0/48), whereas the secondary CTR reports a single case (1/519)."
+    },
+    "42d1fcd3-8faa-4065-bbba-42cc90ab67fb": {
+        "Type": "Comparison",
+        "Section_id": "Results",
+        "Primary_id": "NCT00856492",
+        "Secondary_id": "NCT00009945",
+        "Statement": "the secondary trial and the primary trial do not both measure the pCR of their patient cohorts.",
+        "Label": "Entailment",
+        "explain": "The statement is contradicted by the CTRs. In the primary trial, the outcome measurement is explicitly stated as \"Number of Patients With Pathological Complete Response Rate\" (pCR), whereas in the secondary trial, the outcome measurement is \"Disease Free Survival\" (DFS) which is distinct from pCR. There is no mention of pCR measurement in either of the secondary trial's arms."
+    },
+    "d01fda83-5dc8-4ad5-92b8-7553dabd7046": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00428922",
+        "Statement": "the outcome measurement of the primary trial is The length of time during and after the treatment, that a patient lives with the disease but it does not get worse",
+        "Label": "Entailment",
+        "explain": "The statement \"the outcome measurement of the primary trial is The length of progression-free survival (PFS) of a patient during and after the treatment\" is entailed by the provided information in the CTR.\n\nJustification:\nThe outcome measurement of the primary trial as stated in the text is \"Progression-free Survival (PFS)\" and is further explained as \"the length of time during and after the treatment, that a patient lives without the disease progressing.\" This is consistent with the expert's statement. Additionally, the text mentions that the trial was designed specifically to evaluate PFS as a primary endpoint due to the long time frame for this outcome."
+    },
+    "985bc5a0-bc21-447f-92f1-150e23ede3f5": {
+        "Type": "Single",
+        "Section_id": "Results",
+        "Primary_id": "NCT00217399",
+        "Statement": "All the primary trial patients had a minimum of 50% decrease in the sum of the longest diameter of target lesions",
+        "Label": "Contradiction",
+        "explain": "Contradict\n\nExplanation:\n\nThe statement \"All the primary trial patients had a minimum of 50% decrease in the sum of the longest diameter of target lesions\" contradicts the primary trial's outcome measurement definition of Partial Response (PR), which requires a >=30% decrease in the sum of the longest diameter of target lesions (CTR, section Outcome Measurement). Therefore, it is unlikely that all patients in the primary trial had a minimum of 50% decrease in target lesion size."
+    }
+}
