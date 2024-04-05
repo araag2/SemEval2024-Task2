@@ -38,7 +38,7 @@ def tokenize_generate_decode_constraint(model : object, tokenizer : object, text
     #outputs =  model.generate(**tokenized, pad_token_id=tokenizer.eos_token_id, max_new_tokens = 2, do_sample = True, top_k = 10)
     #print(f'Tensors -> {outputs[0][tokenized["input_ids"].shape[1]:]} that decode to {tokenizer.decode(outputs[0][tokenized["input_ids"].shape[1]:]).strip()}')
 
-    outputs =  model.generate(**tokenized, pad_token_id=tokenizer.eos_token_id, max_new_tokens = 2, do_sample = True, top_k = 10, prefix_allowed_tokens_fn=lambda batch_id, sent: trie.get(sent.tolist(), tokenizer, tokenized["input_ids"].shape[1]))
+    outputs =  model.generate(**tokenized, pad_token_id=tokenizer.eos_token_id, max_new_tokens = 3, prefix_allowed_tokens_fn=lambda batch_id, sent: trie.get(sent.tolist(), tokenizer, tokenized["input_ids"].shape[1]))
     return tokenizer.decode(outputs[0][tokenized["input_ids"].shape[1]:]).strip()
 
 def query_inference(model : object, tokenizer : object, queries : dict, constraint : bool = False) -> dict:
@@ -47,7 +47,7 @@ def query_inference(model : object, tokenizer : object, queries : dict, constrai
     #trie = MarisaTrie([ [0]+tokenizer.encode(‘Yes’) , [0]+tokenizer.encode(‘No’)])
 
     # Tokens for Yes and No
-    trie = MarisaTrie([[7929, 28723], [7929,  13], [7929, 28725], [627, 2255]]) if constraint else None
+    trie = MyMarisaTrie([[7929, 28723], [7929,  13], [7929, 28725], [627, 2255]]) if constraint else None
 
     with torch.inference_mode():
         for q_id in tqdm(queries):
@@ -56,6 +56,7 @@ def query_inference(model : object, tokenizer : object, queries : dict, constrai
                 decoded_output = tokenize_generate_decode(model, tokenizer, queries[q_id]["text"], 5, 5, True)
             else:
                 decoded_output = tokenize_generate_decode_constraint(model, tokenizer, queries[q_id]["text"], trie)
+                print(f'Query Output: -> {decoded_output}')
 
             decoded_output_sub = re.sub("[,!\.()-]+", " ", decoded_output)
             decoded_output_sub = re.sub("(\\n)+", " ", decoded_output_sub)
@@ -147,8 +148,10 @@ def output_prompt_labels(model : object, tokenizer : object, queries : dict, pro
 
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
 
+    exp_name = args.exp_name if "exp_name" in args else ""
+
     # Output results
-    with safe_open_w(f'{args.output_dir}{args.exp_name if "exp_name" in args else ""}{timestamp}_{used_set}-set.json') as output_file:
+    with safe_open_w(f'{args.output_dir}{exp_name if exp_name != "" else args.checkpoint}{timestamp}_{used_set}-set.json') as output_file:
         output_file.write(json.dumps(label_2_SemEval2024(pred_labels), ensure_ascii=False, indent=4))
 
 def output_prompt_res(model : object, tokenizer : object, queries : dict, qrels : str, prompt : str, args : object, used_set : str, task_type : str = "base"):

@@ -32,13 +32,14 @@ def preprocess_dataset(args : argparse, prompt : str , split : str):
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--model_name', type=str, default="models/Mistral-7B-Instruct-v0.2/run_7/end_model/", help='model to train')
+    # "models/Mistral-7B-Instruct-v0.2/run_7/end_model/"
+    parser.add_argument('--model_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='model to train')
     parser.add_argument('--tokenizer_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='tokenizer to use for the model')
-    parser.add_argument('--exp_name', type=str, default="Run_4 Re-Train Run 7 self_consistency Manual Expand", help='Describes the conducted experiment')
-    parser.add_argument('--run', type=int, default=4, help='run number for wandb logging')
+    parser.add_argument('--exp_name', type=str, default="Run_3 self_consistency full Synthetic Expand ", help='Describes the conducted experiment')
+    parser.add_argument('--run', type=int, default=3, help='run number for wandb logging')
 
     # I/O paths for models, CT, queries and qrels
-    parser.add_argument('--save_dir', type=str, default="models/run_4_re-train-run-7_self-consistency_manual-expand/", help='path to model save dir')
+    parser.add_argument('--save_dir', type=str, default="models/run_3_self-consistency_full-Synthetic-expand/", help='path to model save dir')
 
     parser.add_argument("--prompt_file", default="prompts/AddPrompts.json", type=str)
     parser.add_argument("--prompt_name", default="self-consistency_prompt", type=str)
@@ -47,7 +48,7 @@ def parse_args():
     parser.add_argument("--queries", default="queries/", type=str)
     parser.add_argument("--qrels", default="qrels/", type=str)
 
-    parser.add_argument("--train_split_name", default="train_self-consistency_manual-expand_and_dev", type=str)
+    parser.add_argument("--train_split_name", default="train_self-consistency_full-synthetic-expand", type=str)
     parser.add_argument("--dev_split_name", default="dev_self-consistency", type=str)
     parser.add_argument("--task_type", default="self_consistency", type=str, help="Type of task to train on (explain, base, self_consistency)")
 
