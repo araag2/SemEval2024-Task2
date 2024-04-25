@@ -29,7 +29,8 @@ def extract_info_from_query(query : dict, task_type : str = "base") -> dict:
     relevant_info["secondary_evidence"] = query["Secondary_id_txt"] if "Secondary_id_txt" in query else ""
     if task_type in TASK_TYPES:
         for field in TASK_TYPES[task_type]:
-            relevant_info[field] = query[field]
+            #TODO: Check which field is the correct one
+            relevant_info[field] = query[field][4]
     return relevant_info
 
 def generate_query_from_prompt(text_to_replace: dict, prompt: str, task_type : str = "base") -> str:

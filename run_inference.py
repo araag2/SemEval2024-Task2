@@ -14,13 +14,13 @@ def main():
 
     # Model and checkpoint paths, including a merging flag
     parser.add_argument('--model', type=str, help='name of the model used to generate and combine prompts', default='mistralai/Mistral-7B-Instruct-v0.2')
-    parser.add_argument('--exp_name', type=str, help='name of the experiment', default='run_4_re-train-run-7_self-consistency_manual-expand/end_model/')
+    parser.add_argument('--exp_name', type=str, help='name of the experiment', default='run-2_self-consistency_top-5_4')
 
     parser.add_argument('--merge', dest='merge', action='store_true', help='boolean flag to set if model is merging')
     parser.add_argument('--no-merge', dest='merge', action='store_true', help='boolean flag to set if model is merging')
     parser.set_defaults(merge=False)
 
-    parser.add_argument('--checkpoint', type=str, help='path to model checkpoint, used if merging', default="models/run_4_re-train-run-7_self-consistency_manual-expand/end_model/")
+    parser.add_argument('--checkpoint', type=str, help='path to model checkpoint, used if merging', default="models/run_2_self-consistency_manual-expand/checkpoint-2930/")
 
     parser.add_argument('--constraint', dest='constraint', action='store_true', help='boolean flag to set if model is constrained on Yes or No')
     parser.add_argument('--no-constraint', dest='constraint', action='store_true', help='boolean flag to set if model is constrained on Yes or No')
@@ -28,7 +28,7 @@ def main():
 
 
     # Path to queries, qrels and prompt files
-    parser.add_argument('--used_set', type=str, help='choose which data to use', default="test_self-consistency") # train | dev | test
+    parser.add_argument('--used_set', type=str, help='choose which data to use', default="test_train-self-consistency_top-5") # train | dev | test
     args = parser.parse_known_args()
     parser.add_argument('--queries', type=str, help='path to queries file', default=f'queries/queries2024_{args[0].used_set}.json')
     parser.add_argument('--qrels', type=str, help='path to qrels file', default=f'qrels/qrels2024_{args[0].used_set}.json')
@@ -49,8 +49,8 @@ def main():
     model = None
 
     if args.merge:
-        model = AutoModelForCausalLM.from_pretrained(args.model, device_map= {"": 0})
-        model = PeftModel.from_pretrained(model, args.checkpoint, device_map= {"": 0})
+        model = AutoModelForCausalLM.from_pretrained(args.model, device_map= {"": 0}, torch_dtype=torch.bfloat16,attn_implementation="flash_attention_2")
+        model = PeftModel.from_pretrained(model, args.checkpoint, device_map= {"": 0}, torch_dtype=torch.bfloat16,attn_implementation="flash_attention_2")
         model = model.merge_and_unload()
     else:
        model = AutoModelForCausalLM.from_pretrained(

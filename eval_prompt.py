@@ -20,15 +20,25 @@ class MyMarisaTrie(MarisaTrie):
     def __init__(self, data): super().__init__(data)
     def get(self, data, tokenizer, length_to_ignore): return super().get([tokenizer.bos_token_id] + data[length_to_ignore:])
 
-def tokenize_generate_decode(model : object, tokenizer : object, text : str, max_new_tokens : int = 50, top_k : int = 5, do_sample : bool = True) -> str:   
+def tokenize_generate_decode(model : object, tokenizer : object, text : str, max_new_tokens : int = 50, top_k : int = 50, top_p : float = 0.95, do_sample : bool = True, temperature : float = 1.0) -> str:   
     tokenized = tokenizer(text, return_tensors="pt")
     tokenized["input_ids"] = tokenized.input_ids.to(device="cuda")
     tokenized["attention_mask"] = tokenized.attention_mask.to(device="cuda")
 
     # We could use do_sample=False and disable top_k and top_p to get a deterministic output
-    outputs =  model.generate(**tokenized, max_new_tokens=max_new_tokens, top_k = top_k, do_sample=do_sample, pad_token_id=tokenizer.eos_token_id)
-
+    outputs = model.generate(**tokenized, max_new_tokens=max_new_tokens, top_k = top_k, top_p = top_p, do_sample=do_sample, temperature = temperature, pad_token_id=tokenizer.eos_token_id)
+    
     return tokenizer.decode(outputs[0][tokenized["input_ids"].shape[1]:]).strip()
+
+def tokenize_generate_five_decode(model : object, tokenizer : object, text : str, max_new_tokens : int = 50, top_k : int = 5, top_p : float = 0, do_sample : bool = True, temperature : float = 1.0) -> str:   
+    tokenized = tokenizer(text, return_tensors="pt")
+    tokenized["input_ids"] = tokenized.input_ids.to(device="cuda")
+    tokenized["attention_mask"] = tokenized.attention_mask.to(device="cuda")
+
+    # We could use do_sample=False and disable top_k and top_p to get a deterministic output
+    outputs = model.generate(**tokenized, max_new_tokens=max_new_tokens, top_k = top_k, top_p = top_p, do_sample=do_sample, temperature = temperature, pad_token_id=tokenizer.eos_token_id, num_return_sequences= 5)
+
+    return [re.sub("(</s>)*", "", tokenizer.decode(out[tokenized["input_ids"].shape[1]:]).strip()) for out in outputs]
 
 def tokenize_generate_decode_constraint(model : object, tokenizer : object, text : str, trie : object) -> str:
     tokenized = tokenizer(text, return_tensors="pt")
@@ -53,7 +63,7 @@ def query_inference(model : object, tokenizer : object, queries : dict, constrai
         for q_id in tqdm(queries):
             decoded_output = ""
             if not constraint:
-                decoded_output = tokenize_generate_decode(model, tokenizer, queries[q_id]["text"], 5, 5, True)
+                decoded_output = tokenize_generate_decode(model, tokenizer, queries[q_id]["text"], 5, 15, 0.70, True)
             else:
                 decoded_output = tokenize_generate_decode_constraint(model, tokenizer, queries[q_id]["text"], trie)
                 print(f'Query Output: -> {decoded_output}')
@@ -160,8 +170,9 @@ def output_prompt_res(model : object, tokenizer : object, queries : dict, qrels 
 
     with torch.inference_mode():
         for q_id in tqdm(queries):
-            queries[q_id]["expanded_text"] = tokenize_generate_decode(model, tokenizer, queries[q_id]["text"], 1000, 5, True)
-            queries[q_id]["text"] += queries[q_id]["expanded_text"]
+            #TO:DO Change this afterwards
+            #queries[q_id]["expanded_text"] = tokenize_generate_decode(model, tokenizer, queries[q_id]["text"], 500, 15, 0.70, True)
+            queries[q_id]["expanded_text"] = tokenize_generate_five_decode(model, tokenizer, queries[q_id]["text"], 500, 50, 0.95, True)
 
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
 
