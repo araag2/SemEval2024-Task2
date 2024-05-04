@@ -1,0 +1,49 @@
+Scores for file: self-consistency_run-1_end-model2024-04-01_01-33_test_self-consistency-set.json
+
+Overall Control Score
+
+Control_F1: 0.771
+Control_Precision: 0.760
+Control_Recall: 0.782
+
+Overall Contrast Score
+Contrast_F1: 0.549
+Contrast_Precision: 0.524
+Contrast_Recall: 0.577
+Faithfulness: 0.812
+Consistency: 0.708
+
+Paraphrase Scores
+
+Text Paraphrase
+Para_F1: 0.726
+Para_Precision: 0.704
+Para_Recall: 0.749
+Para_Consistency: 0.734
+
+Numerical Paraphrase
+Numerical_Para_F1: 0.550
+Numerical_Para_Precision: 0.451
+Numerical_Para_Recall: 0.707
+Numerical_Para_Consistency: 0.701
+
+Contradiction Scores
+Text Contradiction
+Cont_F1: 0.000
+Cont_Precision: 0.000
+Cont_Recall: 0.000
+Cont_Faithfulness: 0.811
+Cont_Consistency: 0.761
+
+Numerical Contradiction
+Numerical_Cont_F1: 0.000
+Numerical_Cont_Precision: 0.000
+Numerical_Cont_Recall: 0.000
+Numerical_Cont_Faithfulness: 0.825
+Numerical_Cont_Consistency: 0.932
+
+Text_Append Scores
+Text_Append_F1: 0.489
+Text_Append_Precision: 0.352
+Text_Append_Recall: 0.802
+Text_Append_Consistency: 0.633

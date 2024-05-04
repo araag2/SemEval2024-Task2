@@ -30,7 +30,7 @@ def extract_info_from_query(query : dict, task_type : str = "base") -> dict:
     if task_type in TASK_TYPES:
         for field in TASK_TYPES[task_type]:
             #TODO: Check which field is the correct one
-            relevant_info[field] = query[field][4]
+            relevant_info[field] = query[field]
     return relevant_info
 
 def generate_query_from_prompt(text_to_replace: dict, prompt: str, task_type : str = "base") -> str:
