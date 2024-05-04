@@ -28,18 +28,18 @@ def preprocess_dataset(args : argparse, prompt : str , split : str):
         label = "YES" if example["gold_label"] == 1 else "NO"
         set_dict["text"].append(f'{example["text"]} Answer: {label}')
     return Dataset.from_dict(set_dict)
-
+    
 def parse_args():
     parser = argparse.ArgumentParser()
 
     # "models/Mistral-7B-Instruct-v0.2/run_7/end_model/"
     parser.add_argument('--model_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='model to train')
     parser.add_argument('--tokenizer_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='tokenizer to use for the model')
-    parser.add_argument('--exp_name', type=str, default="Run_3 self_consistency full Synthetic Expand ", help='Describes the conducted experiment')
-    parser.add_argument('--run', type=int, default=3, help='run number for wandb logging')
+    parser.add_argument('--exp_name', type=str, default="Run_4 Normal + Self_Consistency + Section Info", help='Describes the conducted experiment')
+    parser.add_argument('--run', type=int, default=4, help='run number for wandb logging')
 
     # I/O paths for models, CT, queries and qrels
-    parser.add_argument('--save_dir', type=str, default="models/run_3_self-consistency_full-Synthetic-expand/", help='path to model save dir')
+    parser.add_argument('--save_dir', type=str, default="models/run_4_normal_self-consistency_section-info/", help='path to model save dir')
 
     parser.add_argument("--prompt_file", default="prompts/AddPrompts.json", type=str)
     parser.add_argument("--prompt_name", default="self-consistency_prompt", type=str)

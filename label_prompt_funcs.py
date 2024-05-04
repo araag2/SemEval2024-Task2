@@ -20,7 +20,7 @@ def label_2_SemEval2024(labels : dict) -> dict:
 
 # Base queries and prompts
 
-TASK_TYPES = {"base" : [], "self_consistency" : ["entail", "contradict"], "explain_answer" : ["explain"]}
+TASK_TYPES = {"base" : [], "self_consistency" : ["entail", "contradict"], "explain_answer" : ["explain"], "section_info" : ["Primary_Section_Info", "Secondary_Section_Info"]}
 
 def extract_info_from_query(query : dict, task_type : str = "base") -> dict:
     relevant_info = {}
@@ -30,7 +30,7 @@ def extract_info_from_query(query : dict, task_type : str = "base") -> dict:
     if task_type in TASK_TYPES:
         for field in TASK_TYPES[task_type]:
             #TODO: Check which field is the correct one
-            relevant_info[field] = query[field]
+            relevant_info[field] = query[field] if field in query else ""
     return relevant_info
 
 def generate_query_from_prompt(text_to_replace: dict, prompt: str, task_type : str = "base") -> str:
