@@ -28,7 +28,40 @@ def preprocess_dataset(args : argparse, prompt : str , split : str):
         label = "YES" if example["gold_label"] == 1 else "NO"
         set_dict["text"].append(f'{example["text"]} Answer: {label}')
     return Dataset.from_dict(set_dict)
-    
+
+def preprocess_conjoint_dataset(args : argparse, split : str):
+    base_queries = json.load(open(f'{args.queries}queries2024_{split}.json'))
+    base_qrels = json.load(open(f'{args.qrels}qrels2024_{split}.json'))
+
+    task_type_prompts = {
+        "base" : {"prompt" : json.load(open(args.prompt_file))["base_prompt"], "queries" : {}, "qrels" : {}},
+
+        "self_consistency" : {"prompt" : json.load(open(args.prompt_file))["self-consistency_prompt"], "queries" : {}, "qrels" : {}},
+
+        "section_info" : {"prompt" : json.load(open(args.prompt_file))["section_info_prompt"], "queries" : {}, "qrels" : {}}
+    }
+
+    for q_id in base_queries:
+        split_id = q_id.split("_")
+        if split_id[-1] in task_type_prompts:
+            task_type_prompts[split_id[-1]]["queries"][q_id] = base_queries[q_id]
+            task_type_prompts[split_id[-1]]["qrels"][q_id] = base_qrels[q_id]
+
+    set_dict = {"id" : [], "text" : []}
+
+    for task_type in task_type_prompts:
+        res = create_qid_prompt_label_dict(task_type_prompts[task_type]["queries"], task_type_prompts[task_type]["qrels"], task_type_prompts[task_type]["prompt"], task_type)
+
+        for q_id in res:
+            example = base_queries[q_id]
+            set_dict["id"].append(q_id)
+            label = "YES" if base_qrels[q_id] == 1 else "NO"
+            set_dict["text"].append(f'{example} Answer: {label}')
+
+    return Dataset.from_dict(set_dict)
+                     
+
+
 def parse_args():
     parser = argparse.ArgumentParser()
 
@@ -50,7 +83,7 @@ def parse_args():
 
     parser.add_argument("--train_split_name", default="train_self-consistency_full-synthetic-expand", type=str)
     parser.add_argument("--dev_split_name", default="dev_self-consistency", type=str)
-    parser.add_argument("--task_type", default="self_consistency", type=str, help="Type of task to train on (explain, base, self_consistency)")
+    parser.add_argument("--task_type", default="self_consistency", type=str, help="Type of task to train on (explain, base, self_consistency, conjoint)")
 
     #Model Hyperparamenters
     parser.add_argument("--max_length", type=int, default=7000)
@@ -125,7 +158,15 @@ def main():
 
     # Load dataset and prompt
     prompt = json.load(open(args.prompt_file))[args.prompt_name]
-    train_dataset = preprocess_dataset(args, prompt, args.train_split_name)
+
+    train_dataset = None
+    #TO:DO - Elegantly Support this
+    if args.task_type == "conjoint":
+        train_dataset = preprocess_conjoint_dataset(args, args.train_split_name)
+    else:
+        train_dataset = preprocess_dataset(args, prompt, args.train_split_name)
+
+
     eval_dataset = preprocess_dataset(args, prompt, args.dev_split_name)
 
     training_arguments = TrainingArguments(
