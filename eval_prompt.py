@@ -171,8 +171,8 @@ def output_prompt_res(model : object, tokenizer : object, queries : dict, qrels 
     with torch.inference_mode():
         for q_id in tqdm(queries):
             #TO:DO Change this afterwards
-            #queries[q_id]["expanded_text"] = tokenize_generate_decode(model, tokenizer, queries[q_id]["text"], 500, 15, 0.70, True)
-            queries[q_id]["expanded_text"] = tokenize_generate_five_decode(model, tokenizer, queries[q_id]["text"], 500, 50, 0.95, True)
+            queries[q_id]["expanded_text"] = tokenize_generate_decode(model, tokenizer, queries[q_id]["text"], 500, 15, 0.70, True)
+            #queries[q_id]["expanded_text"] = tokenize_generate_five_decode(model, tokenizer, queries[q_id]["text"], 500, 50, 0.95, True)
 
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
 

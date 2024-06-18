@@ -14,7 +14,7 @@ from datasets.arrow_dataset import Dataset
 
 # Model Libs
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, AutoTokenizer, TrainingArguments
-from peft import LoraConfig, prepare_model_for_kbit_training, get_peft_model, PeftModel
+from peft import LoraConfig, prepare_model_for_kbit_training, get_peft_model
 from trl import SFTTrainer, DataCollatorForCompletionOnlyLM
 
 def preprocess_dataset(args : argparse, prompt : str , split : str):
@@ -68,18 +68,11 @@ def parse_args():
     # "models/Mistral-7B-Instruct-v0.2/run_7/end_model/"
     parser.add_argument('--model_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='model to train')
     parser.add_argument('--tokenizer_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='tokenizer to use for the model')
-
-    parser.add_argument('--merge', dest='merge', action='store_true', help='boolean flag to set if model is merging')
-    parser.add_argument('--no-merge', dest='merge', action='store_true', help='boolean flag to set if model is merging')
-    parser.set_defaults(merge=False)
-
-    parser.add_argument('--checkpoint', type=str, help='path to model checkpoint, used if merging', default="models/pre-train_run-1_complete-eligibility-info_base-prompt/checkpoint-18597/")
-
-    parser.add_argument('--exp_name', type=str, default="Run_2 Pre-Train Complete Eligibility + Base Task Template", help='Describes the conducted experiment')
+    parser.add_argument('--exp_name', type=str, default="Pre-Train Run_1 MedInstruct-52k", help='Describes the conducted experiment')
     parser.add_argument('--run', type=int, default=1, help='run number for wandb logging')
 
     # I/O paths for models, CT, queries and qrels
-    parser.add_argument('--save_dir', type=str, default="models/pre-train-complete-eligibility_plus_base-task-tamplate/", help='path to model save dir')
+    parser.add_argument('--save_dir', type=str, default="models/pre-train_run-1_MedInstruct-52k/", help='path to model save dir')
 
     parser.add_argument("--prompt_file", default="prompts/AddPrompts.json", type=str)
     parser.add_argument("--prompt_name", default="base_prompt", type=str)
@@ -88,7 +81,7 @@ def parse_args():
     parser.add_argument("--queries", default="queries/", type=str)
     parser.add_argument("--qrels", default="qrels/", type=str)
 
-    parser.add_argument("--train_split_name", default="train-manual-expand_and_dev", type=str)
+    parser.add_argument("--pre-train_task", default="pre-train_complete_elegibility-criteria", type=str)
     parser.add_argument("--dev_split_name", default="dev", type=str)
     parser.add_argument("--task_type", default="base", type=str, help="Type of task to train on (explain, base, self_consistency, conjoint)", choices = ["base", "self_consistency",  "section_info"])
 
@@ -96,7 +89,7 @@ def parse_args():
     parser.add_argument("--max_length", type=int, default=7000)
     parser.add_argument("--batch_size", default=1, type=int)
     parser.add_argument("--pooling", default="mean")
-    parser.add_argument("--train_epochs", default=5, type=int)
+    parser.add_argument("--train_epochs", default=3, type=int)
     parser.add_argument("--lr", type=float, default=2e-5)
 
     # Lora Hyperparameters
@@ -119,20 +112,12 @@ def create_model_and_tokenizer(args : argparse):
         bnb_4bit_compute_dtype= torch.bfloat16,
         bnb_4bit_use_double_quant= False,
     )
-    
-    model = None
 
-    if args.merge:
-        model = AutoModelForCausalLM.from_pretrained(args.model_name, quantization_config= bnb_config, device_map= {"": 0}, torch_dtype=torch.bfloat16,attn_implementation="flash_attention_2")
-        model = PeftModel.from_pretrained(model, args.checkpoint, quantization_config= bnb_config, device_map= {"": 0}, torch_dtype=torch.bfloat16,attn_implementation="flash_attention_2")
-        model = model.merge_and_unload()
-    else:
-       model = AutoModelForCausalLM.from_pretrained(
-            args.model_name, low_cpu_mem_usage=True,
-            quantization_config= bnb_config,
-            return_dict=True, torch_dtype=torch.bfloat16,
-            device_map= {"": 0}
-       )
+    model = AutoModelForCausalLM.from_pretrained(
+        args.model_name,
+        quantization_config= bnb_config,
+        device_map= {"": 0}
+    )
 
     #### LLAMA STUFF
     model.config.use_cache = False
@@ -174,14 +159,14 @@ def main():
     # Load dataset and prompt
     prompt = json.load(open(args.prompt_file))[args.prompt_name]
 
-    train_dataset = None
-    #TO:DO - Elegantly Support this
-    if args.task_type == "conjoint":
-        train_dataset = preprocess_conjoint_dataset(args, args.train_split_name)
-    else:
-        train_dataset = preprocess_dataset(args, prompt, args.train_split_name)
+    train_dataset_load = json.load(open(f'pre-training/task_prompts/{args.pre_train_task}.json', encoding='utf8'))
+    train_dataset = {"id" : [], "text" : []}
 
+    for q_id in train_dataset_load:
+        train_dataset["id"].append(q_id)
+        train_dataset["text"].append(f'{train_dataset_load[q_id]["text"]}')
 
+    train_dataset = Dataset.from_dict(train_dataset)
     eval_dataset = preprocess_dataset(args, prompt, args.dev_split_name)
 
     training_arguments = TrainingArguments(
