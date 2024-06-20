@@ -1,0 +1,49 @@
+Scores for file: complete-ctr-pre-train_base-task_test-set.json
+
+Overall Control Score
+
+Control_F1: 0.789
+Control_Precision: 0.824
+Control_Recall: 0.757
+
+Overall Contrast Score
+Contrast_F1: 0.580
+Contrast_Precision: 0.580
+Contrast_Recall: 0.581
+Faithfulness: 0.794
+Consistency: 0.720
+
+Paraphrase Scores
+
+Text Paraphrase
+Para_F1: 0.780
+Para_Precision: 0.812
+Para_Recall: 0.751
+Para_Consistency: 0.771
+
+Numerical Paraphrase
+Numerical_Para_F1: 0.683
+Numerical_Para_Precision: 0.615
+Numerical_Para_Recall: 0.767
+Numerical_Para_Consistency: 0.768
+
+Contradiction Scores
+Text Contradiction
+Cont_F1: 0.000
+Cont_Precision: 0.000
+Cont_Recall: 0.000
+Cont_Faithfulness: 0.789
+Cont_Consistency: 0.744
+
+Numerical Contradiction
+Numerical_Cont_F1: 0.000
+Numerical_Cont_Precision: 0.000
+Numerical_Cont_Recall: 0.000
+Numerical_Cont_Faithfulness: 0.825
+Numerical_Cont_Consistency: 0.944
+
+Text_Append Scores
+Text_Append_F1: 0.478
+Text_Append_Precision: 0.343
+Text_Append_Recall: 0.791
+Text_Append_Consistency: 0.626

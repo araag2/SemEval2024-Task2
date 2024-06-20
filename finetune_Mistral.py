@@ -6,8 +6,8 @@ import argparse
 import typing
 
 # Local Files
-from eval_prompt import create_qid_prompt_label_dict
-from utils import create_path
+from inference.eval_prompt import create_qid_prompt_label_dict
+from inference.utils import create_path
 
 # Util libs
 from datasets.arrow_dataset import Dataset

@@ -1,6 +1,6 @@
 import json
 import argparse
-from utils import safe_open_w
+from inference.utils import safe_open_w
 from tqdm import tqdm
 
 if __name__ == '__main__':

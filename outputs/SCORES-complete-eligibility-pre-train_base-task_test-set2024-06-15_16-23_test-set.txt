@@ -1,0 +1,49 @@
+Scores for file: complete-eligibility-pre-train_base-task_test-set2024-06-15_16-23_test-set.json
+
+Overall Control Score
+
+Control_F1: 0.776
+Control_Precision: 0.748
+Control_Recall: 0.806
+
+Overall Contrast Score
+Contrast_F1: 0.528
+Contrast_Precision: 0.473
+Contrast_Recall: 0.596
+Faithfulness: 0.825
+Consistency: 0.711
+
+Paraphrase Scores
+
+Text Paraphrase
+Para_F1: 0.755
+Para_Precision: 0.728
+Para_Recall: 0.783
+Para_Consistency: 0.763
+
+Numerical Paraphrase
+Numerical_Para_F1: 0.592
+Numerical_Para_Precision: 0.462
+Numerical_Para_Recall: 0.824
+Numerical_Para_Consistency: 0.741
+
+Contradiction Scores
+Text Contradiction
+Cont_F1: 0.000
+Cont_Precision: 0.000
+Cont_Recall: 0.000
+Cont_Faithfulness: 0.816
+Cont_Consistency: 0.789
+
+Numerical Contradiction
+Numerical_Cont_F1: 0.000
+Numerical_Cont_Precision: 0.000
+Numerical_Cont_Recall: 0.000
+Numerical_Cont_Faithfulness: 0.886
+Numerical_Cont_Consistency: 0.963
+
+Text_Append Scores
+Text_Append_F1: 0.347
+Text_Append_Precision: 0.220
+Text_Append_Recall: 0.825
+Text_Append_Consistency: 0.587

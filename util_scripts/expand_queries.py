@@ -3,7 +3,7 @@ import json
 import torch
 
 # Local files
-import eval_prompt
+import eval_prompt as eval_prompt
 
 # Model Libs
 from transformers import AutoTokenizer, AutoModelForCausalLM

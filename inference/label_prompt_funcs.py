@@ -2,7 +2,7 @@ import json
 import typing
 
 # Local Files
-from utils import safe_open_w
+from .utils import safe_open_w
 
 ENTAILMENT_LABELS = {"entailment", "yes", "y", "yes.", "(yes)"}
 CONTRADICTION_LABELS = {"contradiction", "not", "no", "n", "no.", "(no)"}

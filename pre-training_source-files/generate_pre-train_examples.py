@@ -34,7 +34,7 @@ def main():
 
     parser.add_argument('--corpus', type=str, default='../corpus/SemEval_CT-corpus.json')
     parser.add_argument('--output_p', type=str, default='task_prompts/')
-    parser.add_argument('--task_type', type=str, default='complete_elegibility-criteria', choices=["complete_ctr-info", "complete_elegibility-criteria"])
+    parser.add_argument('--task_type', type=str, default='complete_ctr-info', choices=["complete_ctr-info", "complete_elegibility-criteria"])
     args = parser.parse_args()
 
     corpus = json.load(open(args.corpus, encoding='utf8'))
@@ -44,8 +44,10 @@ def main():
     if args.task_type == "complete_ctr-info":
         for ctr in corpus:
             for section in corpus[ctr]:
-                res[f'{ctr}_complete-{section}'] = {"text" : "", "ground_truth" : ""}
-                res[f'{ctr}_complete-{section}']["text"], res[f'{ctr}_complete-{section}']["ground_truth"], = subs_ctr_info(corpus[ctr], prompt, section)
+                #res[f'{ctr}_complete-{section}'] = {"text" : "", "ground_truth" : ""}
+                #res[f'{ctr}_complete-{section}']["text"], res[f'{ctr}_complete-{section}']["ground_truth"], = subs_ctr_info(corpus[ctr], prompt, section)
+                res[f'{ctr}_complete-{section}'] = {"id" : f'{ctr}_complete-{section}', "text" : ""}
+                res[f'{ctr}_complete-{section}']["text"] = f'{subs_ctr_info(corpus[ctr], prompt, section)[0]} {subs_ctr_info(corpus[ctr], prompt, section)[1]}'
 
     elif args.task_type == "complete_elegibility-criteria":
         for ctr in corpus:
@@ -55,8 +57,11 @@ def main():
                     curr = "Exclusion Criteria"
                     break
 
-                res[f'{ctr}_complete-{curr}_{line}'] = {"text" : "", "ground_truth" : ""}
-                res[f'{ctr}_complete-{curr}_{line}']["text"], res[f'{ctr}_complete-{curr}_{line}']["ground_truth"], = filter_eligibility_criteria(corpus[ctr]["Eligibility"], prompt, curr, line)
+                #res[f'{ctr}_complete-{curr}_{line}'] = {"text" : "", "ground_truth" : ""}
+                #res[f'{ctr}_complete-{curr}_{line}']["text"], res[f'{ctr}_complete-{curr}_{line}']["ground_truth"], = filter_eligibility_criteria(corpus[ctr]["Eligibility"], prompt, curr, line)
+
+                res[f'{ctr}_complete-{curr}_{line}'] = {"id" : f'{ctr}_complete-{curr}_{line}', "text" : ""}
+                res[f'{ctr}_complete-{curr}_{line}']["text"] = f'{filter_eligibility_criteria(corpus[ctr]["Eligibility"], prompt, curr, line)[0]} {filter_eligibility_criteria(corpus[ctr]["Eligibility"], prompt, curr, line)[1]}'
 
     print(f'Res Size: {len(res)}, Average Size per ctr: {len(res) / len(corpus)}')
 
