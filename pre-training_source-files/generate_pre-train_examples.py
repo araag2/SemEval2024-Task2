@@ -63,6 +63,9 @@ def main():
                 res[f'{ctr}_complete-{curr}_{line}'] = {"id" : f'{ctr}_complete-{curr}_{line}', "text" : ""}
                 res[f'{ctr}_complete-{curr}_{line}']["text"] = f'{filter_eligibility_criteria(corpus[ctr]["Eligibility"], prompt, curr, line)[0]} {filter_eligibility_criteria(corpus[ctr]["Eligibility"], prompt, curr, line)[1]}'
 
+    elif args.task_type == "explantions":
+        
+
     print(f'Res Size: {len(res)}, Average Size per ctr: {len(res) / len(corpus)}')
 
     with safe_open_w(f'{args.output_p}pre-train_{args.task_type}.json') as out_f:

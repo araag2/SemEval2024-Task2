@@ -166,6 +166,7 @@ SemEval_base/
 data_json/
 combination_output/
 args_output/
+source/
 wandb
 
 # PyCharm

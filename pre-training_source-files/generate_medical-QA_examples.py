@@ -2,8 +2,6 @@ import os
 import json
 import argparse
 
-from sklearn.model_selection import train_test_split
-
 def safe_open_w(path: str):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     return open(path, 'w', encoding='utf8')
@@ -18,8 +16,8 @@ def main():
     prompt = json.load(open("task_prompts/pre-train_macro-prompts.json", encoding="utf8"))["answer_MedLFQA_prompt"]
 
     res = {}
-    #for file in [f'{args.corpus_dir}{"MedInstruct-52k.json"}']:
-    for file in [f'{args.corpus_dir}{f}' for f in os.listdir(args.corpus_dir) if f.endswith('.jsonl')]:
+    for file in [f'{args.corpus_dir}{"MedCalc.json"}']:
+    #for file in [f'{args.corpus_dir}{f}' for f in os.listdir(args.corpus_dir) if f.endswith('.jsonl')]:
         source_data = [json.loads(line) for line in open(file, 'r', encoding='utf8') if line != None] if file.endswith('.jsonl') else json.load(open(file, 'r', encoding='utf8'))
 
         if "MedInstruct" in file:
@@ -43,6 +41,18 @@ def main():
                         "text" : f'{prompt.replace("$instruction", data["instruction"]).replace("$input", data["input"])}{data["output"]}</s>'
                     }
 
+        elif "MedCalc" in file:
+            prompt = json.load(open("task_prompts/pre-train_macro-prompts.json", encoding="utf8"))["MedCalc_prompt"]
+
+            for i, data in enumerate(source_data):
+                if "Question" in data and (data['Question'] == None or data['Question'] == ""):
+                    continue
+
+                res[f'{file.split("/")[-1][:-5]}_{i}'] = {
+                    "id" : f'{file.split("/")[-1][:-5]}_{i}',
+                    "text" : f'{prompt.replace("$question", data["Question"]).replace("$patient_note", data["Patient Note"])}{data["Ground Truth Explanation"]}</s>'
+                }
+
         else:
             for i, data in enumerate(source_data):
                 if "question" in data and (data['Question'] == None or data['Question'] == ""):
@@ -59,10 +69,10 @@ def main():
     #with safe_open_w(f'{args.output_p}pre-train_MedInstruct-52k.json') as out_f:
     #    json.dump(res, out_f, indent=4)
 
-    with safe_open_w(f'{args.output_p}pre-train_MedLFQA_train.json') as out_f:
+    with safe_open_w(f'{args.output_p}pre-train_MedCalc_train.json') as out_f:
         json.dump({key: value for i, (key, value) in enumerate(res.items()) if i % 10 != 0}, out_f, indent=4)
 
-    with safe_open_w(f'{args.output_p}pre-train_MedLFQA_dev.json') as out_f:
+    with safe_open_w(f'{args.output_p}pre-train_MedCalc_dev.json') as out_f:
         json.dump({key: value for i, (key, value) in enumerate(res.items()) if i % 10 == 0}, out_f, indent=4)
 
 

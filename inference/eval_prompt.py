@@ -6,6 +6,7 @@ import re
 # Local Files
 from .utils import safe_open_w
 from .label_prompt_funcs import textlabel_2_binarylabel, label_2_SemEval2024, create_qid_prompt_label_dict, create_qdid_prompt
+from .codalab_sourceEval import calc_scores
 
 # Util libs
 from datetime import datetime
@@ -36,7 +37,7 @@ def tokenize_generate_five_decode(model : object, tokenizer : object, text : str
     tokenized["attention_mask"] = tokenized.attention_mask.to(device="cuda")
 
     # We could use do_sample=False and disable top_k and top_p to get a deterministic output
-    outputs = model.generate(**tokenized, max_new_tokens=max_new_tokens, top_k = top_k, top_p = top_p, do_sample=do_sample, temperature = temperature, pad_token_id=tokenizer.eos_token_id, num_return_sequences= 5)
+    outputs = model.generate(**tokenized, max_new_tokens=max_new_tokens, top_k = top_k, top_p = top_p, do_sample=do_sample, temperature = temperature, pad_token_id=tokenizer.eos_token_id, num_return_sequences= 10)
 
     return [re.sub("(</s>)*", "", tokenizer.decode(out[tokenized["input_ids"].shape[1]:]).strip()) for out in outputs]
 
@@ -162,7 +163,10 @@ def output_prompt_labels(model : object, tokenizer : object, queries : dict, pro
 
     # Output results
     with safe_open_w(f'{args.output_dir}{exp_name if exp_name != "" else args.checkpoint}{timestamp}_{used_set}-set.json') as output_file:
-        output_file.write(json.dumps(label_2_SemEval2024(pred_labels), ensure_ascii=False, indent=4))
+        preds = label_2_SemEval2024(pred_labels)
+        output_file.write(json.dumps(preds, ensure_ascii=False, indent=4))
+
+        calc_scores(preds, f'{exp_name if exp_name != "" else args.checkpoint}{timestamp}_{used_set}-set.json', args.output_dir)
 
 def output_prompt_res(model : object, tokenizer : object, queries : dict, qrels : str, prompt : str, args : object, used_set : str, task_type : str = "base"):
     # Replace prompt with query info
@@ -171,8 +175,8 @@ def output_prompt_res(model : object, tokenizer : object, queries : dict, qrels 
     with torch.inference_mode():
         for q_id in tqdm(queries):
             #TO:DO Change this afterwards
-            queries[q_id]["expanded_text"] = tokenize_generate_decode(model, tokenizer, queries[q_id]["text"], 500, 15, 0.70, True)
-            #queries[q_id]["expanded_text"] = tokenize_generate_five_decode(model, tokenizer, queries[q_id]["text"], 500, 50, 0.95, True)
+            #queries[q_id]["expanded_text"] = tokenize_generate_decode(model, tokenizer, queries[q_id]["text"], 500, 15, 0.70, True)
+            queries[q_id]["expanded_text"] = tokenize_generate_five_decode(model, tokenizer, queries[q_id]["text"], 500, 50, 0.95, True)
 
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
 

@@ -11,7 +11,7 @@ from datasets.arrow_dataset import Dataset
 # Model Libs
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, AutoTokenizer, TrainingArguments
 from peft import LoraConfig, prepare_model_for_kbit_training, get_peft_model, PeftModel
-from trl import SFTTrainer, DataCollatorForCompletionOnlyLM
+from trl import DPOTrainer, DPODataCollatorWithPadding
 
 def create_path(path : str) -> None:
     os.makedirs(path, exist_ok=True)
@@ -24,22 +24,22 @@ def parse_args():
     parser.add_argument('--model_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='model to train')
     parser.add_argument('--tokenizer_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='tokenizer to use for the model')
 
-    parser.add_argument('--checkpoint', type=str, default="models/pre-train_run-1_MedInstruct-52k/checkpoint-4389/", help='checkpoint to load for model')
+    parser.add_argument('--checkpoint', type=str, default="models/fine-tune_run-1_MedInstruct-52k/checkpoint-4389/", help='checkpoint to load for model')
     parser.add_argument('--merge', dest='merge', action='store_true', help='boolean flag to set if model is merging')
     parser.add_argument('--no-merge', dest='merge', action='store_true', help='boolean flag to set if model is merging')
     parser.set_defaults(merge=False)
 
-    parser.add_argument('--exp_name', type=str, default="Pre-Train Run_1 MedMix", help='Describes the conducted experiment')
-    parser.add_argument('--run', type=int, default=1, help='run number for wandb logging')
+    parser.add_argument('--exp_name', type=str, default="DPO Iteration-1 MedInstruct-52k + MEDLFQA", help='Describes the conducted experiment')
+    parser.add_argument('--run', type=int, default=3, help='run number for wandb logging')
 
     # I/O paths for models, CT, queries and qrels
-    parser.add_argument('--save_dir', type=str, default="models/pre-train_run-1_MedMix/", help='path to model save dir')
+    parser.add_argument('--save_dir', type=str, default="models/pre-train_run-3_MedLFQA/", help='path to model save dir')
 
-    parser.add_argument("--train_file", default="pre-training_source-files/medical_datasets/pre-train_MedMix_train", type=str)
-    parser.add_argument("--dev_file", default="pre-training_source-files/medical_datasets/pre-train_MedMix_dev", type=str)
+    parser.add_argument("--train_file", default="", type=str)
+    parser.add_argument("--dev_file", default="", type=str)
 
     #Model Hyperparamenters
-    parser.add_argument("--max_length", type=int, default=1300)
+    parser.add_argument("--max_length", type=int, default=5000)
     parser.add_argument("--batch_size", default=16, type=int)
     parser.add_argument("--pooling", default="mean")
     parser.add_argument("--train_epochs", default=15, type=int)
@@ -158,7 +158,7 @@ def main():
     )
     
     ## Data collator for completing with "Answer: YES" or "Answer: NO"
-    collator = DataCollatorForCompletionOnlyLM("Answer:", tokenizer= tokenizer)
+    collator = DPODataCollatorWithPadding(tokenizer= tokenizer, padding="max_length", max_length= args.max_length, pooling= args.pooling)
 
     ## Setting sft parameters
     trainer = SFTTrainer(

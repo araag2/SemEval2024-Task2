@@ -1,0 +1,49 @@
+Scores for file: pre-train_run-1_MedInstruct52k-MedLFQA2024-06-20_17-02_test-set.json
+
+Overall Control Score
+
+Control_F1: 0.693
+Control_Precision: 0.900
+Control_Recall: 0.564
+
+Overall Contrast Score
+Contrast_F1: 0.544
+Contrast_Precision: 0.899
+Contrast_Recall: 0.390
+Faithfulness: 0.420
+Consistency: 0.541
+
+Paraphrase Scores
+
+Text Paraphrase
+Para_F1: 0.693
+Para_Precision: 0.908
+Para_Recall: 0.560
+Para_Consistency: 0.597
+
+Numerical Paraphrase
+Numerical_Para_F1: 0.587
+Numerical_Para_Precision: 0.780
+Numerical_Para_Recall: 0.470
+Numerical_Para_Consistency: 0.554
+
+Contradiction Scores
+Text Contradiction
+Cont_F1: 0.000
+Cont_Precision: 0.000
+Cont_Recall: 0.000
+Cont_Faithfulness: 0.420
+Cont_Consistency: 0.385
+
+Numerical Contradiction
+Numerical_Cont_F1: 0.000
+Numerical_Cont_Precision: 0.000
+Numerical_Cont_Recall: 0.000
+Numerical_Cont_Faithfulness: 0.421
+Numerical_Cont_Consistency: 0.500
+
+Text_Append Scores
+Text_Append_F1: 0.675
+Text_Append_Precision: 0.905
+Text_Append_Recall: 0.538
+Text_Append_Consistency: 0.564

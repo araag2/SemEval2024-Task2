@@ -1,0 +1,49 @@
+Scores for file: pre-train_run-1_MedInstruct52k2024-06-20_18-02_test-set.json
+
+Overall Control Score
+
+Control_F1: 0.696
+Control_Precision: 0.880
+Control_Recall: 0.576
+
+Overall Contrast Score
+Contrast_F1: 0.546
+Contrast_Precision: 0.904
+Contrast_Recall: 0.391
+Faithfulness: 0.426
+Consistency: 0.541
+
+Paraphrase Scores
+
+Text Paraphrase
+Para_F1: 0.700
+Para_Precision: 0.915
+Para_Recall: 0.567
+Para_Consistency: 0.609
+
+Numerical Paraphrase
+Numerical_Para_F1: 0.571
+Numerical_Para_Precision: 0.725
+Numerical_Para_Recall: 0.471
+Numerical_Para_Consistency: 0.558
+
+Contradiction Scores
+Text Contradiction
+Cont_F1: 0.000
+Cont_Precision: 0.000
+Cont_Recall: 0.000
+Cont_Faithfulness: 0.421
+Cont_Consistency: 0.369
+
+Numerical Contradiction
+Numerical_Cont_F1: 0.000
+Numerical_Cont_Precision: 0.000
+Numerical_Cont_Recall: 0.000
+Numerical_Cont_Faithfulness: 0.456
+Numerical_Cont_Consistency: 0.488
+
+Text_Append Scores
+Text_Append_F1: 0.677
+Text_Append_Precision: 0.916
+Text_Append_Recall: 0.536
+Text_Append_Consistency: 0.562

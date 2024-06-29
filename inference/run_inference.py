@@ -3,7 +3,7 @@ import json
 import torch
 
 # Local files
-import inference.eval_prompt as eval_prompt
+from .eval_prompt import output_prompt_labels, full_evaluate_prompt
 
 # Model Libs
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -14,13 +14,13 @@ def main():
 
     # Model and checkpoint paths, including a merging flag
     parser.add_argument('--model', type=str, help='name of the model used to generate and combine prompts', default='mistralai/Mistral-7B-Instruct-v0.2')
-    parser.add_argument('--exp_name', type=str, help='name of the experiment', default='pre-train_run-1_MedInstruct52k-MedLFQA')
+    parser.add_argument('--exp_name', type=str, help='name of the experiment', default='pre-train_run-1_MedInstruct52k')
 
     parser.add_argument('--merge', dest='merge', action='store_true', help='boolean flag to set if model is merging')
     parser.add_argument('--no-merge', dest='merge', action='store_true', help='boolean flag to set if model is merging')
     parser.set_defaults(merge=False)
 
-    parser.add_argument('--checkpoint', type=str, help='path to model checkpoint, used if merging', default="models/pre-train_run-1_MedInstruct52k-MedLFQA/checkpoint-4185/")
+    parser.add_argument('--checkpoint', type=str, help='path to model checkpoint, used if merging', default="models/pre-train_run-1_MedInstruct52k/checkpoint-4389/")
 
     parser.add_argument('--constraint', dest='constraint', action='store_true', help='boolean flag to set if model is constrained on Yes or No')
     parser.add_argument('--no-constraint', dest='constraint', action='store_true', help='boolean flag to set if model is constrained on Yes or No')
@@ -68,10 +68,10 @@ def main():
     prompt = json.load(open(args.prompt_file))[args.prompt_name]
 
     if args.task == "output_labels":
-        eval_prompt.output_prompt_labels(model, tokenizer, queries, prompt, args, args.used_set, args.constraint, args.task_type)
+        output_prompt_labels(model, tokenizer, queries, prompt, args, args.used_set, args.constraint, args.task_type)
 
     elif args.task == "evaluate":
-        eval_prompt.full_evaluate_prompt(model, tokenizer, queries, qrels, "id-best_combination_prompt", prompt, args, args.used_set, args.task_type)
+        full_evaluate_prompt(model, tokenizer, queries, qrels, "id-best_combination_prompt", prompt, args, args.used_set, args.task_type)
 
 if __name__ == '__main__':
     main()
