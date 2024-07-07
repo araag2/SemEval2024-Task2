@@ -24,31 +24,31 @@ def parse_args():
     parser.add_argument('--model_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='model to train')
     parser.add_argument('--tokenizer_name', type=str, default="mistralai/Mistral-7B-Instruct-v0.2", help='tokenizer to use for the model')
 
-    parser.add_argument('--checkpoint', type=str, default="models/pre-train_run-1_MedInstruct-52k/checkpoint-4389/", help='checkpoint to load for model')
+    parser.add_argument('--checkpoint', type=str, default="models/pre-train_run-1_MedMix/checkpoint-6526/", help='checkpoint to load for model')
     parser.add_argument('--merge', dest='merge', action='store_true', help='boolean flag to set if model is merging')
     parser.add_argument('--no-merge', dest='merge', action='store_true', help='boolean flag to set if model is merging')
     parser.set_defaults(merge=False)
 
-    parser.add_argument('--exp_name', type=str, default="Pre-Train Run_1 MedMix", help='Describes the conducted experiment')
+    parser.add_argument('--exp_name', type=str, default="Iterative-Training-Explanations Base-Model Iter-1", help='Describes the conducted experiment')
     parser.add_argument('--run', type=int, default=1, help='run number for wandb logging')
 
     # I/O paths for models, CT, queries and qrels
-    parser.add_argument('--save_dir', type=str, default="models/pre-train_run-1_MedMix/", help='path to model save dir')
+    parser.add_argument('--save_dir', type=str, default="models/Base-Model_Iterative-Training-Explanations_Iter-1/", help='path to model save dir')
 
-    parser.add_argument("--train_file", default="pre-training_source-files/medical_datasets/pre-train_MedMix_train", type=str)
-    parser.add_argument("--dev_file", default="pre-training_source-files/medical_datasets/pre-train_MedMix_dev", type=str)
+    parser.add_argument("--train_file", default="training/iterative_training_queries/iteration-1_base-model_iterative-train-explanations_train", type=str)
+    parser.add_argument("--dev_file", default="training/iterative_training_queries/iteration-1_base-model_iterative-train-explanations_dev", type=str)
 
     #Model Hyperparamenters
-    parser.add_argument("--max_length", type=int, default=1300)
-    parser.add_argument("--batch_size", default=16, type=int)
+    parser.add_argument("--max_length", type=int, default=1700)
+    parser.add_argument("--batch_size", default=8, type=int)
     parser.add_argument("--pooling", default="mean")
-    parser.add_argument("--train_epochs", default=15, type=int)
+    parser.add_argument("--train_epochs", default=10, type=int)
     parser.add_argument("--lr", type=float, default=2e-5)
 
     # Lora Hyperparameters
-    parser.add_argument("--lora_r", type=int, default=64)
+    parser.add_argument("--lora_r", type=int, default=32)
     parser.add_argument("--lora_dropout", type=float, default=0.1)
-    parser.add_argument("--lora_alpha", type=float, default=64)
+    parser.add_argument("--lora_alpha", type=float, default=32)
 
     #Speed and memory optimization parameters
     parser.add_argument("--fp16", action="store_true", help="Whether to use 16-bit (mixed) precision instead of 32-bit")
@@ -136,9 +136,11 @@ def main():
     training_arguments = TrainingArguments(
         output_dir = args.save_dir,
         overwrite_output_dir=True,
-        evaluation_strategy="epoch",
-        save_strategy="epoch",
-        save_total_limit= 5,
+        evaluation_strategy="steps",
+        save_strategy="steps",
+        save_total_limit= 10,
+        save_steps= 1000,
+        eval_steps= 1000,
         num_train_epochs = args.train_epochs,
         per_device_train_batch_size= args.batch_size,
         optim = "paged_adamw_8bit",

@@ -13,7 +13,7 @@ def main():
     parser = argparse.ArgumentParser()
 
     # Model and checkpoint paths, including a merging flag
-    parser.add_argument('--exp_name', type=str, help='name of the experiment', default='explain_query-10')
+    parser.add_argument('--exp_name', type=str, help='name of the experiment', default='base-model_explain-query-10')
 
     # Model and checkpoint paths, including a merging flag
     parser.add_argument('--model', type=str, help='name of the model used to generate and combine prompts', default='mistralai/Mistral-7B-Instruct-v0.2')

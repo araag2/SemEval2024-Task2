@@ -13,7 +13,7 @@ def main():
     parser.add_argument('--prompt', type=str, default='prompts/DPOPrompts.json')
     parser.add_argument('--explanations_queries', type=str, default='outputs/explain_query-102024-06-28_03-30_train-set.json')
 
-    parser.add_argument('--output_name', type=str, default='iteration-1_iterative-train-explanations')
+    parser.add_argument('--output_name', type=str, default='iteration-1_base-model_iterative-train-explanations')
     args = parser.parse_args()
 
     base_queries = json.load(open(args.base_q, encoding='utf8'))
@@ -41,8 +41,11 @@ def main():
                 "text": f'{l_prompt.replace("$explanation", explanations_queries[query_id]["expanded_text"][i])}{"NO" if explanations_queries[query_id]["gold_label"] == 0 else "YES"}',
             }
 
-    with safe_open_w(f'training/iterative_training_queries/{args.output_name}.json') as out_f:
-        json.dump(res, out_f, indent=4)
+    with safe_open_w(f'training/iterative_training_queries/{args.output_name}_train.json') as out_f:
+        json.dump({key: value for i, (key, value) in enumerate(res.items()) if i % 10 != 0}, out_f, indent=4)
+
+    with safe_open_w(f'training/iterative_training_queries/{args.output_name}_dev.json') as out_f:
+        json.dump({key: value for i, (key, value) in enumerate(res.items()) if i % 10 == 0}, out_f, indent=4)
 
 if __name__ == '__main__':
     main()

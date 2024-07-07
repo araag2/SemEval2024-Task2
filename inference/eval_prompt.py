@@ -69,11 +69,7 @@ def query_inference(model : object, tokenizer : object, queries : dict, constrai
                 decoded_output = tokenize_generate_decode_constraint(model, tokenizer, queries[q_id]["text"], trie)
                 print(f'Query Output: -> {decoded_output}')
 
-            decoded_output_sub = re.sub("[,!\.()-]+", " ", decoded_output)
-            decoded_output_sub = re.sub("(\\n)+", " ", decoded_output_sub)
-            decoded_output_sub = re.sub("(<\/s>)+", " ", decoded_output_sub)
-
-            #print(decoded_output_sub)
+            decoded_output_sub = re.sub("(<\/s>)+", " ", decoded_output)
 
             res_labels[q_id] = textlabel_2_binarylabel(decoded_output_sub.split(" "))
     return res_labels
@@ -162,7 +158,7 @@ def output_prompt_labels(model : object, tokenizer : object, queries : dict, pro
     exp_name = args.exp_name if "exp_name" in args else ""
 
     # Output results
-    with safe_open_w(f'{args.output_dir}{exp_name if exp_name != "" else args.checkpoint}{timestamp}_{used_set}-set.json') as output_file:
+    with safe_open_w(f'{args.output_dir}{exp_name if exp_name != "" else args.checkpoint}_{timestamp}_{used_set}-set.json') as output_file:
         preds = label_2_SemEval2024(pred_labels)
         output_file.write(json.dumps(preds, ensure_ascii=False, indent=4))
 
@@ -181,5 +177,5 @@ def output_prompt_res(model : object, tokenizer : object, queries : dict, qrels 
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
 
     # Output results
-    with safe_open_w(f'{args.output_dir}{args.exp_name if "exp_name" in args else ""}{timestamp}_{used_set}-set.json') as output_file:
+    with safe_open_w(f'{args.output_dir}{args.exp_name if "exp_name" in args else ""}_{timestamp}_{used_set}-set.json') as output_file:
         output_file.write(json.dumps(queries, ensure_ascii=False, indent=4))

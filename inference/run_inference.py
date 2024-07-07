@@ -14,13 +14,13 @@ def main():
 
     # Model and checkpoint paths, including a merging flag
     parser.add_argument('--model', type=str, help='name of the model used to generate and combine prompts', default='mistralai/Mistral-7B-Instruct-v0.2')
-    parser.add_argument('--exp_name', type=str, help='name of the experiment', default='pre-train_run-1_MedInstruct52k')
+    parser.add_argument('--exp_name', type=str, help='name of the experiment', default='pre-train_run-2_MedMix2-0')
 
     parser.add_argument('--merge', dest='merge', action='store_true', help='boolean flag to set if model is merging')
     parser.add_argument('--no-merge', dest='merge', action='store_true', help='boolean flag to set if model is merging')
     parser.set_defaults(merge=False)
 
-    parser.add_argument('--checkpoint', type=str, help='path to model checkpoint, used if merging', default="models/pre-train_run-1_MedInstruct52k/checkpoint-4389/")
+    parser.add_argument('--checkpoint', type=str, help='path to model checkpoint, used if merging', default="models/pre-train_run-2_MedMix/checkpoint-13000")
 
     parser.add_argument('--constraint', dest='constraint', action='store_true', help='boolean flag to set if model is constrained on Yes or No')
     parser.add_argument('--no-constraint', dest='constraint', action='store_true', help='boolean flag to set if model is constrained on Yes or No')
@@ -34,12 +34,12 @@ def main():
     parser.add_argument('--qrels', type=str, help='path to qrels file', default=f'qrels/qrels2024_{args[0].used_set}.json')
     
     parser.add_argument('--prompt_file', type=str, help='path to prompts file', default="prompts/AddPrompts.json")
-    parser.add_argument('--prompt_name', type=str, help='name of the prompt to use', default='explain_entailment_or_contradiction_prompt')
+    parser.add_argument('--prompt_name', type=str, help='name of the prompt to use', default='base_prompt')
 
     # Task to run
     parser.add_argument('--task', type=str, help='task to run', default='output_labels', choices=['output_labels', 'evaluate']) # output_labels | self_consistency | evaluate
 
-    parser.add_argument('--task_type', type=str, help='task type to run', default='self_consistency', choices=['base', 'self_consistency', 'explain_answer']) # output_labels | self_consistency | evaluate
+    parser.add_argument('--task_type', type=str, help='task type to run', default='base', choices=['base', 'self_consistency', 'explain_answer']) # output_labels | self_consistency | evaluate
 
     # Output directory
     parser.add_argument('--output_dir', type=str, help='path to output_dir', default="outputs/")
