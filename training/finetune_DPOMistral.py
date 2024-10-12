@@ -11,7 +11,7 @@ from datasets.arrow_dataset import Dataset
 # Model Libs
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, AutoTokenizer, TrainingArguments
 from peft import LoraConfig, prepare_model_for_kbit_training, get_peft_model, PeftModel
-from trl import DPOTrainer, DataCollatorForCompletionOnlyLM
+from trl import DPOTrainer, DPOConfig,DataCollatorForCompletionOnlyLM
 
 def create_path(path : str) -> None:
     os.makedirs(path, exist_ok=True)
@@ -135,7 +135,7 @@ def main():
         eval_dataset["rejected"].append(f'{eval_dataset_load["rejected"][i]}')
     eval_dataset = Dataset.from_dict(eval_dataset)
 
-    training_arguments = TrainingArguments(
+    training_arguments = DPOConfig(
         output_dir = args.save_dir,
         overwrite_output_dir=True,
         evaluation_strategy="steps",

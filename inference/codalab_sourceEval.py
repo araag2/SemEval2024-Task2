@@ -10,6 +10,7 @@ from sklearn.metrics import f1_score, precision_score, recall_score
 
 warnings.simplefilter('ignore')
 
+
 def extract_control_set(predictions, gold):
     control_predicitons = {}
     for key in gold.keys():
