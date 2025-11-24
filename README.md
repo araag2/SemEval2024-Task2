@@ -58,27 +58,12 @@ The Pratice-test also includes the dev-set. whilst the Test set includes several
 
 We also expanded sets in order to train the model on additional data:
 
-| **Set**                | #Samples | Single | Comparison  | Entailment | Contradiction |
-|:-------------- |:--:|:--:|:--:||:--:|:--:|
-| TREC-synthetic         | 1630     | 1542   | 88          |     815    |   815         |
-| Train-manual           | 2334     | 1380   | 854         |     1167   |   1167        |
-| Train-manual-synthetic | 3720     | 2368   | 1352        |     1860   |   1860        |
-| Train-full-synthetic   | 11011    | 6705   | 4306        |     5098   |   5913        |
-
-
-## Experimental Results
-
-TO:DO - For now info in the System Description Paper
-
-### Evaluation Criteria
-
-TO:DO - For now info in the System Description Paper
-
-### Mistral Results
-
-The model we chose to conduct most experiments on was the [Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2) model, using the pubicly available huggingface weights, and the python libraries torch, transformers and peft. 
-
-TO:DO - For now info in the System Description Paper
+| **Set**                | #Samples | Single | Comparison | Entailment | Contradiction |
+|------------------------|:--------:|:------:|:----------:|:----------:|:--------------:|
+| TREC-synthetic         | 1630     | 1542   | 88         | 815        | 815            |
+| Train-manual           | 2334     | 1380   | 854        | 1167       | 1167           |
+| Train-manual-synthetic | 3720     | 2368   | 1352       | 1860       | 1860           |
+| Train-full-synthetic   | 11011    | 6705   | 4306       | 5098       | 5913           |
 
 ### T5 Base Results
 
